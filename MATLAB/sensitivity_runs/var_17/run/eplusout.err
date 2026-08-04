@@ -1,0 +1,70 @@
+Program Version,EnergyPlus, Version 24.1.0-9d7789a3ac, YMD=2026.06.23 16:18,
+   ** Warning ** Timestep: Requested number (1) is less than the suggested minimum of 4.
+   **   ~~~   ** Please see entry for Timestep in Input/Output Reference for discussion of considerations.
+   ************* Beginning Zone Sizing Calculations
+   ** Warning ** Weather file location will be used rather than entered (IDF) Location object.
+   **   ~~~   ** ..Location object=BOSTON&#44 MA
+   **   ~~~   ** ..Weather File Location=City Name State Name Country Name Data Source WMO#=NA
+   **   ~~~   ** ..due to location differences, Latitude difference=[42.36] degrees, Longitude difference=[71.06] degrees.
+   **   ~~~   ** ..Time Zone difference=[0.0] hour(s), Elevation difference=[100.00] percent, [505.25] meters.
+   ** Warning ** Did you realize that you have Latitude=0.0, Longitude=0.0 and TimeZone=0.0?  Your building site is in the middle of the Atlantic Ocean.
+   ** Warning ** SetUpDesignDay: Entered DesignDay Barometric Pressure=83011 differs by more than 10% from Standard Barometric Pressure=101325.
+   **   ~~~   ** ...occurs in DesignDay=DENVER INTL AP ANN CLG .4% CONDNS DB=>MWB 1, Standard Pressure (based on elevation) will be used.
+   ** Warning ** ProcessScheduleInput: DecodeHHMMField, Invalid "until" field value is not a multiple of the minutes for each timestep: 05:30
+   **   ~~~   ** Other errors may result. Occurred in Day Schedule=DEHUMIDIFYING SETPOINT SCHEDULE DEHUMIDIFYING SETPOINT DEFAULT DAY SCHEDULE
+   ** Warning ** ProcessScheduleInput: DecodeHHMMField, Invalid "until" field value is not a multiple of the minutes for each timestep: 05:30
+   **   ~~~   ** Other errors may result. Occurred in Day Schedule=COOLING SETPOINT SCHEDULE COOLING SETPOINT DEFAULT DAY SCHEDULE
+   ** Warning ** ProcessScheduleInput: DecodeHHMMField, Invalid "until" field value is not a multiple of the minutes for each timestep: 05:30
+   **   ~~~   ** Other errors may result. Occurred in Day Schedule=HEATING SETPOINT SCHEDULE HEATING SETPOINT DEFAULT DAY SCHEDULE
+   ** Warning ** GetHTSurfaceData: Surfaces with interface to Ground found but no "Ground Temperatures" were input.
+   **   ~~~   ** Found first in surface=SU-B-100-E-F-8
+   **   ~~~   ** Defaults, constant throughout the year of (18.0) will be used.
+   ************* Note that the following warning(s) may/will occur if you have not enclosed your zone completely.
+   ** Warning ** Entered Zone Volumes differ from calculated zone volume(s).
+   **   ~~~   ** ...use Output:Diagnostics,DisplayExtraWarnings; to show more details on individual zones.
+   ** Warning ** CheckUsedConstructions: There are 7 nominally unused constructions in input.
+   **   ~~~   ** For explicit details on each unused construction, use Output:Diagnostics,DisplayExtraWarnings;
+   ** Warning ** SetUpDesignDay: Entered DesignDay Barometric Pressure=83011 differs by more than 10% from Standard Barometric Pressure=101325.
+   **   ~~~   ** ...occurs in DesignDay=DENVER INTL AP ANN CLG .4% CONDNS WB=>MDB 1, Standard Pressure (based on elevation) will be used.
+   ** Warning ** SetUpDesignDay: Entered DesignDay Barometric Pressure=83011 differs by more than 10% from Standard Barometric Pressure=101325.
+   **   ~~~   ** ...occurs in DesignDay=DENVER INTL AP ANN HTG 99.6% CONDNS DB 1, Standard Pressure (based on elevation) will be used.
+   ** Warning ** ManageSizing: For a plant sizing run, there must be at least 1 Sizing:Plant object input. SimulationControl Plant Sizing option ignored.
+   ** Warning ** Output:Meter: invalid Key Name="NATURALGAS:FACILITY" - not found.
+   ** Warning ** Output:Meter:MeterFileOnly: invalid Key Name="NATURALGAS:FACILITY" - not found.
+   ** Warning ** Output:Meter:MeterFileOnly requested for "Electricity:Facility" (TimeStep), already on "Output:Meter". Will report to both eplusout.eso and eplusout.mtr
+   ************* Testing Individual Branch Integrity
+   ************* All Branches passed integrity testing
+   ************* Testing Individual Supply Air Path Integrity
+   ************* All Supply Air Paths passed integrity testing
+   ************* Testing Individual Return Air Path Integrity
+   ************* All Return Air Paths passed integrity testing
+   ************* No node connection errors were found.
+   ************* Beginning Simulation
+   ** Warning ** Processing Monthly Tabular Reports: Variable names not valid for this simulation
+   **   ~~~   ** ...use Output:Diagnostics,DisplayExtraWarnings; to show more details on individual variables.
+   ** Warning ** The resource referenced by LifeCycleCost:UsePriceEscalation= "U.S. AVG  COMMERCIAL-ELECTRICITY" has no energy cost. 
+   **   ~~~   ** ... It is likely that the wrong resource is used. The resource should match the meter used in Utility:Tariff.
+   ** Warning ** The resource referenced by LifeCycleCost:UsePriceEscalation= "U.S. AVG  COMMERCIAL-DISTILLATE OIL" has no energy cost. 
+   **   ~~~   ** ... It is likely that the wrong resource is used. The resource should match the meter used in Utility:Tariff.
+   ** Warning ** The resource referenced by LifeCycleCost:UsePriceEscalation= "U.S. AVG  COMMERCIAL-RESIDUAL OIL" has no energy cost. 
+   **   ~~~   ** ... It is likely that the wrong resource is used. The resource should match the meter used in Utility:Tariff.
+   ** Warning ** The resource referenced by LifeCycleCost:UsePriceEscalation= "U.S. AVG  COMMERCIAL-NATURAL GAS" has no energy cost. 
+   **   ~~~   ** ... It is likely that the wrong resource is used. The resource should match the meter used in Utility:Tariff.
+   ** Warning ** The resource referenced by LifeCycleCost:UsePriceEscalation= "U.S. AVG  COMMERCIAL-COAL" has no energy cost. 
+   **   ~~~   ** ... It is likely that the wrong resource is used. The resource should match the meter used in Utility:Tariff.
+   ************* Simulation Error Summary *************
+   ************* There are 6 unused schedules in input.
+   ************* There are 6 unused week schedules in input.
+   ************* There are 15 unused day schedules in input.
+   ************* Use Output:Diagnostics,DisplayUnusedSchedules; to see them.
+   *************
+   ************* ===== Final Error Summary =====
+   ************* The following error categories occurred.  Consider correcting or noting.
+   ************* Nominally Unused Constructions
+   ************* ..The nominally unused constructions warning is provided to alert you to potential conditions that can cause
+   ************* ..extra time during simulation. Each construction is calculated by the algorithm indicated in the HeatBalanceAlgorithm
+   ************* ..object. You may remove the constructions indicated (when you use the DisplayExtraWarnings option).
+   *************
+   ************* EnergyPlus Warmup Error Summary. During Warmup: 0 Warning; 0 Severe Errors.
+   ************* EnergyPlus Sizing Error Summary. During Sizing: 12 Warning; 0 Severe Errors.
+   ************* EnergyPlus Completed Successfully-- 22 Warning; 0 Severe Errors; Elapsed Time=00hr 00min  0.62sec

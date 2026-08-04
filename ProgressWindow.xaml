@@ -1,0 +1,56 @@
+<Window x:Class="ProgressWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Running Simulations" Height="600" Width="480" WindowStartupLocation="CenterScreen" Topmost="True" Closed="Window_Closed">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Running Parametric Energy Simulations..." FontWeight="Bold" FontSize="14" Margin="0,0,0,10" Grid.Row="0"/>
+        <Grid Grid.Row="1" Margin="0,0,0,10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Making of the permutations/symulation paramiters list Progress:" FontWeight="SemiBold" Margin="0,0,0,2" Grid.Row="0"/>
+            <ProgressBar x:Name="pbPermutations" Height="15" Margin="0,0,0,10" Grid.Row="1"/>
+            
+            <TextBlock Text="Making Energy Models Progress:" FontWeight="SemiBold" Margin="0,0,0,2" Grid.Row="2"/>
+            <ProgressBar x:Name="pbOverall" Height="15" Margin="0,0,0,10" Grid.Row="3"/>
+            
+            <TextBlock Text="Current Task Progress:" FontWeight="SemiBold" Margin="0,0,0,2" Grid.Row="4"/>
+            <ProgressBar x:Name="pbCurrentTask" Height="15" Margin="0,0,0,5" Grid.Row="5"/>
+        </Grid>
+        
+        <Grid Grid.Row="2" Margin="0,0,0,10">
+            <TextBlock x:Name="txtProgress" Text="0 / 0" FontWeight="Bold" HorizontalAlignment="Left"/>
+            <TextBlock x:Name="txtEta" Text="ETA: --:--:--" HorizontalAlignment="Right" Width="200" TextAlignment="Right"/>
+        </Grid>
+        
+        <StackPanel Grid.Row="3" Margin="0,0,0,10">
+            <TextBlock x:Name="txtCurrentTask" Text="Initializing..." FontWeight="SemiBold" Margin="0,0,0,2"/>
+            <TextBlock x:Name="txtDetails" Text="Please wait." FontStyle="Italic" TextWrapping="Wrap"/>
+        </StackPanel>
+
+        <RichTextBox x:Name="txtWarnings" Grid.Row="4" VerticalScrollBarVisibility="Auto" Margin="0,0,0,10" IsReadOnly="True" BorderBrush="LightGray" BorderThickness="1">
+            <FlowDocument>
+                <Paragraph x:Name="paraWarnings"/>
+            </FlowDocument>
+        </RichTextBox>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="5" HorizontalAlignment="Center">
+            <Button x:Name="btnStopAndOutput" Content="Stop &amp; Output Data" Width="130" Height="30" Margin="0,0,10,0" Click="BtnStopAndOutput_Click"/>
+            <Button x:Name="btnCancel" Content="Cancel &amp; Discard" Width="130" Height="30" Click="BtnCancel_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

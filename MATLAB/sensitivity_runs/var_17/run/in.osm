@@ -1,0 +1,2838 @@
+
+OS:Version,
+  {bfbb6215-cdac-47a2-a1fd-28e40d6cb65f}, !- Handle
+  3.8.0;                                  !- Version Identifier
+
+OS:Material,
+  {4d24aca5-fef7-4924-a1c0-88ba753df54e}, !- Handle
+  mat-112inwood,                          !- Name
+  MediumRough,                            !- Roughness
+  0.0376,                                 !- Thickness {m}
+  0.15,                                   !- Conductivity {W/m-K}
+  608,                                    !- Density {kg/m3}
+  1630;                                   !- Specific Heat {J/kg-K}
+
+OS:AdditionalProperties,
+  {dcb117ca-0a61-4ca4-b668-e932ef031b84}, !- Handle
+  {4d24aca5-fef7-4924-a1c0-88ba753df54e}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  mat-112inwood,                          !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  1 1/2 in wood;                          !- Feature Value 2
+
+OS:Material:NoMass,
+  {a82ff181-54c2-4357-a4c8-67831a2ac4b9}, !- Handle
+  mat-airspace,                           !- Name
+  Smooth,                                 !- Roughness
+  0.10919;                                !- Thermal Resistance {m2-K/W}
+
+OS:AdditionalProperties,
+  {3b2f2f3f-16b6-4028-ac75-8b7667110f69}, !- Handle
+  {a82ff181-54c2-4357-a4c8-67831a2ac4b9}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  mat-airspace,                           !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  Air space;                              !- Feature Value 2
+
+OS:Material:NoMass,
+  {8eba0d2c-34c6-4635-915a-a4639de46d38}, !- Handle
+  mat-bldgpaperfeltbp01,                  !- Name
+  Smooth,                                 !- Roughness
+  0.01057;                                !- Thermal Resistance {m2-K/W}
+
+OS:AdditionalProperties,
+  {45d84c12-c905-4d97-bb02-9b743e6c07d4}, !- Handle
+  {8eba0d2c-34c6-4635-915a-a4639de46d38}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  mat-bldgpaperfeltbp01,                  !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  Bldg paper felt  (BP01);                !- Feature Value 2
+
+OS:Material,
+  {b0695972-24a2-4c22-8427-1853d6b1b815}, !- Handle
+  mat-blt-uproof38inbr01,                 !- Name
+  MediumRough,                            !- Roughness
+  0.00954,                                !- Thickness {m}
+  0.162516,                               !- Conductivity {W/m-K}
+  1121.4,                                 !- Density {kg/m3}
+  1465.38,                                !- Specific Heat {J/kg-K}
+  0.3;                                    !- Thermal Absorptance
+
+OS:AdditionalProperties,
+  {33eaafed-95c4-41df-b57d-0835e810190e}, !- Handle
+  {b0695972-24a2-4c22-8427-1853d6b1b815}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  mat-blt-uproof38inbr01,                 !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  Blt-Up roof 3/8 in  (BR01);             !- Feature Value 2
+
+OS:Material:NoMass,
+  {c7b487c2-ae29-4071-ab59-512cd43de31a}, !- Handle
+  mat-carpetfiberpadcp01,                 !- Name
+  Smooth,                                 !- Roughness
+  0.36631;                                !- Thermal Resistance {m2-K/W}
+
+OS:AdditionalProperties,
+  {23944005-af24-492e-8240-21d7e83e1208}, !- Handle
+  {c7b487c2-ae29-4071-ab59-512cd43de31a}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  mat-carpetfiberpadcp01,                 !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  Carpet fiber pad  (CP01);               !- Feature Value 2
+
+OS:Material,
+  {c9d105b7-5ff3-49a6-b684-4e97ee6a228c}, !- Handle
+  mat-concheavyweight140lb8incc05,        !- Name
+  MediumRough,                            !- Roughness
+  0.2032,                                 !- Thickness {m}
+  1.311205,                               !- Conductivity {W/m-K}
+  2242.8,                                 !- Density {kg/m3}
+  837.36;                                 !- Specific Heat {J/kg-K}
+
+OS:AdditionalProperties,
+  {9965d8eb-d6b3-4efd-8f88-dfbcffcf0da2}, !- Handle
+  {c9d105b7-5ff3-49a6-b684-4e97ee6a228c}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  mat-concheavyweight140lb8incc05,        !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  Conc heavyweight 140lb 8 in  (CC05);    !- Feature Value 2
+
+OS:Material,
+  {903d62d1-c007-4222-a440-ad96cc6269bc}, !- Handle
+  mat-gypbd58ingp02,                      !- Name
+  MediumRough,                            !- Roughness
+  0.015879,                               !- Thickness {m}
+  0.160266,                               !- Conductivity {W/m-K}
+  801,                                    !- Density {kg/m3}
+  837.36,                                 !- Specific Heat {J/kg-K}
+  0.7;                                    !- Thermal Absorptance
+
+OS:AdditionalProperties,
+  {b5fe1bf9-946c-42a0-a97b-7cb4c5463d8d}, !- Handle
+  {903d62d1-c007-4222-a440-ad96cc6269bc}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  mat-gypbd58ingp02,                      !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  GypBd 5/8 in  (GP02);                   !- Feature Value 2
+
+OS:Material,
+  {4a205d84-820e-4181-a4e4-ed58696723a4}, !- Handle
+  mat-minbd3inr-104in24,                  !- Name
+  MediumRough,                            !- Roughness
+  0.076196,                               !- Thickness {m}
+  0.041538,                               !- Conductivity {W/m-K}
+  240.3,                                  !- Density {kg/m3}
+  711.756;                                !- Specific Heat {J/kg-K}
+
+OS:AdditionalProperties,
+  {5a04167a-27a5-487e-8c99-692d43e3918c}, !- Handle
+  {4a205d84-820e-4181-a4e4-ed58696723a4}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  mat-minbd3inr-104in24,                  !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  MinBd 3 in R-10.4  (IN24);              !- Feature Value 2
+
+OS:Material,
+  {01839cc8-af22-40d4-aadd-91e6921596d4}, !- Handle
+  mat-minwoolbattr13w2x4frame,            !- Name
+  MediumRough,                            !- Roughness
+  0.1016,                                 !- Thickness {m}
+  0.06227,                                !- Conductivity {W/m-K}
+  129.9,                                  !- Density {kg/m3}
+  962.3;                                  !- Specific Heat {J/kg-K}
+
+OS:AdditionalProperties,
+  {a59acc2b-94bc-4faa-a6be-6d68be69197a}, !- Handle
+  {01839cc8-af22-40d4-aadd-91e6921596d4}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  mat-minwoolbattr13w2x4frame,            !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  Minwool batt R13 w/ 2x4 frame;          !- Feature Value 2
+
+OS:Material,
+  {6b004b87-6595-410c-841c-3a0b7bde7ea4}, !- Handle
+  mat-soil8in,                            !- Name
+  MediumRough,                            !- Roughness
+  0.204206,                               !- Thickness {m}
+  1.730735,                               !- Conductivity {W/m-K}
+  1842.3,                                 !- Density {kg/m3}
+  837.36;                                 !- Specific Heat {J/kg-K}
+
+OS:AdditionalProperties,
+  {595d13f5-ec0d-4cfa-bdc5-35c742e1f6aa}, !- Handle
+  {6b004b87-6595-410c-841c-3a0b7bde7ea4}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  mat-soil8in,                            !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  Soil 8 in;                              !- Feature Value 2
+
+OS:Material:NoMass,
+  {5373a73f-4c51-4907-8c7c-e0a7891c61f7}, !- Handle
+  mat-ugsurfacefictitiousinsulation,      !- Name
+  Smooth,                                 !- Roughness
+  5.28331;                                !- Thermal Resistance {m2-K/W}
+
+OS:AdditionalProperties,
+  {833ae0c6-ca0a-47e1-9f64-7baf85e3ec4c}, !- Handle
+  {5373a73f-4c51-4907-8c7c-e0a7891c61f7}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  mat-ugsurfacefictitiousinsulation,      !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  UG surface fictitious insulation;       !- Feature Value 2
+
+OS:Material,
+  {4ad34534-7ba6-4d3a-85c8-579e974af5ed}, !- Handle
+  mat-woodsft34inwd01,                    !- Name
+  MediumRough,                            !- Roughness
+  0.019049,                               !- Thickness {m}
+  0.11544,                                !- Conductivity {W/m-K}
+  512.64,                                 !- Density {kg/m3}
+  1381.644;                               !- Specific Heat {J/kg-K}
+
+OS:AdditionalProperties,
+  {40be1d28-7a40-4b3d-9a65-a233a2f44312}, !- Handle
+  {4ad34534-7ba6-4d3a-85c8-579e974af5ed}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  mat-woodsft34inwd01,                    !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  Wood Sft 3/4 in  (WD01);                !- Feature Value 2
+
+OS:Material,
+  {1abad061-6cab-42b6-90a9-35957597cc65}, !- Handle
+  mat-woodshinglews01,                    !- Name
+  MediumRough,                            !- Roughness
+  0.017769,                               !- Thickness {m}
+  0.11544,                                !- Conductivity {W/m-K}
+  512.64,                                 !- Density {kg/m3}
+  1256.04,                                !- Specific Heat {J/kg-K}
+  0.7;                                    !- Thermal Absorptance
+
+OS:AdditionalProperties,
+  {d5f87b4f-18e2-400c-b4a7-c6a8dea6b5b3}, !- Handle
+  {1abad061-6cab-42b6-90a9-35957597cc65}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  mat-woodshinglews01,                    !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  Wood shingle  (WS01);                   !- Feature Value 2
+
+OS:Construction,
+  {5be09ec5-d8b3-49a1-9e1c-96c788b935bd}, !- Handle
+  con-r-0metalframewall,                  !- Name
+  ,                                       !- Surface Rendering Name
+  {903d62d1-c007-4222-a440-ad96cc6269bc}, !- Layer 1
+  {a82ff181-54c2-4357-a4c8-67831a2ac4b9}, !- Layer 2
+  {903d62d1-c007-4222-a440-ad96cc6269bc}; !- Layer 3
+
+OS:AdditionalProperties,
+  {2a9c79cf-545f-45ac-8544-66f783c3da47}, !- Handle
+  {5be09ec5-d8b3-49a1-9e1c-96c788b935bd}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  con-r-0metalframewall,                  !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  R-0 metal frame wall;                   !- Feature Value 2
+
+OS:Construction,
+  {76d39348-e71d-4b5a-8d68-5fd183bef6eb}, !- Handle
+  con-r-13woodframewall,                  !- Name
+  ,                                       !- Surface Rendering Name
+  {1abad061-6cab-42b6-90a9-35957597cc65}, !- Layer 1
+  {8eba0d2c-34c6-4635-915a-a4639de46d38}, !- Layer 2
+  {4ad34534-7ba6-4d3a-85c8-579e974af5ed}, !- Layer 3
+  {01839cc8-af22-40d4-aadd-91e6921596d4}, !- Layer 4
+  {903d62d1-c007-4222-a440-ad96cc6269bc}; !- Layer 5
+
+OS:AdditionalProperties,
+  {d75047b0-5c5b-4eec-8914-372b00852fac}, !- Handle
+  {76d39348-e71d-4b5a-8d68-5fd183bef6eb}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  con-r-13woodframewall,                  !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  R-13 wood frame wall;                   !- Feature Value 2
+
+OS:Construction,
+  {d057ff53-3230-405a-bfbd-3f7d29f86ec8}, !- Handle
+  con-r-20overroofdeck-coolroof,          !- Name
+  ,                                       !- Surface Rendering Name
+  {b0695972-24a2-4c22-8427-1853d6b1b815}, !- Layer 1
+  {8eba0d2c-34c6-4635-915a-a4639de46d38}, !- Layer 2
+  {4a205d84-820e-4181-a4e4-ed58696723a4}, !- Layer 3
+  {4a205d84-820e-4181-a4e4-ed58696723a4}, !- Layer 4
+  {4ad34534-7ba6-4d3a-85c8-579e974af5ed}; !- Layer 5
+
+OS:AdditionalProperties,
+  {6076652b-5652-453f-9c16-1a2eb282834e}, !- Handle
+  {d057ff53-3230-405a-bfbd-3f7d29f86ec8}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  con-r-20overroofdeck-coolroof,          !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  R-20 over roof deck - cool roof;        !- Feature Value 2
+
+OS:Construction,
+  {1142a063-d5d2-40dc-ac7f-f43cbfc0e71f}, !- Handle
+  con-slabedgeuninsulated,                !- Name
+  ,                                       !- Surface Rendering Name
+  {5373a73f-4c51-4907-8c7c-e0a7891c61f7}, !- Layer 1
+  {6b004b87-6595-410c-841c-3a0b7bde7ea4}, !- Layer 2
+  {c9d105b7-5ff3-49a6-b684-4e97ee6a228c}, !- Layer 3
+  {c7b487c2-ae29-4071-ab59-512cd43de31a}; !- Layer 4
+
+OS:AdditionalProperties,
+  {3b3cf925-ad0d-4124-8928-4d0ff9801ffd}, !- Handle
+  {1142a063-d5d2-40dc-ac7f-f43cbfc0e71f}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  con-slabedgeuninsulated,                !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  Slab edge uninsulated;                  !- Feature Value 2
+
+OS:Construction,
+  {2f87be9d-45d7-46d7-af35-419f76f0b630}, !- Handle
+  con-wooden,                             !- Name
+  ,                                       !- Surface Rendering Name
+  {4d24aca5-fef7-4924-a1c0-88ba753df54e}; !- Layer 1
+
+OS:AdditionalProperties,
+  {02cce9a3-dcfa-4d4c-b3f7-93dafb2d792e}, !- Handle
+  {2f87be9d-45d7-46d7-af35-419f76f0b630}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  con-wooden,                             !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  Wooden;                                 !- Feature Value 2
+
+OS:Construction,
+  {4aa31c3b-617f-454f-89ae-6377760f9e1c}, !- Handle
+  win-1,                                  !- Name
+  ,                                       !- Surface Rendering Name
+  {4f6f3306-7477-48f0-8e2d-c3f1366d4881}; !- Layer 1
+
+OS:AdditionalProperties,
+  {ec4d71c7-16ab-41f3-8aeb-d4980b899aa1}, !- Handle
+  {4aa31c3b-617f-454f-89ae-6377760f9e1c}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  win-1,                                  !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  Pilkington RW33 double glazing (1/4 in + 1/4 in); !- Feature Value 2
+
+OS:WindowMaterial:SimpleGlazingSystem,
+  {4f6f3306-7477-48f0-8e2d-c3f1366d4881}, !- Handle
+  {d6eb4655-203b-4c05-a5b6-4af71a0f18ce}, !- Name
+  2.8566,                                 !- U-Factor {W/m2-K}
+  0.76,                                   !- Solar Heat Gain Coefficient
+  0.81;                                   !- Visible Transmittance
+
+OS:YearDescription,
+  {6c1e77fd-78a7-4dbf-83c9-ee4e02f6c976}, !- Handle
+  1997,                                   !- Calendar Year
+  ,                                       !- Day of Week for Start Day
+  ;                                       !- Is Leap Year
+
+OS:ThermalZone,
+  {b6b57429-6603-4193-8e37-aebdb2e19c09}, !- Handle
+  100 room 1,                             !- Name
+  ,                                       !- Multiplier
+  ,                                       !- Ceiling Height {m}
+  449.1446129,                            !- Volume {m3}
+  ,                                       !- Floor Area {m2}
+  ,                                       !- Zone Inside Convection Algorithm
+  ,                                       !- Zone Outside Convection Algorithm
+  ,                                       !- Zone Conditioning Equipment List Name
+  {893e5e40-4b8a-43b7-a56f-32cc62f83b03}, !- Zone Air Inlet Port List
+  {1b06354d-3b61-4345-8ff5-3ef12fa9082d}, !- Zone Air Exhaust Port List
+  {5b515c98-1214-49c9-9c66-90ac553e10ae}, !- Zone Air Node Name
+  {a4fa7997-1e8c-4a6f-ac9c-c5212becc771}, !- Zone Return Air Port List
+  ,                                       !- Primary Daylighting Control Name
+  ,                                       !- Fraction of Zone Controlled by Primary Daylighting Control
+  ,                                       !- Secondary Daylighting Control Name
+  ,                                       !- Fraction of Zone Controlled by Secondary Daylighting Control
+  ,                                       !- Illuminance Map Name
+  ,                                       !- Group Rendering Name
+  {783d1997-ac3b-4734-ba7f-3b3361a5c72a}, !- Thermostat Name
+  Yes,                                    !- Use Ideal Air Loads
+  {de431d36-d587-4f1f-9bc5-8683d78f09e7}; !- Humidistat Name
+
+OS:Node,
+  {65224f55-aad8-419e-9a21-4c642d0436ff}, !- Handle
+  {5bc4ec39-5af0-4f9e-9d0e-03048b79182f}, !- Name
+  {5b515c98-1214-49c9-9c66-90ac553e10ae}, !- Inlet Port
+  ;                                       !- Outlet Port
+
+OS:Connection,
+  {5b515c98-1214-49c9-9c66-90ac553e10ae}, !- Handle
+  {b6b57429-6603-4193-8e37-aebdb2e19c09}, !- Source Object
+  11,                                     !- Outlet Port
+  {65224f55-aad8-419e-9a21-4c642d0436ff}, !- Target Object
+  2;                                      !- Inlet Port
+
+OS:PortList,
+  {893e5e40-4b8a-43b7-a56f-32cc62f83b03}, !- Handle
+  {b6b57429-6603-4193-8e37-aebdb2e19c09}; !- HVAC Component
+
+OS:PortList,
+  {1b06354d-3b61-4345-8ff5-3ef12fa9082d}, !- Handle
+  {b6b57429-6603-4193-8e37-aebdb2e19c09}; !- HVAC Component
+
+OS:PortList,
+  {a4fa7997-1e8c-4a6f-ac9c-c5212becc771}, !- Handle
+  {b6b57429-6603-4193-8e37-aebdb2e19c09}; !- HVAC Component
+
+OS:Sizing:Zone,
+  {b46fe9ef-a117-46c4-b96a-7af1e49538e8}, !- Handle
+  {b6b57429-6603-4193-8e37-aebdb2e19c09}, !- Zone or ZoneList Name
+  SupplyAirTemperature,                   !- Zone Cooling Design Supply Air Temperature Input Method
+  14,                                     !- Zone Cooling Design Supply Air Temperature {C}
+  11.11,                                  !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
+  SupplyAirTemperature,                   !- Zone Heating Design Supply Air Temperature Input Method
+  40,                                     !- Zone Heating Design Supply Air Temperature {C}
+  11.11,                                  !- Zone Heating Design Supply Air Temperature Difference {deltaC}
+  0.0085,                                 !- Zone Cooling Design Supply Air Humidity Ratio {kg-H2O/kg-air}
+  0.005,                                  !- Zone Heating Design Supply Air Humidity Ratio {kg-H2O/kg-air}
+  ,                                       !- Zone Heating Sizing Factor
+  ,                                       !- Zone Cooling Sizing Factor
+  DesignDay,                              !- Cooling Design Air Flow Method
+  ,                                       !- Cooling Design Air Flow Rate {m3/s}
+  ,                                       !- Cooling Minimum Air Flow per Zone Floor Area {m3/s-m2}
+  ,                                       !- Cooling Minimum Air Flow {m3/s}
+  ,                                       !- Cooling Minimum Air Flow Fraction
+  DesignDay,                              !- Heating Design Air Flow Method
+  ,                                       !- Heating Design Air Flow Rate {m3/s}
+  ,                                       !- Heating Maximum Air Flow per Zone Floor Area {m3/s-m2}
+  ,                                       !- Heating Maximum Air Flow {m3/s}
+  ,                                       !- Heating Maximum Air Flow Fraction
+  No,                                     !- Account for Dedicated Outdoor Air System
+  NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
+  autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
+  autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  Sensible Load Only No Latent Load,      !- Zone Load Sizing Method
+  HumidityRatioDifference,                !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  0.005,                                  !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  HumidityRatioDifference,                !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  0.005;                                  !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+
+OS:ZoneHVAC:EquipmentList,
+  {b2fe5f57-c4a7-472f-b5f5-7f155b693012}, !- Handle
+  {8958c724-2fdc-4b49-a312-fc6bde25ab2d}, !- Name
+  {b6b57429-6603-4193-8e37-aebdb2e19c09}; !- Thermal Zone
+
+OS:AdditionalProperties,
+  {e4df737b-4f6b-41cd-95ae-2643c9c71f6f}, !- Handle
+  {b6b57429-6603-4193-8e37-aebdb2e19c09}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  zone-1,                                 !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  100 room 1,                             !- Feature Value 2
+  CADObjectId,                            !- Feature Name 3
+  String,                                 !- Feature Data Type 3
+  1253949,                                !- Feature Value 3
+  id,                                     !- Feature Name 4
+  String,                                 !- Feature Data Type 4
+  zone-1;                                 !- Feature Value 4
+
+OS:ThermalZone,
+  {3ce3106f-708c-41ab-ba36-d3f9c92ef231}, !- Handle
+  101 room 2,                             !- Name
+  ,                                       !- Multiplier
+  ,                                       !- Ceiling Height {m}
+  449.1938455,                            !- Volume {m3}
+  ,                                       !- Floor Area {m2}
+  ,                                       !- Zone Inside Convection Algorithm
+  ,                                       !- Zone Outside Convection Algorithm
+  ,                                       !- Zone Conditioning Equipment List Name
+  {98ed3858-5e56-4507-9ba9-596e6df13c77}, !- Zone Air Inlet Port List
+  {7784ad1b-e146-4438-b538-f95b9447de6e}, !- Zone Air Exhaust Port List
+  {c96253a9-69e4-4801-84b1-314d3cfd3219}, !- Zone Air Node Name
+  {d797dd12-b9ee-4744-9cfd-5479eeab4e06}, !- Zone Return Air Port List
+  ,                                       !- Primary Daylighting Control Name
+  ,                                       !- Fraction of Zone Controlled by Primary Daylighting Control
+  ,                                       !- Secondary Daylighting Control Name
+  ,                                       !- Fraction of Zone Controlled by Secondary Daylighting Control
+  ,                                       !- Illuminance Map Name
+  ,                                       !- Group Rendering Name
+  {fa8160bd-d109-426c-91cf-4114585f6503}, !- Thermostat Name
+  Yes,                                    !- Use Ideal Air Loads
+  {36b02da9-b36a-42ac-9a66-e88874c15227}; !- Humidistat Name
+
+OS:Node,
+  {fbf4888c-3781-4457-ba3a-8ac160f25ba9}, !- Handle
+  {fc5fe08d-07b8-4e1b-8d1d-13c649859903}, !- Name
+  {c96253a9-69e4-4801-84b1-314d3cfd3219}, !- Inlet Port
+  ;                                       !- Outlet Port
+
+OS:Connection,
+  {c96253a9-69e4-4801-84b1-314d3cfd3219}, !- Handle
+  {3ce3106f-708c-41ab-ba36-d3f9c92ef231}, !- Source Object
+  11,                                     !- Outlet Port
+  {fbf4888c-3781-4457-ba3a-8ac160f25ba9}, !- Target Object
+  2;                                      !- Inlet Port
+
+OS:PortList,
+  {98ed3858-5e56-4507-9ba9-596e6df13c77}, !- Handle
+  {3ce3106f-708c-41ab-ba36-d3f9c92ef231}; !- HVAC Component
+
+OS:PortList,
+  {7784ad1b-e146-4438-b538-f95b9447de6e}, !- Handle
+  {3ce3106f-708c-41ab-ba36-d3f9c92ef231}; !- HVAC Component
+
+OS:PortList,
+  {d797dd12-b9ee-4744-9cfd-5479eeab4e06}, !- Handle
+  {3ce3106f-708c-41ab-ba36-d3f9c92ef231}; !- HVAC Component
+
+OS:Sizing:Zone,
+  {2f8e3c96-070c-4732-8d09-5983ce352703}, !- Handle
+  {3ce3106f-708c-41ab-ba36-d3f9c92ef231}, !- Zone or ZoneList Name
+  SupplyAirTemperature,                   !- Zone Cooling Design Supply Air Temperature Input Method
+  14,                                     !- Zone Cooling Design Supply Air Temperature {C}
+  11.11,                                  !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
+  SupplyAirTemperature,                   !- Zone Heating Design Supply Air Temperature Input Method
+  40,                                     !- Zone Heating Design Supply Air Temperature {C}
+  11.11,                                  !- Zone Heating Design Supply Air Temperature Difference {deltaC}
+  0.0085,                                 !- Zone Cooling Design Supply Air Humidity Ratio {kg-H2O/kg-air}
+  0.005,                                  !- Zone Heating Design Supply Air Humidity Ratio {kg-H2O/kg-air}
+  ,                                       !- Zone Heating Sizing Factor
+  ,                                       !- Zone Cooling Sizing Factor
+  DesignDay,                              !- Cooling Design Air Flow Method
+  ,                                       !- Cooling Design Air Flow Rate {m3/s}
+  ,                                       !- Cooling Minimum Air Flow per Zone Floor Area {m3/s-m2}
+  ,                                       !- Cooling Minimum Air Flow {m3/s}
+  ,                                       !- Cooling Minimum Air Flow Fraction
+  DesignDay,                              !- Heating Design Air Flow Method
+  ,                                       !- Heating Design Air Flow Rate {m3/s}
+  ,                                       !- Heating Maximum Air Flow per Zone Floor Area {m3/s-m2}
+  ,                                       !- Heating Maximum Air Flow {m3/s}
+  ,                                       !- Heating Maximum Air Flow Fraction
+  No,                                     !- Account for Dedicated Outdoor Air System
+  NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
+  autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
+  autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  Sensible Load Only No Latent Load,      !- Zone Load Sizing Method
+  HumidityRatioDifference,                !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  0.005,                                  !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  HumidityRatioDifference,                !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  0.005;                                  !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+
+OS:ZoneHVAC:EquipmentList,
+  {fdfbea27-efc9-48b0-8513-da6b4272b196}, !- Handle
+  {f1cb53aa-b268-44cf-ae2a-9f8dcda4a052}, !- Name
+  {3ce3106f-708c-41ab-ba36-d3f9c92ef231}; !- Thermal Zone
+
+OS:AdditionalProperties,
+  {6270ed34-475e-4b97-bc8c-ad19bac26c68}, !- Handle
+  {3ce3106f-708c-41ab-ba36-d3f9c92ef231}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  zone-2,                                 !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  101 room 2,                             !- Feature Value 2
+  CADObjectId,                            !- Feature Name 3
+  String,                                 !- Feature Data Type 3
+  1253948,                                !- Feature Value 3
+  id,                                     !- Feature Name 4
+  String,                                 !- Feature Data Type 4
+  zone-2;                                 !- Feature Value 4
+
+OS:Facility,
+  {fa6bd3d2-fc2b-4c16-8884-7aaf32b43a79}; !- Handle
+
+OS:Building,
+  {faadb27b-c4f3-41ae-af2c-af0045cae135}, !- Handle
+  Project Name,                           !- Name
+  ,                                       !- Building Sector Type
+  ,                                       !- North Axis {deg}
+  ,                                       !- Nominal Floor to Floor Height {m}
+  ,                                       !- Space Type Name
+  ,                                       !- Default Construction Set Name
+  ;                                       !- Default Schedule Set Name
+
+OS:AdditionalProperties,
+  {f87ac7d2-e579-446f-afac-98297f61dd77}, !- Handle
+  {faadb27b-c4f3-41ae-af2c-af0045cae135}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  bldg-1,                                 !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  Project Name;                           !- Feature Value 2
+
+OS:BuildingStory,
+  {c073d74b-9512-4037-ae60-aa8fb7bc6139}, !- Handle
+  stry-1,                                 !- Name
+  ,                                       !- Nominal Z Coordinate {m}
+  ,                                       !- Nominal Floor to Floor Height {m}
+  ,                                       !- Default Construction Set Name
+  ,                                       !- Default Schedule Set Name
+  ;                                       !- Group Rendering Name
+
+OS:AdditionalProperties,
+  {9d130131-7fb6-4a6b-8500-c5d8fe6edd8d}, !- Handle
+  {c073d74b-9512-4037-ae60-aa8fb7bc6139}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  stry-1,                                 !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  L1;                                     !- Feature Value 2
+
+OS:Space,
+  {a1b5c80c-0fb3-47f9-a02e-3ee6f9a31d4a}, !- Handle
+  sp-100room1,                            !- Name
+  ,                                       !- Space Type Name
+  ,                                       !- Default Construction Set Name
+  {28dc1d85-ce3e-45db-aebc-4e5b088814d4}, !- Default Schedule Set Name
+  ,                                       !- Direction of Relative North {deg}
+  ,                                       !- X Origin {m}
+  ,                                       !- Y Origin {m}
+  ,                                       !- Z Origin {m}
+  {c073d74b-9512-4037-ae60-aa8fb7bc6139}, !- Building Story Name
+  {b6b57429-6603-4193-8e37-aebdb2e19c09}, !- Thermal Zone Name
+  ,                                       !- Part of Total Floor Area
+  {6fb0f6cd-6c8a-4a36-95ad-12957ef66e96}, !- Design Specification Outdoor Air Object Name
+  ,                                       !- Building Unit Name
+  449.1446129;                            !- Volume {m3}
+
+OS:AdditionalProperties,
+  {89aa2a5d-0151-4f6e-a433-9868a231c9c5}, !- Handle
+  {a1b5c80c-0fb3-47f9-a02e-3ee6f9a31d4a}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  sp-100room1,                            !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  100 room 1,                             !- Feature Value 2
+  CADObjectId,                            !- Feature Name 3
+  String,                                 !- Feature Data Type 3
+  1253927;                                !- Feature Value 3
+
+OS:Space,
+  {3ec2aba4-8486-47fc-b3d2-13c55af42a06}, !- Handle
+  sp-101room2,                            !- Name
+  ,                                       !- Space Type Name
+  ,                                       !- Default Construction Set Name
+  {28dc1d85-ce3e-45db-aebc-4e5b088814d4}, !- Default Schedule Set Name
+  ,                                       !- Direction of Relative North {deg}
+  ,                                       !- X Origin {m}
+  ,                                       !- Y Origin {m}
+  ,                                       !- Z Origin {m}
+  {c073d74b-9512-4037-ae60-aa8fb7bc6139}, !- Building Story Name
+  {3ce3106f-708c-41ab-ba36-d3f9c92ef231}, !- Thermal Zone Name
+  ,                                       !- Part of Total Floor Area
+  {20e9693c-7cfe-40e4-825c-f3413211232f}, !- Design Specification Outdoor Air Object Name
+  ,                                       !- Building Unit Name
+  449.1938455;                            !- Volume {m3}
+
+OS:AdditionalProperties,
+  {86fdfffd-ce01-42ae-8807-4dd3173493a5}, !- Handle
+  {3ec2aba4-8486-47fc-b3d2-13c55af42a06}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  sp-101room2,                            !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  101 room 2,                             !- Feature Value 2
+  CADObjectId,                            !- Feature Name 3
+  String,                                 !- Feature Data Type 3
+  1253924;                                !- Feature Value 3
+
+OS:Surface,
+  {a9ac0838-c825-455d-808f-4ec9d1e852b8}, !- Handle
+  su-b-100-e-f-8,                         !- Name
+  Floor,                                  !- Surface Type
+  {9b682739-8e89-41b4-8cad-fd53fb667c5d}, !- Construction Name
+  {a1b5c80c-0fb3-47f9-a02e-3ee6f9a31d4a}, !- Space Name
+  Ground,                                 !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  NoSun,                                  !- Sun Exposure
+  NoWind,                                 !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  -2.9611591, -0.0030522, 0,              !- X,Y,Z Vertex 1 {m}
+  -2.9611591, 15.3385478, 0,              !- X,Y,Z Vertex 2 {m}
+  3.3380409, 15.3385478, 0,               !- X,Y,Z Vertex 3 {m}
+  3.3380409, -0.0030522, 0;               !- X,Y,Z Vertex 4 {m}
+
+OS:AdditionalProperties,
+  {5a7192ba-b545-412e-b887-1c76aec0f47b}, !- Handle
+  {a9ac0838-c825-455d-808f-4ec9d1e852b8}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  su-b-100-e-f-8,                         !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  B-100-E-F-8,                            !- Feature Value 2
+  CADObjectId,                            !- Feature Name 3
+  String,                                 !- Feature Data Type 3
+  1253937,                                !- Feature Value 3
+  gbXMLReversed,                          !- Feature Name 4
+  Boolean,                                !- Feature Data Type 4
+  false;                                  !- Feature Value 4
+
+OS:Surface,
+  {b54846c3-b1e8-4fc3-bd48-246370c130ba}, !- Handle
+  su-b-101-e-f-7,                         !- Name
+  Floor,                                  !- Surface Type
+  {a009f8c7-e0a2-44cc-9df6-e97577a4df83}, !- Construction Name
+  {3ec2aba4-8486-47fc-b3d2-13c55af42a06}, !- Space Name
+  Ground,                                 !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  NoSun,                                  !- Sun Exposure
+  NoWind,                                 !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  -2.9611591, -15.3446522, 0,             !- X,Y,Z Vertex 1 {m}
+  -2.9611591, -0.0030522, 0,              !- X,Y,Z Vertex 2 {m}
+  3.3380409, -0.0030522, 0,               !- X,Y,Z Vertex 3 {m}
+  3.3380409, -15.3446522, 0;              !- X,Y,Z Vertex 4 {m}
+
+OS:AdditionalProperties,
+  {2242d246-3345-4d19-a6ba-4c38c19266b5}, !- Handle
+  {b54846c3-b1e8-4fc3-bd48-246370c130ba}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  su-b-101-e-f-7,                         !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  B-101-E-F-7,                            !- Feature Value 2
+  CADObjectId,                            !- Feature Name 3
+  String,                                 !- Feature Data Type 3
+  1253938,                                !- Feature Value 3
+  gbXMLReversed,                          !- Feature Name 4
+  Boolean,                                !- Feature Data Type 4
+  false;                                  !- Feature Value 4
+
+OS:Surface,
+  {c2711aba-f981-4c18-80fb-c9fccb8cff34}, !- Handle
+  su-e-100-e-w-5,                         !- Name
+  Wall,                                   !- Surface Type
+  {c01971de-fbe0-4907-8144-d53bf165804d}, !- Construction Name
+  {a1b5c80c-0fb3-47f9-a02e-3ee6f9a31d4a}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  3.3380409, -0.0030522, 0,               !- X,Y,Z Vertex 1 {m}
+  3.3380409, 15.3385478, 0,               !- X,Y,Z Vertex 2 {m}
+  3.3380409, 15.3385478, 4.01955,         !- X,Y,Z Vertex 3 {m}
+  3.3380409, -0.0030522, 4.01955;         !- X,Y,Z Vertex 4 {m}
+
+OS:AdditionalProperties,
+  {b825c328-9baa-4ea7-9ebe-fcff1aa57679}, !- Handle
+  {c2711aba-f981-4c18-80fb-c9fccb8cff34}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  su-e-100-e-w-5,                         !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  E-100-E-W-5,                            !- Feature Value 2
+  CADObjectId,                            !- Feature Name 3
+  String,                                 !- Feature Data Type 3
+  1253931,                                !- Feature Value 3
+  gbXMLReversed,                          !- Feature Name 4
+  Boolean,                                !- Feature Data Type 4
+  false;                                  !- Feature Value 4
+
+OS:SubSurface,
+  {47923f90-9357-4475-9146-91b489c7b9b9}, !- Handle
+  op-3,                                   !- Name
+  OperableWindow,                         !- Sub Surface Type
+  {f6b61458-c126-40c0-9754-bf33da18bce1}, !- Construction Name
+  {c2711aba-f981-4c18-80fb-c9fccb8cff34}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  3.338041, 10.6701988888378, 0.919650988837843, !- X,Y,Z Vertex 1 {m}
+  3.338041, 11.5740969111622, 0.919650988837843, !- X,Y,Z Vertex 2 {m}
+  3.338041, 11.5740969111622, 2.12834901116216, !- X,Y,Z Vertex 3 {m}
+  3.338041, 10.6701988888378, 2.12834901116216; !- X,Y,Z Vertex 4 {m}
+
+OS:AdditionalProperties,
+  {2e98e83c-1771-45d9-8fa6-027115c760fd}, !- Handle
+  {47923f90-9357-4475-9146-91b489c7b9b9}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  op-3,                                   !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  E-100-E-W-5-W-1,                        !- Feature Value 2
+  CADObjectId,                            !- Feature Name 3
+  String,                                 !- Feature Data Type 3
+  1253932,                                !- Feature Value 3
+  gbXMLReversed,                          !- Feature Name 4
+  Boolean,                                !- Feature Data Type 4
+  false;                                  !- Feature Value 4
+
+OS:Surface,
+  {e98fcbbe-17ab-4cef-a1a3-f300a2fcbe39}, !- Handle
+  su-e-101-e-w-4,                         !- Name
+  Wall,                                   !- Surface Type
+  {5c28a60b-3bed-4551-8537-1feca7ba5229}, !- Construction Name
+  {3ec2aba4-8486-47fc-b3d2-13c55af42a06}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  3.3380409, -15.3446522, 0,              !- X,Y,Z Vertex 1 {m}
+  3.3380409, -0.0030522, 0,               !- X,Y,Z Vertex 2 {m}
+  3.3380409, -0.0030522, 4.01955,         !- X,Y,Z Vertex 3 {m}
+  3.3380409, -15.3446522, 4.01955;        !- X,Y,Z Vertex 4 {m}
+
+OS:AdditionalProperties,
+  {474d66ec-930b-4458-9de6-fd8f4dc088ef}, !- Handle
+  {e98fcbbe-17ab-4cef-a1a3-f300a2fcbe39}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  su-e-101-e-w-4,                         !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  E-101-E-W-4,                            !- Feature Value 2
+  CADObjectId,                            !- Feature Name 3
+  String,                                 !- Feature Data Type 3
+  1253933,                                !- Feature Value 3
+  gbXMLReversed,                          !- Feature Name 4
+  Boolean,                                !- Feature Data Type 4
+  false;                                  !- Feature Value 4
+
+OS:SubSurface,
+  {4759db8c-ff8f-4ebb-baa5-b26ca72b9b17}, !- Handle
+  op-4,                                   !- Name
+  Door,                                   !- Sub Surface Type
+  {6dfeeda3-e6a7-4c28-b1e8-6571304e5017}, !- Construction Name
+  {e98fcbbe-17ab-4cef-a1a3-f300a2fcbe39}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  3.338041, -12.7786891757259, 0.00691292427405851, !- X,Y,Z Vertex 1 {m}
+  3.338041, -11.7765154242741, 0.00691292427405851, !- X,Y,Z Vertex 2 {m}
+  3.338041, -11.7765154242741, 2.12668707572594, !- X,Y,Z Vertex 3 {m}
+  3.338041, -12.7786891757259, 2.12668707572594; !- X,Y,Z Vertex 4 {m}
+
+OS:AdditionalProperties,
+  {ecb0d01d-32f2-4818-9f17-fc7a4bbdc7af}, !- Handle
+  {4759db8c-ff8f-4ebb-baa5-b26ca72b9b17}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  op-4,                                   !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  E-101-E-W-4-D-1,                        !- Feature Value 2
+  CADObjectId,                            !- Feature Name 3
+  String,                                 !- Feature Data Type 3
+  1253934,                                !- Feature Value 3
+  gbXMLReversed,                          !- Feature Name 4
+  Boolean,                                !- Feature Data Type 4
+  false;                                  !- Feature Value 4
+
+OS:SubSurface,
+  {000aa9d6-c081-42f8-9bb0-e4762518abfa}, !- Handle
+  op-5,                                   !- Name
+  OperableWindow,                         !- Sub Surface Type
+  {67352873-f5bd-48eb-a35c-92cbf6da07e2}, !- Construction Name
+  {e98fcbbe-17ab-4cef-a1a3-f300a2fcbe39}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  3.338041, -4.67140101116216, 0.919650988837844, !- X,Y,Z Vertex 1 {m}
+  3.338041, -3.76750298883784, 0.919650988837844, !- X,Y,Z Vertex 2 {m}
+  3.338041, -3.76750298883784, 2.12834901116216, !- X,Y,Z Vertex 3 {m}
+  3.338041, -4.67140101116216, 2.12834901116216; !- X,Y,Z Vertex 4 {m}
+
+OS:AdditionalProperties,
+  {31a7ae20-317f-4f7c-9be9-64d09254e743}, !- Handle
+  {000aa9d6-c081-42f8-9bb0-e4762518abfa}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  op-5,                                   !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  E-101-E-W-4-W-2,                        !- Feature Value 2
+  CADObjectId,                            !- Feature Name 3
+  String,                                 !- Feature Data Type 3
+  1253935,                                !- Feature Value 3
+  gbXMLReversed,                          !- Feature Name 4
+  Boolean,                                !- Feature Data Type 4
+  false;                                  !- Feature Value 4
+
+OS:Surface,
+  {2610454a-55b1-440e-b061-504cd871917e}, !- Handle
+  su-n-100-e-w-6,                         !- Name
+  Wall,                                   !- Surface Type
+  {bb152ca2-b23a-4df1-b7c8-3aeded7be827}, !- Construction Name
+  {a1b5c80c-0fb3-47f9-a02e-3ee6f9a31d4a}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  -2.9611591, 15.3385478, 0,              !- X,Y,Z Vertex 1 {m}
+  -2.9611591, 15.3385478, 4.01955,        !- X,Y,Z Vertex 2 {m}
+  3.3380409, 15.3385478, 4.01955,         !- X,Y,Z Vertex 3 {m}
+  3.3380409, 15.3385478, 0;               !- X,Y,Z Vertex 4 {m}
+
+OS:AdditionalProperties,
+  {cbf07806-86f6-41e6-a9cc-7ae16f9dad6c}, !- Handle
+  {2610454a-55b1-440e-b061-504cd871917e}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  su-n-100-e-w-6,                         !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  N-100-E-W-6,                            !- Feature Value 2
+  CADObjectId,                            !- Feature Name 3
+  String,                                 !- Feature Data Type 3
+  1253936,                                !- Feature Value 3
+  gbXMLReversed,                          !- Feature Name 4
+  Boolean,                                !- Feature Data Type 4
+  false;                                  !- Feature Value 4
+
+OS:Surface,
+  {8a0c5358-bea2-4289-a271-3b9f0fd6c0a4}, !- Handle
+  su-n-101-100-i-w-15,                    !- Name
+  Wall,                                   !- Surface Type
+  {fcece4bc-f9eb-4b60-aeba-03d394bce704}, !- Construction Name
+  {3ec2aba4-8486-47fc-b3d2-13c55af42a06}, !- Space Name
+  Surface,                                !- Outside Boundary Condition
+  {b3647f85-a484-4610-a341-aa4c6d4815a4}, !- Outside Boundary Condition Object
+  NoSun,                                  !- Sun Exposure
+  NoWind,                                 !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  -2.9611591, -0.0030522, 0,              !- X,Y,Z Vertex 1 {m}
+  -2.9611591, -0.0030522, 4.01955,        !- X,Y,Z Vertex 2 {m}
+  0.1884409, -0.0030522, 6.38175,         !- X,Y,Z Vertex 3 {m}
+  3.3380409, -0.0030522, 4.01955,         !- X,Y,Z Vertex 4 {m}
+  3.3380409, -0.0030522, 0;               !- X,Y,Z Vertex 5 {m}
+
+OS:AdditionalProperties,
+  {60a96e71-8482-4b50-bcff-25cb4ff7720f}, !- Handle
+  {8a0c5358-bea2-4289-a271-3b9f0fd6c0a4}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  su-n-101-100-i-w-15,                    !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  N-101-100-I-W-15,                       !- Feature Value 2
+  CADObjectId,                            !- Feature Name 3
+  String,                                 !- Feature Data Type 3
+  1253945,                                !- Feature Value 3
+  gbXMLReversed,                          !- Feature Name 4
+  Boolean,                                !- Feature Data Type 4
+  false;                                  !- Feature Value 4
+
+OS:Surface,
+  {b3647f85-a484-4610-a341-aa4c6d4815a4}, !- Handle
+  su-n-101-100-i-w-15 Reversed,           !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {a1b5c80c-0fb3-47f9-a02e-3ee6f9a31d4a}, !- Space Name
+  Surface,                                !- Outside Boundary Condition
+  {8a0c5358-bea2-4289-a271-3b9f0fd6c0a4}, !- Outside Boundary Condition Object
+  NoSun,                                  !- Sun Exposure
+  NoWind,                                 !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  3.3380409, -0.0030522, 0,               !- X,Y,Z Vertex 1 {m}
+  3.3380409, -0.0030522, 4.01955,         !- X,Y,Z Vertex 2 {m}
+  0.1884409, -0.0030522, 6.38175,         !- X,Y,Z Vertex 3 {m}
+  -2.9611591, -0.0030522, 4.01955,        !- X,Y,Z Vertex 4 {m}
+  -2.9611591, -0.0030522, 0;              !- X,Y,Z Vertex 5 {m}
+
+OS:AdditionalProperties,
+  {3f10e360-b6b7-4e5d-ba10-4b36f88e3370}, !- Handle
+  {b3647f85-a484-4610-a341-aa4c6d4815a4}, !- Object Name
+  CADObjectId,                            !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  1253945,                                !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  N-101-100-I-W-15,                       !- Feature Value 2
+  gbXMLId,                                !- Feature Name 3
+  String,                                 !- Feature Data Type 3
+  su-n-101-100-i-w-15,                    !- Feature Value 3
+  gbXMLReversed,                          !- Feature Name 4
+  Boolean,                                !- Feature Data Type 4
+  true;                                   !- Feature Value 4
+
+OS:Surface,
+  {6b29b707-8e3f-4d47-a5e1-c07b389434f4}, !- Handle
+  su-s-101-e-w-3,                         !- Name
+  Wall,                                   !- Surface Type
+  {0fac6cf7-c952-412f-9f4f-e744ce7b1b81}, !- Construction Name
+  {3ec2aba4-8486-47fc-b3d2-13c55af42a06}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  -2.9611591, -15.3446522, 4.01955,       !- X,Y,Z Vertex 1 {m}
+  -2.9611591, -15.3446522, 0,             !- X,Y,Z Vertex 2 {m}
+  3.3380409, -15.3446522, 0,              !- X,Y,Z Vertex 3 {m}
+  3.3380409, -15.3446522, 4.01955;        !- X,Y,Z Vertex 4 {m}
+
+OS:AdditionalProperties,
+  {075f5356-c344-415f-92b0-bfa1b19981ba}, !- Handle
+  {6b29b707-8e3f-4d47-a5e1-c07b389434f4}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  su-s-101-e-w-3,                         !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  S-101-E-W-3,                            !- Feature Value 2
+  CADObjectId,                            !- Feature Name 3
+  String,                                 !- Feature Data Type 3
+  1253930,                                !- Feature Value 3
+  gbXMLReversed,                          !- Feature Name 4
+  Boolean,                                !- Feature Data Type 4
+  false;                                  !- Feature Value 4
+
+OS:Surface,
+  {d3081da0-3e5e-4dcf-a36c-df54c637cd04}, !- Handle
+  su-t-100-e-r-11,                        !- Name
+  RoofCeiling,                            !- Surface Type
+  {ae075de4-1341-411b-9349-441e2e2d94e0}, !- Construction Name
+  {a1b5c80c-0fb3-47f9-a02e-3ee6f9a31d4a}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  0.1884409, -0.0030522, 6.38175,         !- X,Y,Z Vertex 1 {m}
+  3.3380409, -0.0030522, 4.01955,         !- X,Y,Z Vertex 2 {m}
+  3.3380409, 15.3385478, 4.01955,         !- X,Y,Z Vertex 3 {m}
+  0.1884409, 12.1889478, 6.38175;         !- X,Y,Z Vertex 4 {m}
+
+OS:AdditionalProperties,
+  {51faeea8-3f8e-4d60-b8be-78addd3fab6c}, !- Handle
+  {d3081da0-3e5e-4dcf-a36c-df54c637cd04}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  su-t-100-e-r-11,                        !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  T-100-E-R-11,                           !- Feature Value 2
+  CADObjectId,                            !- Feature Name 3
+  String,                                 !- Feature Data Type 3
+  1253941,                                !- Feature Value 3
+  gbXMLReversed,                          !- Feature Name 4
+  Boolean,                                !- Feature Data Type 4
+  false;                                  !- Feature Value 4
+
+OS:Surface,
+  {592a98c5-b2c8-4e10-a901-0e4682717708}, !- Handle
+  su-t-100-e-r-14,                        !- Name
+  RoofCeiling,                            !- Surface Type
+  {9c65ce6f-2523-4bbc-a396-910ea099c84e}, !- Construction Name
+  {a1b5c80c-0fb3-47f9-a02e-3ee6f9a31d4a}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  -2.9611591, -0.0030522, 4.01955,        !- X,Y,Z Vertex 1 {m}
+  0.1884409, -0.0030522, 6.38175,         !- X,Y,Z Vertex 2 {m}
+  0.1884409, 12.1889478, 6.38175,         !- X,Y,Z Vertex 3 {m}
+  -2.9611591, 15.3385478, 4.01955;        !- X,Y,Z Vertex 4 {m}
+
+OS:AdditionalProperties,
+  {79b31457-7a29-4722-aaa7-59bd8eb32b59}, !- Handle
+  {592a98c5-b2c8-4e10-a901-0e4682717708}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  su-t-100-e-r-14,                        !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  T-100-E-R-14,                           !- Feature Value 2
+  CADObjectId,                            !- Feature Name 3
+  String,                                 !- Feature Data Type 3
+  1253944,                                !- Feature Value 3
+  gbXMLReversed,                          !- Feature Name 4
+  Boolean,                                !- Feature Data Type 4
+  false;                                  !- Feature Value 4
+
+OS:Surface,
+  {27b5a5b9-8c1b-4faa-bae8-756ea475b215}, !- Handle
+  su-t-100-e-r-9,                         !- Name
+  RoofCeiling,                            !- Surface Type
+  {17438d0f-d29b-4af8-8c67-80ff8f382ffb}, !- Construction Name
+  {a1b5c80c-0fb3-47f9-a02e-3ee6f9a31d4a}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  -2.9611591, 15.3385478, 4.01955,        !- X,Y,Z Vertex 1 {m}
+  0.1884409, 12.1889478, 6.38175,         !- X,Y,Z Vertex 2 {m}
+  3.3380409, 15.3385478, 4.01955;         !- X,Y,Z Vertex 3 {m}
+
+OS:AdditionalProperties,
+  {62299dec-00b0-4ebd-a139-0e3ed978fb65}, !- Handle
+  {27b5a5b9-8c1b-4faa-bae8-756ea475b215}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  su-t-100-e-r-9,                         !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  T-100-E-R-9,                            !- Feature Value 2
+  CADObjectId,                            !- Feature Name 3
+  String,                                 !- Feature Data Type 3
+  1253942,                                !- Feature Value 3
+  gbXMLReversed,                          !- Feature Name 4
+  Boolean,                                !- Feature Data Type 4
+  false;                                  !- Feature Value 4
+
+OS:Surface,
+  {4a1717f7-6453-4118-b9d7-90d92a28d6ec}, !- Handle
+  su-t-101-e-r-10,                        !- Name
+  RoofCeiling,                            !- Surface Type
+  {3712add5-a1c4-4d3e-89ff-1685c81e4384}, !- Construction Name
+  {3ec2aba4-8486-47fc-b3d2-13c55af42a06}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  0.1884409, -12.1950522, 6.38175,        !- X,Y,Z Vertex 1 {m}
+  3.3380409, -15.3446522, 4.01955,        !- X,Y,Z Vertex 2 {m}
+  3.3380409, -0.0030522, 4.01955,         !- X,Y,Z Vertex 3 {m}
+  0.1884409, -0.0030522, 6.38175;         !- X,Y,Z Vertex 4 {m}
+
+OS:AdditionalProperties,
+  {041953c3-f6b0-416e-89e0-1556b9d1654a}, !- Handle
+  {4a1717f7-6453-4118-b9d7-90d92a28d6ec}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  su-t-101-e-r-10,                        !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  T-101-E-R-10,                           !- Feature Value 2
+  CADObjectId,                            !- Feature Name 3
+  String,                                 !- Feature Data Type 3
+  1253940,                                !- Feature Value 3
+  gbXMLReversed,                          !- Feature Name 4
+  Boolean,                                !- Feature Data Type 4
+  false;                                  !- Feature Value 4
+
+OS:Surface,
+  {e142a74f-bc4b-4f4a-bfeb-1a88adba2701}, !- Handle
+  su-t-101-e-r-12,                        !- Name
+  RoofCeiling,                            !- Surface Type
+  {1b691d5c-d21f-4de2-a854-1aa586ab2e0c}, !- Construction Name
+  {3ec2aba4-8486-47fc-b3d2-13c55af42a06}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  -2.9611591, -15.3446522, 4.01955,       !- X,Y,Z Vertex 1 {m}
+  3.3380409, -15.3446522, 4.01955,        !- X,Y,Z Vertex 2 {m}
+  0.1884409, -12.1950522, 6.38175;        !- X,Y,Z Vertex 3 {m}
+
+OS:AdditionalProperties,
+  {1cb1d049-9967-4601-a7a4-affa67a4b48a}, !- Handle
+  {e142a74f-bc4b-4f4a-bfeb-1a88adba2701}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  su-t-101-e-r-12,                        !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  T-101-E-R-12,                           !- Feature Value 2
+  CADObjectId,                            !- Feature Name 3
+  String,                                 !- Feature Data Type 3
+  1253939,                                !- Feature Value 3
+  gbXMLReversed,                          !- Feature Name 4
+  Boolean,                                !- Feature Data Type 4
+  false;                                  !- Feature Value 4
+
+OS:Surface,
+  {18f020d7-fe9c-4713-bc80-5e4f7524a7e8}, !- Handle
+  su-t-101-e-r-13,                        !- Name
+  RoofCeiling,                            !- Surface Type
+  {9a758d42-ef79-4d76-b902-dee38edc1d1f}, !- Construction Name
+  {3ec2aba4-8486-47fc-b3d2-13c55af42a06}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  -2.9611591, -15.3446522, 4.01955,       !- X,Y,Z Vertex 1 {m}
+  0.1884409, -12.1950522, 6.38175,        !- X,Y,Z Vertex 2 {m}
+  0.1884409, -0.0030522, 6.38175,         !- X,Y,Z Vertex 3 {m}
+  -2.9611591, -0.0030522, 4.01955;        !- X,Y,Z Vertex 4 {m}
+
+OS:AdditionalProperties,
+  {cd74406c-c16c-41ab-ade7-4d1b2b23528a}, !- Handle
+  {18f020d7-fe9c-4713-bc80-5e4f7524a7e8}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  su-t-101-e-r-13,                        !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  T-101-E-R-13,                           !- Feature Value 2
+  CADObjectId,                            !- Feature Name 3
+  String,                                 !- Feature Data Type 3
+  1253943,                                !- Feature Value 3
+  gbXMLReversed,                          !- Feature Name 4
+  Boolean,                                !- Feature Data Type 4
+  false;                                  !- Feature Value 4
+
+OS:Surface,
+  {31e354fe-eb6e-4175-a207-5a9c65e80d00}, !- Handle
+  su-w-100-e-w-2,                         !- Name
+  Wall,                                   !- Surface Type
+  {40716bc9-163d-4740-b3f7-6c038718954d}, !- Construction Name
+  {a1b5c80c-0fb3-47f9-a02e-3ee6f9a31d4a}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  -2.9611591, -0.0030522, 0,              !- X,Y,Z Vertex 1 {m}
+  -2.9611591, -0.0030522, 4.01955,        !- X,Y,Z Vertex 2 {m}
+  -2.9611591, 15.3385478, 4.01955,        !- X,Y,Z Vertex 3 {m}
+  -2.9611591, 15.3385478, 0;              !- X,Y,Z Vertex 4 {m}
+
+OS:AdditionalProperties,
+  {d559a8ed-78be-4f4d-af5f-ac740d55ae2c}, !- Handle
+  {31e354fe-eb6e-4175-a207-5a9c65e80d00}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  su-w-100-e-w-2,                         !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  W-100-E-W-2,                            !- Feature Value 2
+  CADObjectId,                            !- Feature Name 3
+  String,                                 !- Feature Data Type 3
+  1253928,                                !- Feature Value 3
+  gbXMLReversed,                          !- Feature Name 4
+  Boolean,                                !- Feature Data Type 4
+  false;                                  !- Feature Value 4
+
+OS:SubSurface,
+  {6d73725d-44dd-4a86-8535-3935093dae69}, !- Handle
+  op-2,                                   !- Name
+  Door,                                   !- Sub Surface Type
+  {f6b8efed-cd34-4d6d-93a8-4e9576daaaeb}, !- Construction Name
+  {31e354fe-eb6e-4175-a207-5a9c65e80d00}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  -2.9611591, 7.15713582704599, 0.0069129270459942, !- X,Y,Z Vertex 1 {m}
+  -2.9611591, 7.15713582704599, 2.12668707295401, !- X,Y,Z Vertex 2 {m}
+  -2.9611591, 8.15931017295401, 2.12668707295401, !- X,Y,Z Vertex 3 {m}
+  -2.9611591, 8.15931017295401, 0.0069129270459942; !- X,Y,Z Vertex 4 {m}
+
+OS:AdditionalProperties,
+  {004fb845-72b3-4414-a15d-1f5235231dc7}, !- Handle
+  {6d73725d-44dd-4a86-8535-3935093dae69}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  op-2,                                   !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  W-100-E-W-2-D-1,                        !- Feature Value 2
+  CADObjectId,                            !- Feature Name 3
+  String,                                 !- Feature Data Type 3
+  1253929,                                !- Feature Value 3
+  gbXMLReversed,                          !- Feature Name 4
+  Boolean,                                !- Feature Data Type 4
+  false;                                  !- Feature Value 4
+
+OS:Surface,
+  {4d444048-22ae-4605-8651-0ff94bbb27b3}, !- Handle
+  su-w-101-e-w-1,                         !- Name
+  Wall,                                   !- Surface Type
+  {e0421b03-d4e7-4739-81db-c586755b0137}, !- Construction Name
+  {3ec2aba4-8486-47fc-b3d2-13c55af42a06}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  -2.9611591, -15.3446522, 0,             !- X,Y,Z Vertex 1 {m}
+  -2.9611591, -15.3446522, 4.01955,       !- X,Y,Z Vertex 2 {m}
+  -2.9611591, -0.0030522, 4.01955,        !- X,Y,Z Vertex 3 {m}
+  -2.9611591, -0.0030522, 0;              !- X,Y,Z Vertex 4 {m}
+
+OS:AdditionalProperties,
+  {ac9b08ed-8993-4ec5-9d6d-553c10972d09}, !- Handle
+  {4d444048-22ae-4605-8651-0ff94bbb27b3}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  su-w-101-e-w-1,                         !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  W-101-E-W-1,                            !- Feature Value 2
+  CADObjectId,                            !- Feature Name 3
+  String,                                 !- Feature Data Type 3
+  1253925,                                !- Feature Value 3
+  gbXMLReversed,                          !- Feature Name 4
+  Boolean,                                !- Feature Data Type 4
+  false;                                  !- Feature Value 4
+
+OS:SubSurface,
+  {c513994b-7e0c-4890-b9fc-f441aeb14636}, !- Handle
+  op-1,                                   !- Name
+  Door,                                   !- Sub Surface Type
+  {6889bbb6-4548-4367-802f-3634c2ff1211}, !- Construction Name
+  {4d444048-22ae-4605-8651-0ff94bbb27b3}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  -2.9611591, -12.7977391757259, 0.00691292427405851, !- X,Y,Z Vertex 1 {m}
+  -2.9611591, -12.7977391757259, 2.12668707572594, !- X,Y,Z Vertex 2 {m}
+  -2.9611591, -11.7955654242741, 2.12668707572594, !- X,Y,Z Vertex 3 {m}
+  -2.9611591, -11.7955654242741, 0.00691292427405851; !- X,Y,Z Vertex 4 {m}
+
+OS:AdditionalProperties,
+  {e26cbea7-556f-4c07-9d4f-caaa40936178}, !- Handle
+  {c513994b-7e0c-4890-b9fc-f441aeb14636}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  op-1,                                   !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  W-101-E-W-1-D-1,                        !- Feature Value 2
+  CADObjectId,                            !- Feature Name 3
+  String,                                 !- Feature Data Type 3
+  1253926,                                !- Feature Value 3
+  gbXMLReversed,                          !- Feature Name 4
+  Boolean,                                !- Feature Data Type 4
+  false;                                  !- Feature Value 4
+
+OS:ShadingSurface,
+  {830b8e7f-02a5-4634-a058-4f5912a525e9}, !- Handle
+  su-x-s-16,                              !- Name
+  ,                                       !- Construction Name
+  {87b9095d-7ccf-4f95-9512-253106c8148f}, !- Shading Surface Group Name
+  ,                                       !- Transmittance Schedule Name
+  ,                                       !- Number of Vertices
+  -2.8595592, -0.0030522, 4.09575,        !- X,Y,Z Vertex 1 {m}
+  -2.8595592, -0.0030522, 6.096,          !- X,Y,Z Vertex 2 {m}
+  -0.1925591, -0.0030522, 6.096;          !- X,Y,Z Vertex 3 {m}
+
+OS:AdditionalProperties,
+  {0533b70a-bf62-411d-ace3-dfbb377f6215}, !- Handle
+  {830b8e7f-02a5-4634-a058-4f5912a525e9}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  su-x-s-16,                              !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  X-S-16,                                 !- Feature Value 2
+  CADObjectId,                            !- Feature Name 3
+  String,                                 !- Feature Data Type 3
+  1253947;                                !- Feature Value 3
+
+OS:ShadingSurfaceGroup,
+  {87b9095d-7ccf-4f95-9512-253106c8148f}, !- Handle
+  {54e772af-f8d7-48c8-91bb-6d2c29dfae3a}, !- Name
+  Building;                               !- Shading Surface Type
+
+OS:ShadingSurface,
+  {b2504667-ba59-4373-889c-f108a3faa8f3}, !- Handle
+  su-x-s-17,                              !- Name
+  ,                                       !- Construction Name
+  {87b9095d-7ccf-4f95-9512-253106c8148f}, !- Shading Surface Group Name
+  ,                                       !- Transmittance Schedule Name
+  ,                                       !- Number of Vertices
+  0.5694409, -0.0030522, 6.096,           !- X,Y,Z Vertex 1 {m}
+  3.2364408, -0.0030522, 6.096,           !- X,Y,Z Vertex 2 {m}
+  3.2364408, -0.0030522, 4.09575;         !- X,Y,Z Vertex 3 {m}
+
+OS:AdditionalProperties,
+  {d26f9e7d-f400-42bb-b574-5af8e3ff291d}, !- Handle
+  {b2504667-ba59-4373-889c-f108a3faa8f3}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  su-x-s-17,                              !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  X-S-17,                                 !- Feature Value 2
+  CADObjectId,                            !- Feature Name 3
+  String,                                 !- Feature Data Type 3
+  1253946;                                !- Feature Value 3
+
+OS:WeatherFile,
+  {9aa965ad-65b8-47bd-9175-6b77f72dacd2}, !- Handle
+  City Name,                              !- City
+  State Name,                             !- State Province Region
+  Country Name,                           !- Country
+  Data Source,                            !- Data Source
+  0,                                      !- WMO Number
+  0,                                      !- Latitude {deg}
+  0,                                      !- Longitude {deg}
+  0,                                      !- Time Zone {hr}
+  0,                                      !- Elevation {m}
+  E:/Documents/AntigravityIDE/Revit Add-in/MATLAB/sensitivity_runs/var_17/custom_weather.epw, !- Url
+  87BB59DC,                               !- Checksum
+  ,                                       !- Start Date Actual Year
+  Sunday;                                 !- Start Day of Week
+
+OS:SizingPeriod:DesignDay,
+  {72f8776c-60f5-4166-ab16-f0d38f0a9f52}, !- Handle
+  Denver Intl Ap Ann Clg .4% Condns DB=>MWB 1, !- Name
+  34.6,                                   !- Maximum Dry-Bulb Temperature {C}
+  15.2,                                   !- Daily Dry-Bulb Temperature Range {deltaC}
+  83011,                                  !- Barometric Pressure {Pa}
+  4.2,                                    !- Wind Speed {m/s}
+  80,                                     !- Wind Direction {deg}
+  ,                                       !- Sky Clearness
+  No,                                     !- Rain Indicator
+  No,                                     !- Snow Indicator
+  21,                                     !- Day of Month
+  7,                                      !- Month
+  SummerDesignDay,                        !- Day Type
+  No,                                     !- Daylight Saving Time Indicator
+  Wetbulb,                                !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  15.7,                                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  DefaultMultipliers,                     !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAETau,                              !- Solar Model Indicator
+  ,                                       !- Beam Solar Day Schedule Name
+  ,                                       !- Diffuse Solar Day Schedule Name
+  0.424,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
+  2.012;                                  !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
+
+OS:SizingPeriod:DesignDay,
+  {0ba5805c-9ade-47c1-ba70-06491afe1a89}, !- Handle
+  Denver Intl Ap Ann Clg .4% Condns WB=>MDB 1, !- Name
+  27.3,                                   !- Maximum Dry-Bulb Temperature {C}
+  15.2,                                   !- Daily Dry-Bulb Temperature Range {deltaC}
+  83011,                                  !- Barometric Pressure {Pa}
+  4.2,                                    !- Wind Speed {m/s}
+  80,                                     !- Wind Direction {deg}
+  ,                                       !- Sky Clearness
+  No,                                     !- Rain Indicator
+  No,                                     !- Snow Indicator
+  21,                                     !- Day of Month
+  7,                                      !- Month
+  SummerDesignDay,                        !- Day Type
+  No,                                     !- Daylight Saving Time Indicator
+  Wetbulb,                                !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  18.3,                                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  DefaultMultipliers,                     !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAETau,                              !- Solar Model Indicator
+  ,                                       !- Beam Solar Day Schedule Name
+  ,                                       !- Diffuse Solar Day Schedule Name
+  0.424,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
+  2.012;                                  !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
+
+OS:SizingPeriod:DesignDay,
+  {a505964e-e573-4640-b117-d2e3c408a926}, !- Handle
+  Denver Intl Ap Ann Htg 99.6% Condns DB 1, !- Name
+  -17.4,                                  !- Maximum Dry-Bulb Temperature {C}
+  0,                                      !- Daily Dry-Bulb Temperature Range {deltaC}
+  83011,                                  !- Barometric Pressure {Pa}
+  3.3,                                    !- Wind Speed {m/s}
+  160,                                    !- Wind Direction {deg}
+  0,                                      !- Sky Clearness
+  No,                                     !- Rain Indicator
+  No,                                     !- Snow Indicator
+  21,                                     !- Day of Month
+  12,                                     !- Month
+  WinterDesignDay,                        !- Day Type
+  No,                                     !- Daylight Saving Time Indicator
+  Wetbulb,                                !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  -17.4,                                  !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  DefaultMultipliers,                     !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAEClearSky;                         !- Solar Model Indicator
+
+OS:Site:WaterMainsTemperature,
+  {a4322871-7a29-4b20-94a1-ccfaf204f198}, !- Handle
+  Correlation,                            !- Calculation Method
+  ,                                       !- Temperature Schedule Name
+  10.8,                                   !- Annual Average Outdoor Air Temperature {C}
+  23.2;                                   !- Maximum Difference In Monthly Average Outdoor Air Temperatures {deltaC}
+
+OS:ClimateZones,
+  {0b62fef8-9d43-425e-9adf-a3192f417940}, !- Handle
+  ASHRAE,                                 !- Climate Zone Institution Name 1
+  ANSI/ASHRAE Standard 169,               !- Climate Zone Document Name 1
+  2006,                                   !- Climate Zone Document Year 1
+  4B;                                     !- Climate Zone Value 1
+
+OS:Site,
+  {0b663eba-fe70-4a59-82c2-0a96fff76d8a}, !- Handle
+  Boston&#44 MA,                          !- Name
+  42.3587227,                             !- Latitude {deg}
+  -71.0567627,                            !- Longitude {deg}
+  0,                                      !- Time Zone {hr}
+  505.2493438,                            !- Elevation {m}
+  ;                                       !- Terrain
+
+OS:ScheduleTypeLimits,
+  {893b388f-f8eb-4c46-8ada-8b822f4f2a13}, !- Handle
+  Temperature Schedule Type Limits,       !- Name
+  ,                                       !- Lower Limit Value
+  ,                                       !- Upper Limit Value
+  Continuous,                             !- Numeric Type
+  Temperature;                            !- Unit Type
+
+OS:Schedule:Ruleset,
+  {1b8ea8a6-f82d-494e-93d0-7f7ca549fe24}, !- Handle
+  Common Office Occupancy - 8 AM to 5 PM, !- Name
+  {3983a797-90a7-44b5-bc52-0f653a4b729e}, !- Schedule Type Limits Name
+  {af934a49-d627-4919-b204-c20c2354fda4}, !- Default Day Schedule Name
+  {09c6b4b2-06c4-4ce4-8294-0253be5b5b7b}, !- Summer Design Day Schedule Name
+  {f2faac71-0a74-4592-a6e0-f466ec70e5e2}; !- Winter Design Day Schedule Name
+
+OS:Schedule:Day,
+  {af934a49-d627-4919-b204-c20c2354fda4}, !- Handle
+  Schedule Day 1,                         !- Name
+  {3983a797-90a7-44b5-bc52-0f653a4b729e}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  24,                                     !- Hour 1
+  0,                                      !- Minute 1
+  0;                                      !- Value Until Time 1
+
+OS:Schedule:Day,
+  {f2faac71-0a74-4592-a6e0-f466ec70e5e2}, !- Handle
+  Common Office Occupancy - 8 AM to 5 PM Winter Design Day, !- Name
+  {3983a797-90a7-44b5-bc52-0f653a4b729e}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  24,                                     !- Hour 1
+  0,                                      !- Minute 1
+  0;                                      !- Value Until Time 1
+
+OS:Schedule:Day,
+  {09c6b4b2-06c4-4ce4-8294-0253be5b5b7b}, !- Handle
+  Common Office Occupancy - 8 AM to 5 PM Summer Design Day, !- Name
+  {3983a797-90a7-44b5-bc52-0f653a4b729e}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  24,                                     !- Hour 1
+  0,                                      !- Minute 1
+  1;                                      !- Value Until Time 1
+
+OS:Schedule:Rule,
+  {1c100003-18e6-4b85-8326-1e9fa5185b13}, !- Handle
+  Common Office Occupancy - 8 AM to 5 PM wshc-commonofficeoccupancy-8amto5pm Rule, !- Name
+  {1b8ea8a6-f82d-494e-93d0-7f7ca549fe24}, !- Schedule Ruleset Name
+  0,                                      !- Rule Order
+  {785b08f6-3a12-4806-95bb-120349dfa129}, !- Day Schedule Name
+  Yes,                                    !- Apply Sunday
+  Yes,                                    !- Apply Monday
+  Yes,                                    !- Apply Tuesday
+  Yes,                                    !- Apply Wednesday
+  Yes,                                    !- Apply Thursday
+  Yes,                                    !- Apply Friday
+  Yes,                                    !- Apply Saturday
+  DateRange,                              !- Date Specification Type
+  1,                                      !- Start Month
+  1,                                      !- Start Day
+  12,                                     !- End Month
+  31;                                     !- End Day
+
+OS:Schedule:Day,
+  {785b08f6-3a12-4806-95bb-120349dfa129}, !- Handle
+  Common Office Occupancy - 8 AM to 5 PM wshc-commonofficeoccupancy-8amto5pm, !- Name
+  {3983a797-90a7-44b5-bc52-0f653a4b729e}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  7,                                      !- Hour 1
+  0,                                      !- Minute 1
+  0,                                      !- Value Until Time 1
+  8,                                      !- Hour 2
+  0,                                      !- Minute 2
+  0.1,                                    !- Value Until Time 2
+  9,                                      !- Hour 3
+  0,                                      !- Minute 3
+  0.2,                                    !- Value Until Time 3
+  11,                                     !- Hour 4
+  0,                                      !- Minute 4
+  0.95,                                   !- Value Until Time 4
+  13,                                     !- Hour 5
+  0,                                      !- Minute 5
+  0.45,                                   !- Value Until Time 5
+  18,                                     !- Hour 6
+  0,                                      !- Minute 6
+  0.95,                                   !- Value Until Time 6
+  19,                                     !- Hour 7
+  0,                                      !- Minute 7
+  0.3,                                    !- Value Until Time 7
+  22,                                     !- Hour 8
+  0,                                      !- Minute 8
+  0.1,                                    !- Value Until Time 8
+  24,                                     !- Hour 9
+  0,                                      !- Minute 9
+  0;                                      !- Value Until Time 9
+
+OS:Schedule:Ruleset,
+  {e11a428c-6762-4737-887c-506fbf3390c3}, !- Handle
+  Office Lighting - 6 AM to 11 PM,        !- Name
+  {3983a797-90a7-44b5-bc52-0f653a4b729e}, !- Schedule Type Limits Name
+  {f39804df-aba1-42bd-8129-5f8227d27b63}, !- Default Day Schedule Name
+  {7822e466-c84a-4f23-92c7-45a1a6267e6f}, !- Summer Design Day Schedule Name
+  {07218c3b-d7b9-4db2-97f6-0b824feed8b6}; !- Winter Design Day Schedule Name
+
+OS:Schedule:Day,
+  {f39804df-aba1-42bd-8129-5f8227d27b63}, !- Handle
+  Schedule Day 4,                         !- Name
+  {3983a797-90a7-44b5-bc52-0f653a4b729e}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  24,                                     !- Hour 1
+  0,                                      !- Minute 1
+  0;                                      !- Value Until Time 1
+
+OS:Schedule:Day,
+  {07218c3b-d7b9-4db2-97f6-0b824feed8b6}, !- Handle
+  Office Lighting - 6 AM to 11 PM Winter Design Day, !- Name
+  {3983a797-90a7-44b5-bc52-0f653a4b729e}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  24,                                     !- Hour 1
+  0,                                      !- Minute 1
+  0;                                      !- Value Until Time 1
+
+OS:Schedule:Day,
+  {7822e466-c84a-4f23-92c7-45a1a6267e6f}, !- Handle
+  Office Lighting - 6 AM to 11 PM Summer Design Day, !- Name
+  {3983a797-90a7-44b5-bc52-0f653a4b729e}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  24,                                     !- Hour 1
+  0,                                      !- Minute 1
+  1;                                      !- Value Until Time 1
+
+OS:Schedule:Rule,
+  {1809a361-96e6-43cc-b458-42d8ed9a77f1}, !- Handle
+  Office Lighting - 6 AM to 11 PM wshc-officelighting-6amto11pm Rule, !- Name
+  {e11a428c-6762-4737-887c-506fbf3390c3}, !- Schedule Ruleset Name
+  0,                                      !- Rule Order
+  {f733ee6b-46fc-4879-9914-ecec85a502d7}, !- Day Schedule Name
+  Yes,                                    !- Apply Sunday
+  Yes,                                    !- Apply Monday
+  Yes,                                    !- Apply Tuesday
+  Yes,                                    !- Apply Wednesday
+  Yes,                                    !- Apply Thursday
+  Yes,                                    !- Apply Friday
+  Yes,                                    !- Apply Saturday
+  DateRange,                              !- Date Specification Type
+  1,                                      !- Start Month
+  1,                                      !- Start Day
+  12,                                     !- End Month
+  31;                                     !- End Day
+
+OS:Schedule:Day,
+  {f733ee6b-46fc-4879-9914-ecec85a502d7}, !- Handle
+  Office Lighting - 6 AM to 11 PM wshc-officelighting-6amto11pm, !- Name
+  {3983a797-90a7-44b5-bc52-0f653a4b729e}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  6,                                      !- Hour 1
+  0,                                      !- Minute 1
+  0,                                      !- Value Until Time 1
+  7,                                      !- Hour 2
+  0,                                      !- Minute 2
+  0.1,                                    !- Value Until Time 2
+  8,                                      !- Hour 3
+  0,                                      !- Minute 3
+  0.3,                                    !- Value Until Time 3
+  12,                                     !- Hour 4
+  0,                                      !- Minute 4
+  0.9,                                    !- Value Until Time 4
+  13,                                     !- Hour 5
+  0,                                      !- Minute 5
+  0.8,                                    !- Value Until Time 5
+  17,                                     !- Hour 6
+  0,                                      !- Minute 6
+  0.9,                                    !- Value Until Time 6
+  18,                                     !- Hour 7
+  0,                                      !- Minute 7
+  0.5,                                    !- Value Until Time 7
+  20,                                     !- Hour 8
+  0,                                      !- Minute 8
+  0.3,                                    !- Value Until Time 8
+  22,                                     !- Hour 9
+  0,                                      !- Minute 9
+  0.2,                                    !- Value Until Time 9
+  24,                                     !- Hour 10
+  0,                                      !- Minute 10
+  0;                                      !- Value Until Time 10
+
+OS:Schedule:Ruleset,
+  {396af754-04fa-42f8-ae13-268cf3438b69}, !- Handle
+  infil_bldg,                             !- Name
+  {3983a797-90a7-44b5-bc52-0f653a4b729e}, !- Schedule Type Limits Name
+  {3f1840be-191f-43d6-8b5a-fdd14585d5ad}, !- Default Day Schedule Name
+  {47fb575e-a6d9-4375-a4ae-59281c188fa5}, !- Summer Design Day Schedule Name
+  {dc094c86-36e3-4591-af0c-b0cb6d8e5467}; !- Winter Design Day Schedule Name
+
+OS:Schedule:Day,
+  {3f1840be-191f-43d6-8b5a-fdd14585d5ad}, !- Handle
+  infil_bldg infil_bldg_default,          !- Name
+  {3983a797-90a7-44b5-bc52-0f653a4b729e}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  24,                                     !- Hour 1
+  0,                                      !- Minute 1
+  1;                                      !- Value Until Time 1
+
+OS:Schedule:Day,
+  {dc094c86-36e3-4591-af0c-b0cb6d8e5467}, !- Handle
+  infil_bldg Winter Design Day,           !- Name
+  {3983a797-90a7-44b5-bc52-0f653a4b729e}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  24,                                     !- Hour 1
+  0,                                      !- Minute 1
+  0;                                      !- Value Until Time 1
+
+OS:Schedule:Day,
+  {47fb575e-a6d9-4375-a4ae-59281c188fa5}, !- Handle
+  infil_bldg Summer Design Day,           !- Name
+  {3983a797-90a7-44b5-bc52-0f653a4b729e}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  24,                                     !- Hour 1
+  0,                                      !- Minute 1
+  1;                                      !- Value Until Time 1
+
+OS:DefaultScheduleSet,
+  {28dc1d85-ce3e-45db-aebc-4e5b088814d4}, !- Handle
+  schd-officelighting-6amto11pm|schd-officelighting-6amto11pm|schd-commonofficeoccupancy-8amto5pm, !- Name
+  ,                                       !- Hours of Operation Schedule Name
+  {1b8ea8a6-f82d-494e-93d0-7f7ca549fe24}, !- Number of People Schedule Name
+  ,                                       !- People Activity Level Schedule Name
+  {e11a428c-6762-4737-887c-506fbf3390c3}, !- Lighting Schedule Name
+  {e11a428c-6762-4737-887c-506fbf3390c3}, !- Electric Equipment Schedule Name
+  ,                                       !- Gas Equipment Schedule Name
+  ,                                       !- Hot Water Equipment Schedule Name
+  {396af754-04fa-42f8-ae13-268cf3438b69}, !- Infiltration Schedule Name
+  ,                                       !- Steam Equipment Schedule Name
+  ;                                       !- Other Equipment Schedule Name
+
+OS:ScheduleTypeLimits,
+  {3983a797-90a7-44b5-bc52-0f653a4b729e}, !- Handle
+  Fractional,                             !- Name
+  0,                                      !- Lower Limit Value
+  1,                                      !- Upper Limit Value
+  Continuous;                             !- Numeric Type
+
+OS:Lights:Definition,
+  {64bf2fd3-405e-4b7e-9833-7be4d4d13c4e}, !- Handle
+  adv_import_light_0,                     !- Name
+  Watts/Area,                             !- Design Level Calculation Method
+  ,                                       !- Lighting Level {W}
+  10.7639104,                             !- Watts per Space Floor Area {W/m2}
+  ;                                       !- Watts per Person {W/person}
+
+OS:ElectricEquipment:Definition,
+  {fe0b7079-0441-41fb-a3eb-0ea352c87d5a}, !- Handle
+  adv_import_elec_equip_0,                !- Name
+  Watts/Area,                             !- Design Level Calculation Method
+  ,                                       !- Design Level {W}
+  13.9930835,                             !- Watts per Space Floor Area {W/m2}
+  ;                                       !- Watts per Person {W/person}
+
+OS:People:Definition,
+  {05ed4a98-906a-4217-b1bd-a3beb401275a}, !- Handle
+  adv_import_people_0,                    !- Name
+  People,                                 !- Number of People Calculation Method
+  4,                                      !- Number of People {people}
+  ,                                       !- People per Space Floor Area {person/m2}
+  ,                                       !- Space Floor Area per Person {m2/person}
+  0.3,                                    !- Fraction Radiant
+  0.555555555134304;                      !- Sensible Heat Fraction
+
+OS:Lights,
+  {7eeb145a-099f-48ff-8503-204aa1c802c2}, !- Handle
+  sp-100room1_lights,                     !- Name
+  {64bf2fd3-405e-4b7e-9833-7be4d4d13c4e}, !- Lights Definition Name
+  {a1b5c80c-0fb3-47f9-a02e-3ee6f9a31d4a}, !- Space or SpaceType Name
+  ,                                       !- Schedule Name
+  1,                                      !- Fraction Replaceable
+  ,                                       !- Multiplier
+  General;                                !- End-Use Subcategory
+
+OS:ElectricEquipment,
+  {068c50ad-bd45-4065-9c31-4b68bdd62071}, !- Handle
+  sp-100room1_elec_equip,                 !- Name
+  {fe0b7079-0441-41fb-a3eb-0ea352c87d5a}, !- Electric Equipment Definition Name
+  {a1b5c80c-0fb3-47f9-a02e-3ee6f9a31d4a}, !- Space or SpaceType Name
+  ,                                       !- Schedule Name
+  ,                                       !- Multiplier
+  General;                                !- End-Use Subcategory
+
+OS:Schedule:Ruleset,
+  {d1b5df18-33fd-4449-b5e6-53ce5a61cc87}, !- Handle
+  activity_131.8819816,                   !- Name
+  {49e3b663-c3e6-4b91-ad52-2da33f12d0e7}, !- Schedule Type Limits Name
+  {562a7479-dfd5-43f0-8a4f-8b22528638ea}, !- Default Day Schedule Name
+  {8f67a5bc-251d-4619-85d6-57c2f0df252c}, !- Summer Design Day Schedule Name
+  {95ca7196-1a2b-40df-8447-5be1546cb35d}; !- Winter Design Day Schedule Name
+
+OS:Schedule:Day,
+  {562a7479-dfd5-43f0-8a4f-8b22528638ea}, !- Handle
+  activity_131.8819816 Schedule Week Day, !- Name
+  {49e3b663-c3e6-4b91-ad52-2da33f12d0e7}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  24,                                     !- Hour 1
+  0,                                      !- Minute 1
+  131.8819816;                            !- Value Until Time 1
+
+OS:Schedule:Day,
+  {95ca7196-1a2b-40df-8447-5be1546cb35d}, !- Handle
+  activity_131.8819816 Winter Design Day, !- Name
+  {49e3b663-c3e6-4b91-ad52-2da33f12d0e7}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  24,                                     !- Hour 1
+  0,                                      !- Minute 1
+  0;                                      !- Value Until Time 1
+
+OS:Schedule:Day,
+  {8f67a5bc-251d-4619-85d6-57c2f0df252c}, !- Handle
+  activity_131.8819816 Summer Design Day, !- Name
+  {49e3b663-c3e6-4b91-ad52-2da33f12d0e7}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  24,                                     !- Hour 1
+  0,                                      !- Minute 1
+  131.8819816;                            !- Value Until Time 1
+
+OS:ScheduleTypeLimits,
+  {49e3b663-c3e6-4b91-ad52-2da33f12d0e7}, !- Handle
+  ActivityLevel,                          !- Name
+  0,                                      !- Lower Limit Value
+  ,                                       !- Upper Limit Value
+  Continuous,                             !- Numeric Type
+  ActivityLevel;                          !- Unit Type
+
+OS:Schedule:Constant,
+  {68ba42ab-8f24-4fdf-952c-a300fc5102cc}, !- Handle
+  Always On Discrete,                     !- Name
+  {658eb000-21de-4345-9a3d-8afba2833084}, !- Schedule Type Limits Name
+  1;                                      !- Value
+
+OS:ScheduleTypeLimits,
+  {658eb000-21de-4345-9a3d-8afba2833084}, !- Handle
+  OnOff,                                  !- Name
+  0,                                      !- Lower Limit Value
+  1,                                      !- Upper Limit Value
+  Discrete,                               !- Numeric Type
+  Availability;                           !- Unit Type
+
+OS:DesignSpecification:OutdoorAir,
+  {6fb0f6cd-6c8a-4a36-95ad-12957ef66e96}, !- Handle
+  sp-100room1_ventilation,                !- Name
+  Sum,                                    !- Outdoor Air Method
+  0.002359737216,                         !- Outdoor Air Flow per Person {m3/s-person}
+  0.0003048,                              !- Outdoor Air Flow per Floor Area {m3/s-m2}
+  ,                                       !- Outdoor Air Flow Rate {m3/s}
+  ,                                       !- Outdoor Air Flow Air Changes per Hour {1/hr}
+  ;                                       !- Outdoor Air Flow Rate Fraction Schedule Name
+
+OS:Lights,
+  {c348a441-182c-4f45-a370-883d4c7f226a}, !- Handle
+  sp-101room2_lights,                     !- Name
+  {64bf2fd3-405e-4b7e-9833-7be4d4d13c4e}, !- Lights Definition Name
+  {3ec2aba4-8486-47fc-b3d2-13c55af42a06}, !- Space or SpaceType Name
+  ,                                       !- Schedule Name
+  1,                                      !- Fraction Replaceable
+  ,                                       !- Multiplier
+  General;                                !- End-Use Subcategory
+
+OS:ElectricEquipment,
+  {1365ca65-3b18-460c-9d8a-092336603f1d}, !- Handle
+  sp-101room2_elec_equip,                 !- Name
+  {fe0b7079-0441-41fb-a3eb-0ea352c87d5a}, !- Electric Equipment Definition Name
+  {3ec2aba4-8486-47fc-b3d2-13c55af42a06}, !- Space or SpaceType Name
+  ,                                       !- Schedule Name
+  ,                                       !- Multiplier
+  General;                                !- End-Use Subcategory
+
+OS:DesignSpecification:OutdoorAir,
+  {20e9693c-7cfe-40e4-825c-f3413211232f}, !- Handle
+  sp-101room2_ventilation,                !- Name
+  Sum,                                    !- Outdoor Air Method
+  0.002359737216,                         !- Outdoor Air Flow per Person {m3/s-person}
+  0.0003048,                              !- Outdoor Air Flow per Floor Area {m3/s-m2}
+  ,                                       !- Outdoor Air Flow Rate {m3/s}
+  ,                                       !- Outdoor Air Flow Air Changes per Hour {1/hr}
+  ;                                       !- Outdoor Air Flow Rate Fraction Schedule Name
+
+OS:Schedule:Ruleset,
+  {39246887-3134-43cf-a0b4-c267b04b76bd}, !- Handle
+  Heating Setpoint Schedule,              !- Name
+  {893b388f-f8eb-4c46-8ada-8b822f4f2a13}, !- Schedule Type Limits Name
+  {79e9edd9-2c1d-4193-94a9-531ffb893358}, !- Default Day Schedule Name
+  {f08f653e-74e0-4a15-aa61-d92431f457e1}, !- Summer Design Day Schedule Name
+  {0bc6d89e-f200-4811-9e9c-2ed6b054b0c3}; !- Winter Design Day Schedule Name
+
+OS:Schedule:Day,
+  {79e9edd9-2c1d-4193-94a9-531ffb893358}, !- Handle
+  Heating Setpoint Schedule Heating Setpoint Default Day Schedule, !- Name
+  {893b388f-f8eb-4c46-8ada-8b822f4f2a13}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  5,                                      !- Hour 1
+  30,                                     !- Minute 1
+  18.3333333222222,                       !- Value Until Time 1
+  22,                                     !- Hour 2
+  0,                                      !- Minute 2
+  21.1111111,                             !- Value Until Time 2
+  24,                                     !- Hour 3
+  0,                                      !- Minute 3
+  18.3333333222222;                       !- Value Until Time 3
+
+OS:Schedule:Day,
+  {0bc6d89e-f200-4811-9e9c-2ed6b054b0c3}, !- Handle
+  Heating Setpoint Schedule Winter Design Day, !- Name
+  {893b388f-f8eb-4c46-8ada-8b822f4f2a13}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  24,                                     !- Hour 1
+  0,                                      !- Minute 1
+  21.1111111;                             !- Value Until Time 1
+
+OS:Schedule:Day,
+  {f08f653e-74e0-4a15-aa61-d92431f457e1}, !- Handle
+  Heating Setpoint Schedule Summer Design Day, !- Name
+  {893b388f-f8eb-4c46-8ada-8b822f4f2a13}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  24,                                     !- Hour 1
+  0,                                      !- Minute 1
+  21.1111111;                             !- Value Until Time 1
+
+OS:Timestep,
+  {32641d1b-0b95-476f-b5bb-ae1416d9f19c}, !- Handle
+  1;                                      !- Number of Timesteps per Hour
+
+OS:ThermostatSetpoint:DualSetpoint,
+  {783d1997-ac3b-4734-ba7f-3b3361a5c72a}, !- Handle
+  Thermostat Setpoint Dual Setpoint 1,    !- Name
+  {73ec4539-df26-48f2-8bb7-2ccaf6614ef0}, !- Heating Setpoint Temperature Schedule Name
+  {9b9be85c-243d-45ab-8141-4c48197fc156}; !- Cooling Setpoint Temperature Schedule Name
+
+OS:ThermostatSetpoint:DualSetpoint,
+  {fa8160bd-d109-426c-91cf-4114585f6503}, !- Handle
+  Thermostat Setpoint Dual Setpoint 2,    !- Name
+  {b9db612d-3661-4304-a258-4e7c6a65d788}, !- Heating Setpoint Temperature Schedule Name
+  {764a1d61-c3cf-47f4-b0e4-27dd5d239afc}; !- Cooling Setpoint Temperature Schedule Name
+
+OS:Schedule:Ruleset,
+  {dfab7b5d-0efa-493b-988b-c47193fe606b}, !- Handle
+  Cooling Setpoint Schedule,              !- Name
+  {893b388f-f8eb-4c46-8ada-8b822f4f2a13}, !- Schedule Type Limits Name
+  {7208baa3-16c3-4bf9-8ed5-90bc1c282d43}, !- Default Day Schedule Name
+  {d79c14e6-cf62-45f1-9e78-2934da2f24fb}, !- Summer Design Day Schedule Name
+  {b9c62bb5-fc01-4bc3-a2bd-38a0cd3aed04}; !- Winter Design Day Schedule Name
+
+OS:Schedule:Day,
+  {7208baa3-16c3-4bf9-8ed5-90bc1c282d43}, !- Handle
+  Cooling Setpoint Schedule Cooling Setpoint Default Day Schedule, !- Name
+  {893b388f-f8eb-4c46-8ada-8b822f4f2a13}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  5,                                      !- Hour 1
+  30,                                     !- Minute 1
+  26.6666666777778,                       !- Value Until Time 1
+  22,                                     !- Hour 2
+  0,                                      !- Minute 2
+  23.8888889,                             !- Value Until Time 2
+  24,                                     !- Hour 3
+  0,                                      !- Minute 3
+  26.6666666777778;                       !- Value Until Time 3
+
+OS:Schedule:Day,
+  {b9c62bb5-fc01-4bc3-a2bd-38a0cd3aed04}, !- Handle
+  Cooling Setpoint Schedule Winter Design Day, !- Name
+  {893b388f-f8eb-4c46-8ada-8b822f4f2a13}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  24,                                     !- Hour 1
+  0,                                      !- Minute 1
+  23.8888889;                             !- Value Until Time 1
+
+OS:Schedule:Day,
+  {d79c14e6-cf62-45f1-9e78-2934da2f24fb}, !- Handle
+  Cooling Setpoint Schedule Summer Design Day, !- Name
+  {893b388f-f8eb-4c46-8ada-8b822f4f2a13}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  24,                                     !- Hour 1
+  0,                                      !- Minute 1
+  23.8888889;                             !- Value Until Time 1
+
+OS:ZoneControl:Humidistat,
+  {de431d36-d587-4f1f-9bc5-8683d78f09e7}, !- Handle
+  Zone Control Humidistat 1,              !- Name
+  {7198c02f-4b7e-49df-800d-1d638044bd0e}; !- Humidifying Relative Humidity Setpoint Schedule Name
+
+OS:ScheduleTypeLimits,
+  {0d3da6b9-e539-400a-a73a-a415fe186de3}, !- Handle
+  Percent,                                !- Name
+  0,                                      !- Lower Limit Value
+  100,                                    !- Upper Limit Value
+  Continuous,                             !- Numeric Type
+  Percent;                                !- Unit Type
+
+OS:ZoneControl:Humidistat,
+  {36b02da9-b36a-42ac-9a66-e88874c15227}, !- Handle
+  Zone Control Humidistat 2,              !- Name
+  {7198c02f-4b7e-49df-800d-1d638044bd0e}; !- Humidifying Relative Humidity Setpoint Schedule Name
+
+OS:Schedule:Ruleset,
+  {7198c02f-4b7e-49df-800d-1d638044bd0e}, !- Handle
+  Dehumidifying Setpoint Schedule,        !- Name
+  {0d3da6b9-e539-400a-a73a-a415fe186de3}, !- Schedule Type Limits Name
+  {f58d9e4e-40c0-4eb5-8434-de8b1cf45c23}, !- Default Day Schedule Name
+  {0d59cf7b-0d5e-4dbb-8416-013ed442f031}, !- Summer Design Day Schedule Name
+  {5f6aaa29-3fcf-4bc6-97de-b83dca451d2b}; !- Winter Design Day Schedule Name
+
+OS:Schedule:Day,
+  {f58d9e4e-40c0-4eb5-8434-de8b1cf45c23}, !- Handle
+  Dehumidifying Setpoint Schedule Dehumidifying Setpoint Default Day Schedule, !- Name
+  {0d3da6b9-e539-400a-a73a-a415fe186de3}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  5,                                      !- Hour 1
+  30,                                     !- Minute 1
+  0,                                      !- Value Until Time 1
+  22,                                     !- Hour 2
+  0,                                      !- Minute 2
+  70,                                     !- Value Until Time 2
+  24,                                     !- Hour 3
+  0,                                      !- Minute 3
+  0;                                      !- Value Until Time 3
+
+OS:Schedule:Day,
+  {5f6aaa29-3fcf-4bc6-97de-b83dca451d2b}, !- Handle
+  Dehumidifying Setpoint Schedule Winter Design Day, !- Name
+  {0d3da6b9-e539-400a-a73a-a415fe186de3}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  24,                                     !- Hour 1
+  0,                                      !- Minute 1
+  70;                                     !- Value Until Time 1
+
+OS:Schedule:Day,
+  {0d59cf7b-0d5e-4dbb-8416-013ed442f031}, !- Handle
+  Dehumidifying Setpoint Schedule Summer Design Day, !- Name
+  {0d3da6b9-e539-400a-a73a-a415fe186de3}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  24,                                     !- Hour 1
+  0,                                      !- Minute 1
+  70;                                     !- Value Until Time 1
+
+OS:SpaceInfiltration:DesignFlowRate,
+  {b8d39f50-6ea1-4f3e-9b58-24527a2de557}, !- Handle
+  sp-100room1 Infiltration,               !- Name
+  {a1b5c80c-0fb3-47f9-a02e-3ee6f9a31d4a}, !- Space or SpaceType Name
+  ,                                       !- Schedule Name
+  AirChanges/Hour,                        !- Design Flow Rate Calculation Method
+  ,                                       !- Design Flow Rate {m3/s}
+  ,                                       !- Flow per Space Floor Area {m3/s-m2}
+  ,                                       !- Flow per Exterior Surface Area {m3/s-m2}
+  0.5,                                    !- Air Changes per Hour {1/hr}
+  1,                                      !- Constant Term Coefficient
+  0,                                      !- Temperature Term Coefficient
+  0,                                      !- Velocity Term Coefficient
+  0;                                      !- Velocity Squared Term Coefficient
+
+OS:People:Definition,
+  {3f86a179-767b-485d-902b-3415222b4234}, !- Handle
+  sp-100room1 People Def,                 !- Name
+  People,                                 !- Number of People Calculation Method
+  2.5,                                    !- Number of People {people}
+  ,                                       !- People per Space Floor Area {person/m2}
+  ,                                       !- Space Floor Area per Person {m2/person}
+  0.3;                                    !- Fraction Radiant
+
+OS:Schedule:Ruleset,
+  {4ac992d2-2977-492a-ac9d-4dac3d380d27}, !- Handle
+  sp-100room1 Activity Sch,               !- Name
+  {49e3b663-c3e6-4b91-ad52-2da33f12d0e7}, !- Schedule Type Limits Name
+  {73348d96-7498-4590-9b2d-8835f84c0528}; !- Default Day Schedule Name
+
+OS:Schedule:Day,
+  {73348d96-7498-4590-9b2d-8835f84c0528}, !- Handle
+  sp-100room1 Activity Default,           !- Name
+  {49e3b663-c3e6-4b91-ad52-2da33f12d0e7}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  24,                                     !- Hour 1
+  0,                                      !- Minute 1
+  120;                                    !- Value Until Time 1
+
+OS:Schedule:Ruleset,
+  {c78dd149-ccc9-47a2-b48b-924f28dc84ba}, !- Handle
+  sp-100room1 Number of People Sch,       !- Name
+  {3983a797-90a7-44b5-bc52-0f653a4b729e}, !- Schedule Type Limits Name
+  {7be504dd-cd6f-4f47-8eb6-842161ba5028}; !- Default Day Schedule Name
+
+OS:Schedule:Day,
+  {7be504dd-cd6f-4f47-8eb6-842161ba5028}, !- Handle
+  sp-100room1 Number of People Default,   !- Name
+  {3983a797-90a7-44b5-bc52-0f653a4b729e}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  24,                                     !- Hour 1
+  0,                                      !- Minute 1
+  1;                                      !- Value Until Time 1
+
+OS:People,
+  {0284b3a7-a47a-40cc-ae3a-e14f92c3bc23}, !- Handle
+  sp-100room1 People,                     !- Name
+  {3f86a179-767b-485d-902b-3415222b4234}, !- People Definition Name
+  {a1b5c80c-0fb3-47f9-a02e-3ee6f9a31d4a}, !- Space or SpaceType Name
+  {c78dd149-ccc9-47a2-b48b-924f28dc84ba}, !- Number of People Schedule Name
+  {4ac992d2-2977-492a-ac9d-4dac3d380d27}, !- Activity Level Schedule Name
+  ,                                       !- Surface Name/Angle Factor List Name
+  ,                                       !- Work Efficiency Schedule Name
+  ,                                       !- Clothing Insulation Schedule Name
+  ,                                       !- Air Velocity Schedule Name
+  1;                                      !- Multiplier
+
+OS:Schedule:Ruleset,
+  {73ec4539-df26-48f2-8bb7-2ccaf6614ef0}, !- Handle
+  sp-100room1 Heating Sch,                !- Name
+  {c5f06ede-efe6-47b9-949c-b3e40c696e2c}, !- Schedule Type Limits Name
+  {86addc6e-a696-47f6-a1b2-a1154dddaba5}; !- Default Day Schedule Name
+
+OS:Schedule:Day,
+  {86addc6e-a696-47f6-a1b2-a1154dddaba5}, !- Handle
+  sp-100room1 Heating Default,            !- Name
+  {c5f06ede-efe6-47b9-949c-b3e40c696e2c}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  24,                                     !- Hour 1
+  0,                                      !- Minute 1
+  21.1111111111111;                       !- Value Until Time 1
+
+OS:ScheduleTypeLimits,
+  {c5f06ede-efe6-47b9-949c-b3e40c696e2c}, !- Handle
+  Temperature,                            !- Name
+  ,                                       !- Lower Limit Value
+  ,                                       !- Upper Limit Value
+  Continuous,                             !- Numeric Type
+  Temperature;                            !- Unit Type
+
+OS:Schedule:Ruleset,
+  {9b9be85c-243d-45ab-8141-4c48197fc156}, !- Handle
+  sp-100room1 Cooling Sch,                !- Name
+  {c5f06ede-efe6-47b9-949c-b3e40c696e2c}, !- Schedule Type Limits Name
+  {be026808-59d9-4f1e-9a2b-bda4d26cb4a4}; !- Default Day Schedule Name
+
+OS:Schedule:Day,
+  {be026808-59d9-4f1e-9a2b-bda4d26cb4a4}, !- Handle
+  sp-100room1 Cooling Default,            !- Name
+  {c5f06ede-efe6-47b9-949c-b3e40c696e2c}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  24,                                     !- Hour 1
+  0,                                      !- Minute 1
+  23.8888888888889;                       !- Value Until Time 1
+
+OS:SpaceInfiltration:DesignFlowRate,
+  {17ee1f93-6687-4be1-bef1-fbb5662d72b9}, !- Handle
+  sp-101room2 Infiltration,               !- Name
+  {3ec2aba4-8486-47fc-b3d2-13c55af42a06}, !- Space or SpaceType Name
+  ,                                       !- Schedule Name
+  AirChanges/Hour,                        !- Design Flow Rate Calculation Method
+  ,                                       !- Design Flow Rate {m3/s}
+  ,                                       !- Flow per Space Floor Area {m3/s-m2}
+  ,                                       !- Flow per Exterior Surface Area {m3/s-m2}
+  0.5,                                    !- Air Changes per Hour {1/hr}
+  1,                                      !- Constant Term Coefficient
+  0,                                      !- Temperature Term Coefficient
+  0,                                      !- Velocity Term Coefficient
+  0;                                      !- Velocity Squared Term Coefficient
+
+OS:People:Definition,
+  {2f6bfe4e-bac8-4681-8d66-fa96b4e3f41d}, !- Handle
+  sp-101room2 People Def,                 !- Name
+  People,                                 !- Number of People Calculation Method
+  2.5,                                    !- Number of People {people}
+  ,                                       !- People per Space Floor Area {person/m2}
+  ,                                       !- Space Floor Area per Person {m2/person}
+  0.3;                                    !- Fraction Radiant
+
+OS:Schedule:Ruleset,
+  {4622083b-cc70-4009-9de9-65f54bba343a}, !- Handle
+  sp-101room2 Activity Sch,               !- Name
+  {49e3b663-c3e6-4b91-ad52-2da33f12d0e7}, !- Schedule Type Limits Name
+  {16343135-db63-4aac-83f4-70aae770890d}; !- Default Day Schedule Name
+
+OS:Schedule:Day,
+  {16343135-db63-4aac-83f4-70aae770890d}, !- Handle
+  sp-101room2 Activity Default,           !- Name
+  {49e3b663-c3e6-4b91-ad52-2da33f12d0e7}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  24,                                     !- Hour 1
+  0,                                      !- Minute 1
+  120;                                    !- Value Until Time 1
+
+OS:Schedule:Ruleset,
+  {2757b6e8-21f3-4365-93be-4e63d77668f0}, !- Handle
+  sp-101room2 Number of People Sch,       !- Name
+  {3983a797-90a7-44b5-bc52-0f653a4b729e}, !- Schedule Type Limits Name
+  {f0e9c643-40e1-4ba1-bd00-5696d5849418}; !- Default Day Schedule Name
+
+OS:Schedule:Day,
+  {f0e9c643-40e1-4ba1-bd00-5696d5849418}, !- Handle
+  sp-101room2 Number of People Default,   !- Name
+  {3983a797-90a7-44b5-bc52-0f653a4b729e}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  24,                                     !- Hour 1
+  0,                                      !- Minute 1
+  1;                                      !- Value Until Time 1
+
+OS:People,
+  {a7aa0c52-2e5d-4c0c-b165-40fbd0ca04be}, !- Handle
+  sp-101room2 People,                     !- Name
+  {2f6bfe4e-bac8-4681-8d66-fa96b4e3f41d}, !- People Definition Name
+  {3ec2aba4-8486-47fc-b3d2-13c55af42a06}, !- Space or SpaceType Name
+  {2757b6e8-21f3-4365-93be-4e63d77668f0}, !- Number of People Schedule Name
+  {4622083b-cc70-4009-9de9-65f54bba343a}, !- Activity Level Schedule Name
+  ,                                       !- Surface Name/Angle Factor List Name
+  ,                                       !- Work Efficiency Schedule Name
+  ,                                       !- Clothing Insulation Schedule Name
+  ,                                       !- Air Velocity Schedule Name
+  1;                                      !- Multiplier
+
+OS:Schedule:Ruleset,
+  {b9db612d-3661-4304-a258-4e7c6a65d788}, !- Handle
+  sp-101room2 Heating Sch,                !- Name
+  {c5f06ede-efe6-47b9-949c-b3e40c696e2c}, !- Schedule Type Limits Name
+  {7d6a0152-2428-44f5-b2b2-e7600f5c1222}; !- Default Day Schedule Name
+
+OS:Schedule:Day,
+  {7d6a0152-2428-44f5-b2b2-e7600f5c1222}, !- Handle
+  sp-101room2 Heating Default,            !- Name
+  {c5f06ede-efe6-47b9-949c-b3e40c696e2c}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  24,                                     !- Hour 1
+  0,                                      !- Minute 1
+  21.1111111111111;                       !- Value Until Time 1
+
+OS:Schedule:Ruleset,
+  {764a1d61-c3cf-47f4-b0e4-27dd5d239afc}, !- Handle
+  sp-101room2 Cooling Sch,                !- Name
+  {c5f06ede-efe6-47b9-949c-b3e40c696e2c}, !- Schedule Type Limits Name
+  {818e9f5c-23e8-44c9-816d-f73e622d413c}; !- Default Day Schedule Name
+
+OS:Schedule:Day,
+  {818e9f5c-23e8-44c9-816d-f73e622d413c}, !- Handle
+  sp-101room2 Cooling Default,            !- Name
+  {c5f06ede-efe6-47b9-949c-b3e40c696e2c}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  24,                                     !- Hour 1
+  0,                                      !- Minute 1
+  23.8888888888889;                       !- Value Until Time 1
+
+OS:Construction,
+  {f6b61458-c126-40c0-9754-bf33da18bce1}, !- Handle
+  op-3 Custom R-Value 5.0 Const,          !- Name
+  ,                                       !- Surface Rendering Name
+  {a4e79169-9e64-4ccf-9425-42f1028891c0}; !- Layer 1
+
+OS:AdditionalProperties,
+  {b9a536f3-98bf-4f7b-9937-266d8ed5646f}, !- Handle
+  {f6b61458-c126-40c0-9754-bf33da18bce1}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  win-1,                                  !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  Pilkington RW33 double glazing (1/4 in + 1/4 in); !- Feature Value 2
+
+OS:WindowMaterial:SimpleGlazingSystem,
+  {a4e79169-9e64-4ccf-9425-42f1028891c0}, !- Handle
+  op-3 Custom U-Factor 0.2 Mat,           !- Name
+  1.1356538527057,                        !- U-Factor {W/m2-K}
+  0.4;                                    !- Solar Heat Gain Coefficient
+
+OS:Construction,
+  {67352873-f5bd-48eb-a35c-92cbf6da07e2}, !- Handle
+  op-5 Custom R-Value 5.0 Const,          !- Name
+  ,                                       !- Surface Rendering Name
+  {3c1fa04c-23fc-47eb-ad89-11c1b1f42f6b}; !- Layer 1
+
+OS:AdditionalProperties,
+  {2ea44c49-1ddf-4bc7-8a03-9e66633ac438}, !- Handle
+  {67352873-f5bd-48eb-a35c-92cbf6da07e2}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  win-1,                                  !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  Pilkington RW33 double glazing (1/4 in + 1/4 in); !- Feature Value 2
+
+OS:WindowMaterial:SimpleGlazingSystem,
+  {3c1fa04c-23fc-47eb-ad89-11c1b1f42f6b}, !- Handle
+  op-5 Custom U-Factor 0.2 Mat,           !- Name
+  1.1356538527057,                        !- U-Factor {W/m2-K}
+  0.4;                                    !- Solar Heat Gain Coefficient
+
+OS:Construction,
+  {6dfeeda3-e6a7-4c28-b1e8-6571304e5017}, !- Handle
+  op-4 Custom R-Value 10.0 Const,         !- Name
+  ,                                       !- Surface Rendering Name
+  {1799bce5-86bb-4ace-a923-704fc72c784d}; !- Layer 1
+
+OS:AdditionalProperties,
+  {f57541d2-1a3b-4378-aa90-03b8f9c54da4}, !- Handle
+  {6dfeeda3-e6a7-4c28-b1e8-6571304e5017}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  con-wooden,                             !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  Wooden;                                 !- Feature Value 2
+
+OS:WindowMaterial:SimpleGlazingSystem,
+  {1799bce5-86bb-4ace-a923-704fc72c784d}, !- Handle
+  op-4 Custom U-Factor 0.1 Mat,           !- Name
+  0.567826926352848,                      !- U-Factor {W/m2-K}
+  0.4;                                    !- Solar Heat Gain Coefficient
+
+OS:Construction,
+  {6889bbb6-4548-4367-802f-3634c2ff1211}, !- Handle
+  op-1 Custom R-Value 10.0 Const,         !- Name
+  ,                                       !- Surface Rendering Name
+  {74fdb1cc-30a4-4df0-8f1f-45bc2ea57495}; !- Layer 1
+
+OS:AdditionalProperties,
+  {4ed80b42-17f4-4c4c-9bda-1f423c08f095}, !- Handle
+  {6889bbb6-4548-4367-802f-3634c2ff1211}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  con-wooden,                             !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  Wooden;                                 !- Feature Value 2
+
+OS:WindowMaterial:SimpleGlazingSystem,
+  {74fdb1cc-30a4-4df0-8f1f-45bc2ea57495}, !- Handle
+  op-1 Custom U-Factor 0.1 Mat,           !- Name
+  0.567826926352848,                      !- U-Factor {W/m2-K}
+  0.4;                                    !- Solar Heat Gain Coefficient
+
+OS:Construction,
+  {f6b8efed-cd34-4d6d-93a8-4e9576daaaeb}, !- Handle
+  op-2 Custom R-Value 5.0 Const,          !- Name
+  ,                                       !- Surface Rendering Name
+  {c1a5ac7e-df25-486b-9f75-02d8c28b3ddd}; !- Layer 1
+
+OS:AdditionalProperties,
+  {92234fc4-467f-48b4-ab92-53180177ec97}, !- Handle
+  {f6b8efed-cd34-4d6d-93a8-4e9576daaaeb}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  con-wooden,                             !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  Wooden;                                 !- Feature Value 2
+
+OS:WindowMaterial:SimpleGlazingSystem,
+  {c1a5ac7e-df25-486b-9f75-02d8c28b3ddd}, !- Handle
+  op-2 Custom U-Factor 0.2 Mat,           !- Name
+  1.1356538527057,                        !- U-Factor {W/m2-K}
+  0.4;                                    !- Solar Heat Gain Coefficient
+
+OS:Construction,
+  {9b682739-8e89-41b4-8cad-fd53fb667c5d}, !- Handle
+  su-b-100-e-f-8 Custom R-Value 5.0 Const, !- Name
+  ,                                       !- Surface Rendering Name
+  {7cbca397-fc94-4d7b-aded-b13e04230801}, !- Layer 1
+  {6b004b87-6595-410c-841c-3a0b7bde7ea4}, !- Layer 2
+  {c9d105b7-5ff3-49a6-b684-4e97ee6a228c}, !- Layer 3
+  {c7b487c2-ae29-4071-ab59-512cd43de31a}; !- Layer 4
+
+OS:AdditionalProperties,
+  {0836908e-5408-40f9-a8f0-d06b4afd4b84}, !- Handle
+  {9b682739-8e89-41b4-8cad-fd53fb667c5d}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  con-slabedgeuninsulated,                !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  Slab edge uninsulated;                  !- Feature Value 2
+
+OS:Material:NoMass,
+  {7cbca397-fc94-4d7b-aded-b13e04230801}, !- Handle
+  su-b-100-e-f-8 Custom R-Value 5.0 Mat,  !- Name
+  Smooth,                                 !- Roughness
+  0.88055;                                !- Thermal Resistance {m2-K/W}
+
+OS:Construction,
+  {0fac6cf7-c952-412f-9f4f-e744ce7b1b81}, !- Handle
+  su-s-101-e-w-3 Custom R-Value 5.0 Const, !- Name
+  ,                                       !- Surface Rendering Name
+  {78dc1652-2be5-4684-aa30-c346327224eb}, !- Layer 1
+  {8eba0d2c-34c6-4635-915a-a4639de46d38}, !- Layer 2
+  {4ad34534-7ba6-4d3a-85c8-579e974af5ed}, !- Layer 3
+  {01839cc8-af22-40d4-aadd-91e6921596d4}, !- Layer 4
+  {903d62d1-c007-4222-a440-ad96cc6269bc}; !- Layer 5
+
+OS:AdditionalProperties,
+  {052a02a6-b20c-44dd-8fe6-ed7f9d6f77c0}, !- Handle
+  {0fac6cf7-c952-412f-9f4f-e744ce7b1b81}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  con-r-13woodframewall,                  !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  R-13 wood frame wall;                   !- Feature Value 2
+
+OS:Material:NoMass,
+  {78dc1652-2be5-4684-aa30-c346327224eb}, !- Handle
+  su-s-101-e-w-3 Custom R-Value 5.0 Mat,  !- Name
+  Smooth,                                 !- Roughness
+  0.88055;                                !- Thermal Resistance {m2-K/W}
+
+OS:Construction,
+  {a009f8c7-e0a2-44cc-9df6-e97577a4df83}, !- Handle
+  su-b-101-e-f-7 Custom R-Value 5.0 Const, !- Name
+  ,                                       !- Surface Rendering Name
+  {6e45aa97-0b61-4442-8696-be0d358f4f2a}, !- Layer 1
+  {6b004b87-6595-410c-841c-3a0b7bde7ea4}, !- Layer 2
+  {c9d105b7-5ff3-49a6-b684-4e97ee6a228c}, !- Layer 3
+  {c7b487c2-ae29-4071-ab59-512cd43de31a}; !- Layer 4
+
+OS:AdditionalProperties,
+  {35a82cba-809d-48c8-8a44-0a7199042429}, !- Handle
+  {a009f8c7-e0a2-44cc-9df6-e97577a4df83}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  con-slabedgeuninsulated,                !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  Slab edge uninsulated;                  !- Feature Value 2
+
+OS:Material:NoMass,
+  {6e45aa97-0b61-4442-8696-be0d358f4f2a}, !- Handle
+  su-b-101-e-f-7 Custom R-Value 5.0 Mat,  !- Name
+  Smooth,                                 !- Roughness
+  0.88055;                                !- Thermal Resistance {m2-K/W}
+
+OS:Construction,
+  {c01971de-fbe0-4907-8144-d53bf165804d}, !- Handle
+  su-e-100-e-w-5 Custom R-Value 5.0 Const, !- Name
+  ,                                       !- Surface Rendering Name
+  {d9c889eb-c301-4f7c-b76e-6a6680f83540}, !- Layer 1
+  {8eba0d2c-34c6-4635-915a-a4639de46d38}, !- Layer 2
+  {4ad34534-7ba6-4d3a-85c8-579e974af5ed}, !- Layer 3
+  {01839cc8-af22-40d4-aadd-91e6921596d4}, !- Layer 4
+  {903d62d1-c007-4222-a440-ad96cc6269bc}; !- Layer 5
+
+OS:AdditionalProperties,
+  {894f5db4-a3a4-4290-a05a-983c37f36394}, !- Handle
+  {c01971de-fbe0-4907-8144-d53bf165804d}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  con-r-13woodframewall,                  !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  R-13 wood frame wall;                   !- Feature Value 2
+
+OS:Material:NoMass,
+  {d9c889eb-c301-4f7c-b76e-6a6680f83540}, !- Handle
+  su-e-100-e-w-5 Custom R-Value 5.0 Mat,  !- Name
+  Smooth,                                 !- Roughness
+  0.88055;                                !- Thermal Resistance {m2-K/W}
+
+OS:Construction,
+  {5c28a60b-3bed-4551-8537-1feca7ba5229}, !- Handle
+  su-e-101-e-w-4 Custom R-Value 5.0 Const, !- Name
+  ,                                       !- Surface Rendering Name
+  {36469d6a-7684-4c23-b565-efdfdcf5b89f}, !- Layer 1
+  {8eba0d2c-34c6-4635-915a-a4639de46d38}, !- Layer 2
+  {4ad34534-7ba6-4d3a-85c8-579e974af5ed}, !- Layer 3
+  {01839cc8-af22-40d4-aadd-91e6921596d4}, !- Layer 4
+  {903d62d1-c007-4222-a440-ad96cc6269bc}; !- Layer 5
+
+OS:AdditionalProperties,
+  {232724d5-9c8f-42c5-a0a8-223e1ca8f061}, !- Handle
+  {5c28a60b-3bed-4551-8537-1feca7ba5229}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  con-r-13woodframewall,                  !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  R-13 wood frame wall;                   !- Feature Value 2
+
+OS:Material:NoMass,
+  {36469d6a-7684-4c23-b565-efdfdcf5b89f}, !- Handle
+  su-e-101-e-w-4 Custom R-Value 5.0 Mat,  !- Name
+  Smooth,                                 !- Roughness
+  0.88055;                                !- Thermal Resistance {m2-K/W}
+
+OS:Construction,
+  {bb152ca2-b23a-4df1-b7c8-3aeded7be827}, !- Handle
+  su-n-100-e-w-6 Custom R-Value 5.0 Const, !- Name
+  ,                                       !- Surface Rendering Name
+  {6cdccc02-d93a-44a2-8125-ccdf64bcc27c}, !- Layer 1
+  {8eba0d2c-34c6-4635-915a-a4639de46d38}, !- Layer 2
+  {4ad34534-7ba6-4d3a-85c8-579e974af5ed}, !- Layer 3
+  {01839cc8-af22-40d4-aadd-91e6921596d4}, !- Layer 4
+  {903d62d1-c007-4222-a440-ad96cc6269bc}; !- Layer 5
+
+OS:AdditionalProperties,
+  {f1536231-6416-4013-9efc-579aa14fc17c}, !- Handle
+  {bb152ca2-b23a-4df1-b7c8-3aeded7be827}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  con-r-13woodframewall,                  !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  R-13 wood frame wall;                   !- Feature Value 2
+
+OS:Material:NoMass,
+  {6cdccc02-d93a-44a2-8125-ccdf64bcc27c}, !- Handle
+  su-n-100-e-w-6 Custom R-Value 5.0 Mat,  !- Name
+  Smooth,                                 !- Roughness
+  0.88055;                                !- Thermal Resistance {m2-K/W}
+
+OS:Construction,
+  {9a758d42-ef79-4d76-b902-dee38edc1d1f}, !- Handle
+  su-t-101-e-r-13 Custom R-Value 5.0 Const, !- Name
+  ,                                       !- Surface Rendering Name
+  {1274c4c5-9d43-43c2-9e0f-254a084ced05}, !- Layer 1
+  {8eba0d2c-34c6-4635-915a-a4639de46d38}, !- Layer 2
+  {4a205d84-820e-4181-a4e4-ed58696723a4}, !- Layer 3
+  {4a205d84-820e-4181-a4e4-ed58696723a4}, !- Layer 4
+  {4ad34534-7ba6-4d3a-85c8-579e974af5ed}; !- Layer 5
+
+OS:AdditionalProperties,
+  {25486b78-4480-438b-8e3e-b3f3e4285fff}, !- Handle
+  {9a758d42-ef79-4d76-b902-dee38edc1d1f}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  con-r-20overroofdeck-coolroof,          !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  R-20 over roof deck - cool roof;        !- Feature Value 2
+
+OS:Material:NoMass,
+  {1274c4c5-9d43-43c2-9e0f-254a084ced05}, !- Handle
+  su-t-101-e-r-13 Custom R-Value 5.0 Mat, !- Name
+  Smooth,                                 !- Roughness
+  0.88055;                                !- Thermal Resistance {m2-K/W}
+
+OS:Construction,
+  {fcece4bc-f9eb-4b60-aeba-03d394bce704}, !- Handle
+  su-n-101-100-i-w-15 Custom R-Value 5.0 Const, !- Name
+  ,                                       !- Surface Rendering Name
+  {8f07967b-3784-43f9-bdcd-1a1f52f61adf}, !- Layer 1
+  {a82ff181-54c2-4357-a4c8-67831a2ac4b9}, !- Layer 2
+  {903d62d1-c007-4222-a440-ad96cc6269bc}; !- Layer 3
+
+OS:AdditionalProperties,
+  {a67b2f10-f940-44f0-a19a-318eae64d89d}, !- Handle
+  {fcece4bc-f9eb-4b60-aeba-03d394bce704}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  con-r-0metalframewall,                  !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  R-0 metal frame wall;                   !- Feature Value 2
+
+OS:Material:NoMass,
+  {8f07967b-3784-43f9-bdcd-1a1f52f61adf}, !- Handle
+  su-n-101-100-i-w-15 Custom R-Value 5.0 Mat, !- Name
+  Smooth,                                 !- Roughness
+  0.88055;                                !- Thermal Resistance {m2-K/W}
+
+OS:Construction,
+  {ae075de4-1341-411b-9349-441e2e2d94e0}, !- Handle
+  su-t-100-e-r-11 Custom R-Value 5.0 Const, !- Name
+  ,                                       !- Surface Rendering Name
+  {bc8e5f1f-d197-430a-b120-f5cb5b314807}, !- Layer 1
+  {8eba0d2c-34c6-4635-915a-a4639de46d38}, !- Layer 2
+  {4a205d84-820e-4181-a4e4-ed58696723a4}, !- Layer 3
+  {4a205d84-820e-4181-a4e4-ed58696723a4}, !- Layer 4
+  {4ad34534-7ba6-4d3a-85c8-579e974af5ed}; !- Layer 5
+
+OS:AdditionalProperties,
+  {fdf64643-787f-4be8-8185-420e8360c8d3}, !- Handle
+  {ae075de4-1341-411b-9349-441e2e2d94e0}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  con-r-20overroofdeck-coolroof,          !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  R-20 over roof deck - cool roof;        !- Feature Value 2
+
+OS:Material:NoMass,
+  {bc8e5f1f-d197-430a-b120-f5cb5b314807}, !- Handle
+  su-t-100-e-r-11 Custom R-Value 5.0 Mat, !- Name
+  Smooth,                                 !- Roughness
+  0.88055;                                !- Thermal Resistance {m2-K/W}
+
+OS:Construction,
+  {1b691d5c-d21f-4de2-a854-1aa586ab2e0c}, !- Handle
+  su-t-101-e-r-12 Custom R-Value 5.0 Const, !- Name
+  ,                                       !- Surface Rendering Name
+  {8088c439-8ec5-44ae-8a40-ccf72de0ae00}, !- Layer 1
+  {8eba0d2c-34c6-4635-915a-a4639de46d38}, !- Layer 2
+  {4a205d84-820e-4181-a4e4-ed58696723a4}, !- Layer 3
+  {4a205d84-820e-4181-a4e4-ed58696723a4}, !- Layer 4
+  {4ad34534-7ba6-4d3a-85c8-579e974af5ed}; !- Layer 5
+
+OS:AdditionalProperties,
+  {2bcb4563-2192-4705-93fc-3582590ee066}, !- Handle
+  {1b691d5c-d21f-4de2-a854-1aa586ab2e0c}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  con-r-20overroofdeck-coolroof,          !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  R-20 over roof deck - cool roof;        !- Feature Value 2
+
+OS:Material:NoMass,
+  {8088c439-8ec5-44ae-8a40-ccf72de0ae00}, !- Handle
+  su-t-101-e-r-12 Custom R-Value 5.0 Mat, !- Name
+  Smooth,                                 !- Roughness
+  0.88055;                                !- Thermal Resistance {m2-K/W}
+
+OS:Construction,
+  {9c65ce6f-2523-4bbc-a396-910ea099c84e}, !- Handle
+  su-t-100-e-r-14 Custom R-Value 5.0 Const, !- Name
+  ,                                       !- Surface Rendering Name
+  {afa84705-eec7-4ccd-9f6c-904c20e55fdf}, !- Layer 1
+  {8eba0d2c-34c6-4635-915a-a4639de46d38}, !- Layer 2
+  {4a205d84-820e-4181-a4e4-ed58696723a4}, !- Layer 3
+  {4a205d84-820e-4181-a4e4-ed58696723a4}, !- Layer 4
+  {4ad34534-7ba6-4d3a-85c8-579e974af5ed}; !- Layer 5
+
+OS:AdditionalProperties,
+  {60d0149d-68de-419d-ad84-efb7f5a72cbd}, !- Handle
+  {9c65ce6f-2523-4bbc-a396-910ea099c84e}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  con-r-20overroofdeck-coolroof,          !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  R-20 over roof deck - cool roof;        !- Feature Value 2
+
+OS:Material:NoMass,
+  {afa84705-eec7-4ccd-9f6c-904c20e55fdf}, !- Handle
+  su-t-100-e-r-14 Custom R-Value 5.0 Mat, !- Name
+  Smooth,                                 !- Roughness
+  0.88055;                                !- Thermal Resistance {m2-K/W}
+
+OS:Construction,
+  {17438d0f-d29b-4af8-8c67-80ff8f382ffb}, !- Handle
+  su-t-100-e-r-9 Custom R-Value 5.0 Const, !- Name
+  ,                                       !- Surface Rendering Name
+  {e12ccada-1e54-46db-8d99-7967325e7e26}, !- Layer 1
+  {8eba0d2c-34c6-4635-915a-a4639de46d38}, !- Layer 2
+  {4a205d84-820e-4181-a4e4-ed58696723a4}, !- Layer 3
+  {4a205d84-820e-4181-a4e4-ed58696723a4}, !- Layer 4
+  {4ad34534-7ba6-4d3a-85c8-579e974af5ed}; !- Layer 5
+
+OS:AdditionalProperties,
+  {7c879ff7-6258-4518-aa55-6d95eae34318}, !- Handle
+  {17438d0f-d29b-4af8-8c67-80ff8f382ffb}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  con-r-20overroofdeck-coolroof,          !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  R-20 over roof deck - cool roof;        !- Feature Value 2
+
+OS:Material:NoMass,
+  {e12ccada-1e54-46db-8d99-7967325e7e26}, !- Handle
+  su-t-100-e-r-9 Custom R-Value 5.0 Mat,  !- Name
+  Smooth,                                 !- Roughness
+  0.88055;                                !- Thermal Resistance {m2-K/W}
+
+OS:Construction,
+  {3712add5-a1c4-4d3e-89ff-1685c81e4384}, !- Handle
+  su-t-101-e-r-10 Custom R-Value 5.0 Const, !- Name
+  ,                                       !- Surface Rendering Name
+  {110cb385-8846-4726-aa27-6c5df6adc790}, !- Layer 1
+  {8eba0d2c-34c6-4635-915a-a4639de46d38}, !- Layer 2
+  {4a205d84-820e-4181-a4e4-ed58696723a4}, !- Layer 3
+  {4a205d84-820e-4181-a4e4-ed58696723a4}, !- Layer 4
+  {4ad34534-7ba6-4d3a-85c8-579e974af5ed}; !- Layer 5
+
+OS:AdditionalProperties,
+  {4e2f7a2d-66eb-4e09-8892-9f3a5c0922bf}, !- Handle
+  {3712add5-a1c4-4d3e-89ff-1685c81e4384}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  con-r-20overroofdeck-coolroof,          !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  R-20 over roof deck - cool roof;        !- Feature Value 2
+
+OS:Material:NoMass,
+  {110cb385-8846-4726-aa27-6c5df6adc790}, !- Handle
+  su-t-101-e-r-10 Custom R-Value 5.0 Mat, !- Name
+  Smooth,                                 !- Roughness
+  0.88055;                                !- Thermal Resistance {m2-K/W}
+
+OS:Construction,
+  {40716bc9-163d-4740-b3f7-6c038718954d}, !- Handle
+  su-w-100-e-w-2 Custom R-Value 5.0 Const, !- Name
+  ,                                       !- Surface Rendering Name
+  {8a857710-2f30-49e1-95f8-efa3cc5fef4c}, !- Layer 1
+  {8eba0d2c-34c6-4635-915a-a4639de46d38}, !- Layer 2
+  {4ad34534-7ba6-4d3a-85c8-579e974af5ed}, !- Layer 3
+  {01839cc8-af22-40d4-aadd-91e6921596d4}, !- Layer 4
+  {903d62d1-c007-4222-a440-ad96cc6269bc}; !- Layer 5
+
+OS:AdditionalProperties,
+  {3d3ef81a-2711-48f0-a080-230a4892aab2}, !- Handle
+  {40716bc9-163d-4740-b3f7-6c038718954d}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  con-r-13woodframewall,                  !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  R-13 wood frame wall;                   !- Feature Value 2
+
+OS:Material:NoMass,
+  {8a857710-2f30-49e1-95f8-efa3cc5fef4c}, !- Handle
+  su-w-100-e-w-2 Custom R-Value 5.0 Mat,  !- Name
+  Smooth,                                 !- Roughness
+  0.88055;                                !- Thermal Resistance {m2-K/W}
+
+OS:Construction,
+  {e0421b03-d4e7-4739-81db-c586755b0137}, !- Handle
+  su-w-101-e-w-1 Custom R-Value 5.0 Const, !- Name
+  ,                                       !- Surface Rendering Name
+  {dbc1f5ce-0990-4e8c-a46d-c2486376e389}, !- Layer 1
+  {8eba0d2c-34c6-4635-915a-a4639de46d38}, !- Layer 2
+  {4ad34534-7ba6-4d3a-85c8-579e974af5ed}, !- Layer 3
+  {01839cc8-af22-40d4-aadd-91e6921596d4}, !- Layer 4
+  {903d62d1-c007-4222-a440-ad96cc6269bc}; !- Layer 5
+
+OS:AdditionalProperties,
+  {4ff2ba24-dad1-407f-9aca-b4ff968cc916}, !- Handle
+  {e0421b03-d4e7-4739-81db-c586755b0137}, !- Object Name
+  gbXMLId,                                !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  con-r-13woodframewall,                  !- Feature Value 1
+  displayName,                            !- Feature Name 2
+  String,                                 !- Feature Data Type 2
+  R-13 wood frame wall;                   !- Feature Value 2
+
+OS:Material:NoMass,
+  {dbc1f5ce-0990-4e8c-a46d-c2486376e389}, !- Handle
+  su-w-101-e-w-1 Custom R-Value 5.0 Mat,  !- Name
+  Smooth,                                 !- Roughness
+  0.88055;                                !- Thermal Resistance {m2-K/W}
+
+OS:RunPeriod,
+  {ae51f038-d392-4945-a246-632e7916251a}, !- Handle
+  Run Period 1,                           !- Name
+  1,                                      !- Begin Month
+  1,                                      !- Begin Day of Month
+  12,                                     !- End Month
+  31,                                     !- End Day of Month
+  ,                                       !- Use Weather File Holidays and Special Days
+  ,                                       !- Use Weather File Daylight Saving Period
+  ,                                       !- Apply Weekend Holiday Rule
+  ,                                       !- Use Weather File Rain Indicators
+  ,                                       !- Use Weather File Snow Indicators
+  ;                                       !- Number of Times Runperiod to be Repeated
+
+OS:Sizing:Parameters,
+  {0bf19e5e-fa7a-49bd-8aa1-3571ce1fa78d}, !- Handle
+  1,                                      !- Heating Sizing Factor
+  1;                                      !- Cooling Sizing Factor
+
+OS:SimulationControl,
+  {2b074ea5-77c8-492a-aa98-e5735075ea75}, !- Handle
+  Yes,                                    !- Do Zone Sizing Calculation
+  Yes,                                    !- Do System Sizing Calculation
+  Yes,                                    !- Do Plant Sizing Calculation
+  Yes,                                    !- Run Simulation for Sizing Periods
+  Yes,                                    !- Run Simulation for Weather File Run Periods
+  0.1,                                    !- Loads Convergence Tolerance Value {W}
+  0.5,                                    !- Temperature Convergence Tolerance Value {deltaC}
+  FullExterior,                           !- Solar Distribution
+  25,                                     !- Maximum Number of Warmup Days
+  6;                                      !- Minimum Number of Warmup Days
+
+OS:ConvergenceLimits,
+  {7f0e9a11-b66a-43d3-abd9-0fab9662f2a9}, !- Handle
+  1,                                      !- Minimum System Timestep {minutes}
+  25;                                     !- Maximum HVAC Iterations
+
+OS:WindowMaterial:SimpleGlazingSystem,
+  {57db8b14-c3bc-4ada-9da4-fdcb3eaa593a}, !- Handle
+  Window Material Simple Glazing System 1, !- Name
+  3.7642,                                 !- U-Factor {W/m2-K}
+  0.78,                                   !- Solar Heat Gain Coefficient
+  0.9;                                    !- Visible Transmittance
+
+OS:Construction,
+  {e771e45b-1d66-41c6-aa2a-454ade60ce93}, !- Handle
+  Construction 1,                         !- Name
+  ,                                       !- Surface Rendering Name
+  {57db8b14-c3bc-4ada-9da4-fdcb3eaa593a}; !- Layer 1
+
+OS:Output:SQLite,
+  {9188cb8d-d4bc-4533-8526-838cf5ecfa0c}, !- Handle
+  SimpleAndTabular,                       !- Option Type
+  None;                                   !- Unit Conversion for Tabular Data
+
+OS:Output:Table:SummaryReports,
+  {6f5ac041-38af-4711-b913-93f0e4b51d75}, !- Handle
+  AllSummaryAndSizingPeriod;              !- Report Name 1
+
+OS:OutputControl:Table:Style,
+  {4b7319a4-4a06-49d8-a05f-0307437d9f04}, !- Handle
+  XMLandHTML,                             !- Column Separator
+  InchPound;                              !- Unit Conversion
+

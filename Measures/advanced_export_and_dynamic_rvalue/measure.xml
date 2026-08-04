@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<measure>
+  <schema_version>3.0</schema_version>
+  <name>advanced_export_and_dynamic_rvalue</name>
+  <uid>735d4ad6-87e0-47b8-b118-28df80cc1b81</uid>
+  <version_id>1b2fb9ee-e25f-4aab-85dc-24751f80f14d</version_id>
+  <version_modified>2026-06-25T12:00:00Z</version_modified>
+  <xml_checksum>E0EE97D7</xml_checksum>
+  <class_name>AdvancedExportAndDynamicRvalue</class_name>
+  <display_name>Advanced Export and Dynamic RValue</display_name>
+  <description>Adds detailed room breakdown variables and handles dynamic R-value via EMS.</description>
+  <modeler_description></modeler_description>
+  <arguments>
+    <argument>
+      <name>dynamic_rvalue</name>
+      <display_name>Enable Dynamic R-Value</display_name>
+      <type>Boolean</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>false</default_value>
+      <choices>
+        <choice>
+          <value>true</value>
+          <display_name>true</display_name>
+        </choice>
+        <choice>
+          <value>false</value>
+          <display_name>false</display_name>
+        </choice>
+      </choices>
+    </argument>
+    <argument>
+      <name>equation</name>
+      <display_name>R-Value Equation or Array</display_name>
+      <type>String</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value></default_value>
+    </argument>
+  </arguments>
+  <outputs/>
+  <provenances/>
+  <tags>
+    <tag>Reporting.QAQC</tag>
+  </tags>
+  <attributes>
+    <attribute>
+      <name>Measure Type</name>
+      <value>ModelMeasure</value>
+      <datatype>string</datatype>
+    </attribute>
+  </attributes>
+  <files>
+    <file>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>E0EE97D7</checksum>
+    </file>
+  </files>
+</measure>

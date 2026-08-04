@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<measure>
+  <schema_version>3.1</schema_version>
+  <name>dynamic_rvalue_workspace</name>
+  <uid>12345678-1234-1234-1234-1234567890ab</uid>
+  <version_id>99c66023-4d93-4784-86e7-bf56388f658a</version_id>
+  <version_modified>2026-07-08T02:59:49Z</version_modified>
+  <xml_checksum>3666D6E1</xml_checksum>
+  <class_name>DynamicRvalueWorkspace</class_name>
+  <display_name>Dynamic R-Value Workspace Measure</display_name>
+  <description>Applies TemperatureDependentThermalConductivity to exterior envelope materials.</description>
+  <modeler_description>Injects native EnergyPlus TemperatureDependentThermalConductivity objects into the IDF.</modeler_description>
+  <arguments>
+    <argument>
+      <name>json_overrides</name>
+      <display_name>json_overrides</display_name>
+      <type>String</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>{}</default_value>
+    </argument>
+  </arguments>
+  <outputs />
+  <provenances />
+  <tags>
+    <tag>Envelope.Opaque</tag>
+  </tags>
+  <attributes>
+    <attribute>
+      <name>Measure Type</name>
+      <value>EnergyPlusMeasure</value>
+      <datatype>string</datatype>
+    </attribute>
+  </attributes>
+  <files>
+    <file>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>5402D136</checksum>
+    </file>
+  </files>
+</measure>

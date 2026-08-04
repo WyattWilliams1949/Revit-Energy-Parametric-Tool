@@ -1,0 +1,114 @@
+<Window x:Class="RevitAddin.DynamicMonolithicWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Generate Monolithic Thermal Element" Height="680" Width="1020"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="Btn">
+            <Setter Property="Height" Value="36"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Padding" Value="16,0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="6" Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True"><Setter Property="Background" Value="#3A6DB5"/></Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Label" x:Key="ColH">
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Generate Monolithic Thermal Wall"
+                   FontSize="18" FontFamily="Segoe UI Light" Margin="0,0,0,4"/>
+        <TextBlock Grid.Row="1" TextWrapping="Wrap" FontSize="12" Margin="0,0,0,14"
+                   Text="For each target element type, select a stud type and insulation type. A blended monolithic thermal material will be created and the element type updated."/>
+
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Margin="0,0,0,4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="220"/>
+                    <ColumnDefinition Width="24"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="24"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="80"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="1" Content="Target Element" Style="{StaticResource ColH}"/>
+                <Label Grid.Column="3" Content="Stud Type" Style="{StaticResource ColH}"/>
+                <Label Grid.Column="5" Content="Insulation / Blended Type" Style="{StaticResource ColH}"/>
+                <Label Grid.Column="6" Content="FF (%)" Style="{StaticResource ColH}"/>
+            </Grid>
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                <ItemsControl x:Name="icRows" Background="Transparent">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="0,2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="220"/>
+                                    <ColumnDefinition Width="24"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="24"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="80"/>
+                                </Grid.ColumnDefinitions>
+                                <CheckBox Grid.Column="0" IsChecked="{Binding IsSelected}" VerticalAlignment="Center"/>
+                                <TextBlock Grid.Column="1" Text="{Binding Name}"
+                                           VerticalAlignment="Center" TextTrimming="CharacterEllipsis"
+                                           ToolTip="{Binding Name}" FontFamily="Segoe UI"/>
+                                <ComboBox Grid.Column="3" ItemsSource="{Binding StudTypes}"
+                                          SelectedItem="{Binding StudType, Mode=TwoWay}"
+                                          IsEnabled="{Binding IsSelected}"/>
+                                <ComboBox Grid.Column="5" ItemsSource="{Binding InsTypes}"
+                                          SelectedItem="{Binding InsulationType, Mode=TwoWay}"
+                                          IsEnabled="{Binding IsSelected}"/>
+                                <TextBox Grid.Column="6" Text="{Binding FramingFactor, StringFormat=N1}"
+                                         VerticalContentAlignment="Center" Margin="2"
+                                         IsEnabled="{Binding IsSelected}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </Grid>
+
+        <TextBlock Grid.Row="3" x:Name="lblStatus" FontSize="11"
+                   Margin="0,8,0,4" TextWrapping="Wrap" Visibility="Collapsed"/>
+
+        <Grid Grid.Row="4" Margin="0,8,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="&lt; Back" Style="{StaticResource Btn}" Click="BtnBack_Click"/>
+            <Button Grid.Column="2" Content="Generate Elements" Style="{StaticResource Btn}" Click="BtnGenerate_Click"/>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Name>Parametric Energy Model</Name>
+    <Assembly>E:\Documents\AntigravityIDE\Revit Add-in\bin\Debug\EnergyParametricTool.dll</Assembly>
+    <AddInId>12345678-1234-1234-1234-1234567890ab</AddInId>
+    <FullClassName>EnergyParametricCommand</FullClassName>
+    <VendorId>ANTIGRAVITY</VendorId>
+    <VendorDescription>Parametric Energy Tools</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Name>MATLAB Mode Server</Name>
+    <Assembly>E:\Documents\AntigravityIDE\Revit Add-in\bin\Debug\EnergyParametricTool.dll</Assembly>
+    <AddInId>87654321-4321-4321-4321-ba0987654321</AddInId>
+    <FullClassName>MatlabModeCommand</FullClassName>
+    <VendorId>ANTIGRAVITY</VendorId>
+    <VendorDescription>Parametric Energy Tools - MATLAB Mode</VendorDescription>
+  </AddIn>
+</RevitAddIns>

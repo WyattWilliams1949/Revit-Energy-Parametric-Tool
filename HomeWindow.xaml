@@ -1,0 +1,46 @@
+<Window x:Class="RevitAddin.HomeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Parametric Energy + Wall Tools" Height="500" Width="400"
+        WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <StackPanel Margin="20" VerticalAlignment="Center">
+        <!-- Title and Theme Toggle -->
+        <Grid Margin="0,0,0,20">
+            <StackPanel>
+                <TextBlock Text="Parametric Energy Tool" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,5"/>
+                <TextBlock Text="+ Wall Material Tools" FontSize="14" HorizontalAlignment="Center"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- Energy Analysis -->
+        <TextBlock Text="Energy Analysis" FontSize="14" FontWeight="SemiBold" Margin="0,0,0,10"/>
+        
+        <Button x:Name="BtnAutoAnalysis" Content="Auto Analysis" Height="30" Margin="0,0,0,10"
+                Click="BtnAutoAnalysis_Click" ToolTip="Open the parametric energy simulation setup window"/>
+        
+        <Button x:Name="BtnPasteSettings" Content="Paste Saved Settings" Height="30" Margin="0,0,0,30"
+                Click="BtnPasteSettings_Click" ToolTip="Paste a cipher string from a previous Excel export to restore settings"/>
+
+        <!-- Wall Tools -->
+        <TextBlock Text="Wall Material Tools" FontSize="14" FontWeight="SemiBold" Margin="0,0,0,10"/>
+        
+        <Button x:Name="BtnReplaceWalls" Height="30" Margin="0,0,0,10"
+                Click="BtnReplaceWalls_Click" ToolTip="Split walls/floors/roofs into alternating stud and insulation segments">
+            <TextBlock Text="Replace Elements with Stud + Insulation"/>
+        </Button>
+        
+        <Button x:Name="BtnRValue" Height="30" Margin="0,0,0,10"
+                Click="BtnRValue_Click" ToolTip="Calculate effective whole-wall R-value accounting for framing factor and openings">
+            <TextBlock Text="Calculate Effective R-Value"/>
+        </Button>
+        
+        <Button x:Name="BtnMonolithic" Height="30" Margin="0,0,0,0"
+                Click="BtnMonolithic_Click" ToolTip="Generate a blended monolithic thermal material from stud + insulation data">
+            <TextBlock Text="Generate Monolithic Thermal Wall"/>
+        </Button>
+
+        <CheckBox x:Name="ChkDebugMode" Content="Debug Mode (Keep Simulation Files)" Margin="0,20,0,0"
+                  IsChecked="False" Checked="ChkDebugMode_Checked" Unchecked="ChkDebugMode_Unchecked"
+                  HorizontalAlignment="Center" ToolTip="If checked, simulation files will not be deleted after a successful run."/>
+    </StackPanel>
+</Window>

@@ -1,0 +1,421 @@
+<Window x:Class="RevitAddin.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:RevitAddin"
+        Title="Parametric Energy Simulation Config" Height="600" Width="800">
+    <Window.Resources>
+        <local:EnumDescriptionConverter x:Key="EnumDescriptionConverter" />
+        <local:EnumMatchToBooleanConverter x:Key="EnumMatchToBooleanConverter" />
+        <local:EnumMatchToVisibilityConverter x:Key="EnumMatchToVisibilityConverter" />
+        <local:EnumMatchToInverseVisibilityConverter x:Key="EnumMatchToInverseVisibilityConverter" />
+        <local:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+        <local:BoolToInverseVisibilityConverter x:Key="BoolToInverseVisibilityConverter" />
+        <local:InverseBoolConverter x:Key="InverseBoolConverter" />
+        
+        <DataTemplate x:Key="ProfileItemsControlTemplate">
+            <ItemsControl ItemsSource="{Binding}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="2">
+                            <TextBlock Text="{Binding HourLabel}" TextAlignment="Center" FontSize="10" Foreground="Gray"/>
+                            <TextBox Text="{Binding Value, UpdateSourceTrigger=PropertyChanged}" Width="32" TextAlignment="Center" Padding="0,2"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </DataTemplate>
+
+
+
+        <DataTemplate DataType="{x:Type local:SimulationVariable}">
+            <StackPanel Margin="20,5,0,5">
+                
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,5" Visibility="{Binding IsIndependentVariable, Converter={StaticResource BoolToVisibilityConverter}}">
+                    <TextBlock Text="Variable Name:" Margin="0,0,5,0" VerticalAlignment="Center" FontWeight="Bold"/>
+                    <TextBlock Text="{Binding Name}" VerticalAlignment="Center" FontWeight="Bold" Foreground="DodgerBlue"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                    <TextBlock Text="Property:" Margin="0,0,5,0" VerticalAlignment="Center" Width="60"/>
+                    <ComboBox ItemsSource="{Binding AvailableProperties}" SelectedItem="{Binding Property}" Width="150">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Converter={StaticResource EnumDescriptionConverter}}" />
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                </StackPanel>
+
+                <!-- Unheated Selection -->
+                <StackPanel Orientation="Vertical" Margin="10,0,0,5" Visibility="{Binding IsUnheatedProperty, Converter={StaticResource BoolToVisibilityConverter}}">
+                    <RadioButton Content="Not Included" IsChecked="{Binding IsUnheatedNotIncluded}" Margin="0,0,0,2"/>
+                    <RadioButton Content="Heated" IsChecked="{Binding IsUnheatedHeated}" Margin="0,0,0,2"/>
+                    <RadioButton Content="Not Heated" IsChecked="{Binding IsUnheatedNotHeated}" Margin="0,0,0,2"/>
+                    <RadioButton Content="Vary Heated and Unheated" IsChecked="{Binding IsUnheatedVary}" Margin="0,0,0,2"/>
+                </StackPanel>
+
+                <StackPanel Visibility="{Binding IsNotUnheatedProperty, Converter={StaticResource BoolToVisibilityConverter}}">
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,5"
+                            Visibility="{Binding IsRevitType, Converter={StaticResource BoolToInverseVisibilityConverter}}">
+                    <TextBlock Text="Units:" Margin="0,0,5,0" VerticalAlignment="Center" Width="60"/>
+                    <ComboBox ItemsSource="{Binding AvailableUnits}" SelectedItem="{Binding SelectedUnit}" Width="150"/>
+                </StackPanel>
+                <!-- For RevitType: Units row is replaced by a "Method" label but keeps the ComboBox -->
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,5"
+                            Visibility="{Binding IsRevitType, Converter={StaticResource BoolToVisibilityConverter}}">
+                    <TextBlock Text="Method:" Margin="0,0,5,0" VerticalAlignment="Center" Width="60"/>
+                    <ComboBox ItemsSource="{Binding AvailableUnits}" SelectedItem="{Binding SelectedUnit}" Width="150"/>
+                </StackPanel>
+                
+                <!-- Synthetic Weather Configuration -->
+                <StackPanel Orientation="Vertical" Margin="0,5,0,10" Visibility="{Binding IsSyntheticWeather, Converter={StaticResource BoolToVisibilityConverter}}">
+                    <TextBlock Text="Synthetic Weather Curve Definition:" FontWeight="Bold" Margin="0,0,0,5"/>
+                    <ItemsControl ItemsSource="{Binding SyntheticWeatherParams}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical" Margin="10,5,0,5">
+                                    <TextBlock Text="{Binding Name, StringFormat='\{0\}:'}" FontWeight="SemiBold"/>
+                                    <!-- State Selection -->
+                                    <StackPanel Orientation="Horizontal" Margin="0,5,0,5">
+                                        <RadioButton Content="Constant" GroupName="{Binding Name}" IsChecked="{Binding State, Converter={StaticResource EnumMatchToBooleanConverter}, ConverterParameter=Constant}" Margin="0,0,10,0"/>
+                                        <RadioButton Content="Variable" GroupName="{Binding Name}" IsChecked="{Binding State, Converter={StaticResource EnumMatchToBooleanConverter}, ConverterParameter=Variable}"/>
+                                    </StackPanel>
+                                    
+                                    <!-- Constant Content -->
+                                    <StackPanel Visibility="{Binding State, Converter={StaticResource EnumMatchToVisibilityConverter}, ConverterParameter=Constant}" Margin="10,0,0,0">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="Value:" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                                            <TextBox Text="{Binding ConstantValue}" Width="100"/>
+                                        </StackPanel>
+                                    </StackPanel>
+
+                                    <!-- Variable Configuration -->
+                                    <StackPanel Visibility="{Binding State, Converter={StaticResource EnumMatchToVisibilityConverter}, ConverterParameter=Variable}" Margin="10,0,0,0">
+                                        <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                                            <TextBlock Text="Method:" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                                            <ComboBox ItemsSource="{Binding AvailableMethods}" SelectedItem="{Binding Method}" Width="150"/>
+                                        </StackPanel>
+                                        <StackPanel Visibility="{Binding Method, Converter={StaticResource EnumMatchToVisibilityConverter}, ConverterParameter=MinMaxInterval}">
+                                            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                                                <TextBlock Text="Min:" Margin="0,0,5,0" VerticalAlignment="Center" Width="30"/>
+                                                <TextBox Text="{Binding Min}" Width="60" Margin="0,0,10,0"/>
+                                                <TextBlock Text="Max:" Margin="0,0,5,0" VerticalAlignment="Center" Width="30"/>
+                                                <TextBox Text="{Binding Max}" Width="60"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                                                <TextBlock Text="Interval:" Margin="0,0,5,0" VerticalAlignment="Center" Width="50"/>
+                                                <TextBox Text="{Binding Interval}" Width="60" Margin="0,0,10,0"/>
+                                                <CheckBox Content="Interpret as Count" IsChecked="{Binding IsIntervalCount}" VerticalAlignment="Center"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                        <StackPanel Visibility="{Binding Method, Converter={StaticResource EnumMatchToVisibilityConverter}, ConverterParameter=Array}" Margin="0,0,0,5">
+                                            <TextBlock Text="Values (comma separated):" Margin="0,0,0,5"/>
+                                            <TextBox Text="{Binding ArrayValuesString}" Width="250" HorizontalAlignment="Left"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+
+                <!-- State Selection -->
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,5" Visibility="{Binding ShowStateSelection, Converter={StaticResource BoolToVisibilityConverter}}">
+                    <RadioButton Content="Not Included" GroupName="{Binding Name}" IsChecked="{Binding State, Converter={StaticResource EnumMatchToBooleanConverter}, ConverterParameter=NotIncluded}" Margin="0,0,10,0"/>
+                    <!-- Constant is hidden for RevitType — a type swap must be Variable -->
+                    <RadioButton Content="Constant" GroupName="{Binding Name}" IsChecked="{Binding State, Converter={StaticResource EnumMatchToBooleanConverter}, ConverterParameter=Constant}" Margin="0,0,10,0"
+                                 Visibility="{Binding IsRevitType, Converter={StaticResource BoolToInverseVisibilityConverter}}"/>
+                    <RadioButton Content="Variable" GroupName="{Binding Name}" IsChecked="{Binding State, Converter={StaticResource EnumMatchToBooleanConverter}, ConverterParameter=Variable}"/>
+                </StackPanel>
+                
+                <!-- Metabolic Heat (Only shown if Property == PeopleCount) -->
+                <StackPanel Margin="10,0,0,10" Visibility="{Binding Property, Converter={StaticResource EnumMatchToVisibilityConverter}, ConverterParameter=PeopleCount}">
+                    <CheckBox Content="Use Default Metabolic Heat Output" IsChecked="{Binding UseDefaultMetabolicHeat}"/>
+                    <StackPanel Orientation="Horizontal" Margin="20,5,0,0" IsEnabled="{Binding UseDefaultMetabolicHeat, Converter={StaticResource InverseBoolConverter}}">
+                        <TextBlock Text="Custom Output (W/person):" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                        <TextBox Text="{Binding CustomMetabolicHeat}" Width="60"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <!-- Constant Content -->
+                <StackPanel Visibility="{Binding State, Converter={StaticResource EnumMatchToVisibilityConverter}, ConverterParameter=Constant}" Margin="10,0,0,10">
+                    <StackPanel Orientation="Horizontal" Visibility="{Binding ShowStateSelection, Converter={StaticResource BoolToVisibilityConverter}}">
+                        <TextBlock Text="Value:" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                        <TextBox Text="{Binding ConstantValue}" Width="100"/>
+                    </StackPanel>
+                    
+                    <!-- Schedule Configuration -->
+                    <StackPanel Margin="0,5,0,0" Visibility="{Binding Property, Converter={StaticResource EnumMatchToVisibilityConverter}, ConverterParameter=Schedule}">
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                            <RadioButton Content="Use Default Template" IsChecked="{Binding IsCustomSchedule, Converter={StaticResource InverseBoolConverter}}" GroupName="{Binding Name, StringFormat={}{0}_Sched}" Margin="0,0,10,0"/>
+                            <RadioButton Content="Custom Profile" IsChecked="{Binding IsCustomSchedule}" GroupName="{Binding Name, StringFormat={}{0}_Sched}"/>
+                        </StackPanel>
+                        
+                        <StackPanel Visibility="{Binding IsCustomSchedule, Converter={StaticResource BoolToInverseVisibilityConverter}}" Margin="20,0,0,0">
+                            <TextBlock Text="Select Building Template:" Margin="0,0,0,5"/>
+                            <ComboBox ItemsSource="{Binding AvailableScheduleDefaults}" SelectedItem="{Binding SelectedScheduleDefault}" Width="200" HorizontalAlignment="Left" PreviewMouseWheel="ComboBox_PreviewMouseWheel"/>
+                        </StackPanel>
+                        
+                        <StackPanel Visibility="{Binding IsCustomSchedule, Converter={StaticResource BoolToVisibilityConverter}}" Margin="20,10,0,0" HorizontalAlignment="Left">
+                            <TabControl Height="240">
+                                <TabItem Header="Occupancy">
+                                    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                                        <StackPanel Margin="5">
+                                            <TextBlock Text="Weekday Profile (People):" Margin="0,5,0,2" FontWeight="SemiBold"/>
+                                            <ContentControl Content="{Binding WeekdayOccupancy}" ContentTemplate="{StaticResource ProfileItemsControlTemplate}"/>
+                                            <TextBlock Text="Weekend Profile (People):" Margin="0,10,0,2" FontWeight="SemiBold"/>
+                                            <ContentControl Content="{Binding WeekendOccupancy}" ContentTemplate="{StaticResource ProfileItemsControlTemplate}"/>
+                                        </StackPanel>
+                                    </ScrollViewer>
+                                </TabItem>
+                                <TabItem Header="Lighting">
+                                    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                                        <StackPanel Margin="5">
+                                            <TextBlock Text="Weekday Profile (Multiplier):" Margin="0,5,0,2" FontWeight="SemiBold"/>
+                                            <ContentControl Content="{Binding WeekdayLighting}" ContentTemplate="{StaticResource ProfileItemsControlTemplate}"/>
+                                            <TextBlock Text="Weekend Profile (Multiplier):" Margin="0,10,0,2" FontWeight="SemiBold"/>
+                                            <ContentControl Content="{Binding WeekendLighting}" ContentTemplate="{StaticResource ProfileItemsControlTemplate}"/>
+                                        </StackPanel>
+                                    </ScrollViewer>
+                                </TabItem>
+                                <TabItem Header="Heating Setpoint">
+                                    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                                        <StackPanel Margin="5">
+                                            <TextBlock Text="Weekday Profile (Temp):" Margin="0,5,0,2" FontWeight="SemiBold"/>
+                                            <ContentControl Content="{Binding WeekdayHeating}" ContentTemplate="{StaticResource ProfileItemsControlTemplate}"/>
+                                            <TextBlock Text="Weekend Profile (Temp):" Margin="0,10,0,2" FontWeight="SemiBold"/>
+                                            <ContentControl Content="{Binding WeekendHeating}" ContentTemplate="{StaticResource ProfileItemsControlTemplate}"/>
+                                        </StackPanel>
+                                    </ScrollViewer>
+                                </TabItem>
+                                <TabItem Header="Cooling Setpoint">
+                                    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                                        <StackPanel Margin="5">
+                                            <TextBlock Text="Weekday Profile (Temp):" Margin="0,5,0,2" FontWeight="SemiBold"/>
+                                            <ContentControl Content="{Binding WeekdayCooling}" ContentTemplate="{StaticResource ProfileItemsControlTemplate}"/>
+                                            <TextBlock Text="Weekend Profile (Temp):" Margin="0,10,0,2" FontWeight="SemiBold"/>
+                                            <ContentControl Content="{Binding WeekendCooling}" ContentTemplate="{StaticResource ProfileItemsControlTemplate}"/>
+                                        </StackPanel>
+                                    </ScrollViewer>
+                                </TabItem>
+                            </TabControl>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+                <!-- Variable Content -->
+                <StackPanel Visibility="{Binding ShowValueConfiguration, Converter={StaticResource BoolToVisibilityConverter}}">
+                    <StackPanel Visibility="{Binding State, Converter={StaticResource EnumMatchToVisibilityConverter}, ConverterParameter=Variable}" Margin="10,0,0,10">
+                    <!-- Method selector hidden for RevitType — TypeSelection is always used -->
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,5"
+                                Visibility="{Binding IsRevitType, Converter={StaticResource BoolToInverseVisibilityConverter}}">
+                        <TextBlock Text="Method:" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                        <ComboBox ItemsSource="{Binding AvailableMethods}" SelectedItem="{Binding Method}" Width="150" />
+                    </StackPanel>
+
+                    <!-- MinMaxInterval -->
+                    <StackPanel Visibility="{Binding Method, Converter={StaticResource EnumMatchToVisibilityConverter}, ConverterParameter=MinMaxInterval}" Margin="10,0,0,5">
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                            <TextBlock Text="Min:" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                            <TextBox Text="{Binding Min}" Width="60" Margin="0,0,10,0"/>
+                            <TextBlock Text="Max:" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                            <TextBox Text="{Binding Max}" Width="60"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <CheckBox IsChecked="{Binding IsIntervalCount}" Content="Use Interval Count (instead of step size)" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                            <TextBlock Text="Interval:" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                            <TextBox Text="{Binding Interval}" Width="60"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <!-- Temperature Dependent -->
+                    <StackPanel Visibility="{Binding Method, Converter={StaticResource EnumMatchToVisibilityConverter}, ConverterParameter=TemperatureDependent}" Margin="10,0,0,5">
+                        <TextBlock Text="Equation or Array (T,R;T,R):" Margin="0,0,0,5"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox Text="{Binding RValueTempEquation}" Width="200" HorizontalAlignment="Left"/>
+                            <ComboBox ItemsSource="{Binding AvailableTempUnits}" SelectedItem="{Binding RValueTempEquationUnit}" Width="45" Margin="5,0,0,0"/>
+                        </StackPanel>
+                        <TextBlock Text="e.g. 0,4;5,6;10,8 (Outer Temp, R-Value)" Foreground="Gray" FontSize="11"/>
+                    </StackPanel>
+
+                    <!-- TypeSelection -->
+                    <StackPanel Visibility="{Binding Method, Converter={StaticResource EnumMatchToVisibilityConverter}, ConverterParameter=TypeSelection}" Margin="10,0,0,5">
+                        <CheckBox Content="Include Current Type in Simulations" IsChecked="{Binding IncludeOriginalType}" Margin="0,0,0,5"/>
+                        <TextBlock Text="Select Alternative Types:" Margin="0,0,0,5"/>
+                        <ListBox ItemsSource="{Binding AvailableRevitTypes}" SelectionMode="Multiple" MaxHeight="100" SelectionChanged="ListBox_SelectionChanged" Loaded="ListBox_Loaded" Tag="{Binding}" />
+                    </StackPanel>
+
+                    <!-- Replace Elements -->
+                    <StackPanel Visibility="{Binding Method, Converter={StaticResource EnumMatchToVisibilityConverter}, ConverterParameter=ReplaceElements}" Margin="10,0,0,5">
+                        <TextBlock Text="Select Stud Types:" Margin="0,0,0,5"/>
+                        <ListBox ItemsSource="{Binding AvailableRevitTypes}" SelectionMode="Multiple" MaxHeight="100" SelectionChanged="LbStuds_SelectionChanged" Loaded="LbStuds_Loaded" Tag="{Binding}" Margin="0,0,0,5" />
+                        <TextBlock Text="Select Insulation Types:" Margin="0,0,0,5"/>
+                        <ListBox ItemsSource="{Binding AvailableRevitTypes}" SelectionMode="Multiple" MaxHeight="100" SelectionChanged="LbInsulation_SelectionChanged" Loaded="LbInsulation_Loaded" Tag="{Binding}" />
+
+                        <CheckBox Content="Vary R-Value with Temp" IsChecked="{Binding VaryRValueWithTemp}" Margin="0,5,0,5"/>
+                        <StackPanel Visibility="{Binding VaryRValueWithTemp, Converter={StaticResource BoolToVisibilityConverter}}" Margin="15,0,0,5">
+                            <TextBlock Text="Equation or Array (T,R;T,R):" Margin="0,0,0,5"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox Text="{Binding RValueTempEquation}" Width="200" HorizontalAlignment="Left"/>
+                                <ComboBox ItemsSource="{Binding AvailableTempUnits}" SelectedItem="{Binding RValueTempEquationUnit}" Width="45" Margin="5,0,0,0"/>
+                            </StackPanel>
+                            <TextBlock Text="e.g. 0,4;5,6;10,8 (Outer Temp, R-Value)" Foreground="Gray" FontSize="11"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <!-- Monolithic -->
+                    <StackPanel Visibility="{Binding Method, Converter={StaticResource EnumMatchToVisibilityConverter}, ConverterParameter=Monolithic}" Margin="10,0,0,5">
+                        <TextBlock Text="Select Stud Types:" Margin="0,0,0,5"/>
+                        <ListBox ItemsSource="{Binding AvailableRevitTypes}" SelectionMode="Multiple" MaxHeight="100" SelectionChanged="LbStuds_SelectionChanged" Loaded="LbStuds_Loaded" Tag="{Binding}" Margin="0,0,0,5" />
+                        <TextBlock Text="Select Insulation Types:" Margin="0,0,0,5"/>
+                        <ListBox ItemsSource="{Binding AvailableRevitTypes}" SelectionMode="Multiple" MaxHeight="100" SelectionChanged="LbInsulation_SelectionChanged" Loaded="LbInsulation_Loaded" Tag="{Binding}" Margin="0,0,0,5" />
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Framing Factor (%):" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                            <TextBox Text="{Binding EffFramingFactor}" Width="60"/>
+                        </StackPanel>
+
+                        <CheckBox Content="Vary R-Value with Temp" IsChecked="{Binding VaryRValueWithTemp}" Margin="0,5,0,5"/>
+                        <StackPanel Visibility="{Binding VaryRValueWithTemp, Converter={StaticResource BoolToVisibilityConverter}}" Margin="15,0,0,5">
+                            <TextBlock Text="Equation or Array (T,R;T,R):" Margin="0,0,0,5"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox Text="{Binding RValueTempEquation}" Width="200" HorizontalAlignment="Left"/>
+                                <ComboBox ItemsSource="{Binding AvailableTempUnits}" SelectedItem="{Binding RValueTempEquationUnit}" Width="45" Margin="5,0,0,0"/>
+                            </StackPanel>
+                            <TextBlock Text="e.g. 0,4;5,6;10,8 (Outer Temp, R-Value)" Foreground="Gray" FontSize="11"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <!-- Effective R-Value -->
+                    <StackPanel Visibility="{Binding Method, Converter={StaticResource EnumMatchToVisibilityConverter}, ConverterParameter=EffectiveRValue}" Margin="10,0,0,5">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="Stud R-Value:" Margin="0,2,5,2" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding EffStudRValue}" Width="60" HorizontalAlignment="Left" Margin="0,2,0,2"/>
+                            
+                            <TextBlock Grid.Row="1" Grid.Column="0" Text="Insulation R-Value:" Margin="0,2,5,2" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding EffInsulationRValue}" Width="60" HorizontalAlignment="Left" Margin="0,2,0,2"/>
+                            
+                            <TextBlock Grid.Row="2" Grid.Column="0" Text="Window R-Value:" Margin="0,2,5,2" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding EffWindowRValue}" Width="60" HorizontalAlignment="Left" Margin="0,2,0,2"/>
+                            
+                            <TextBlock Grid.Row="3" Grid.Column="0" Text="Door R-Value:" Margin="0,2,5,2" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding EffDoorRValue}" Width="60" HorizontalAlignment="Left" Margin="0,2,0,2"/>
+                            
+                            <TextBlock Grid.Row="4" Grid.Column="0" Text="Framing Factor (%):" Margin="0,2,5,2" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding EffFramingFactor}" Width="60" HorizontalAlignment="Left" Margin="0,2,0,2"/>
+                            
+                            <TextBlock Grid.Row="5" Grid.Column="0" Text="Density (lb/ft³):" Margin="0,2,5,2" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding EffDensity}" Width="60" HorizontalAlignment="Left" Margin="0,2,0,2"/>
+                            
+                            <TextBlock Grid.Row="6" Grid.Column="0" Text="Specific Heat:" Margin="0,2,5,2" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding EffSpecificHeat}" Width="60" HorizontalAlignment="Left" Margin="0,2,0,2"/>
+                        </Grid>
+                    </StackPanel>
+
+                    <!-- Array -->
+                    <StackPanel Visibility="{Binding Method, Converter={StaticResource EnumMatchToVisibilityConverter}, ConverterParameter=Array}" Margin="10,0,0,5">
+                        <TextBlock Text="Array Values (comma separated):" Margin="0,0,0,5"/>
+                        <TextBox Text="{Binding ArrayValuesString}" Width="300" HorizontalAlignment="Left"/>
+                    </StackPanel>
+
+                    <!-- Equation -->
+                    <StackPanel Visibility="{Binding Method, Converter={StaticResource EnumMatchToVisibilityConverter}, ConverterParameter=Equation}" Margin="10,0,0,5">
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                            <TextBlock Text="Equation:" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                            <TextBox Text="{Binding EquationString}" Width="250"/>
+                        </StackPanel>
+                        <ItemsControl ItemsSource="{Binding IndependentVariables}"/>
+                        <Button Content="Add Independent Variable" Width="180" HorizontalAlignment="Left" Click="BtnAddIndepVar_Click" Tag="{Binding}" Margin="0,5,0,0"/>
+                    </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="SimulationElementTemplate" DataType="{x:Type local:SimulationElement}">
+            <Expander Header="{Binding DisplayName}" IsExpanded="False" Margin="0,0,0,10" FontSize="14"
+                      Visibility="{Binding IsVisible, Converter={StaticResource BoolToVisibilityConverter}}">
+                <StackPanel Margin="20,10,0,0">
+                    <CheckBox Content="Apply variables to the Entire Building (Uncheck to configure per-room spaces and windows)" 
+                              IsChecked="{Binding IsEntireBuilding}" Margin="0,0,0,10"
+                              Visibility="{Binding ShowEntireBuildingToggle, Converter={StaticResource BoolToVisibilityConverter}}"/>
+
+                    <TextBlock Text="{Binding MissingRoomsWarning}" Foreground="Red" Margin="0,0,0,10" TextWrapping="Wrap"
+                               Visibility="{Binding HasMissingRoomsWarning, Converter={StaticResource BoolToVisibilityConverter}}"/>
+
+                    <TextBlock Text="In the Floor Plans lable your Rooms." Foreground="Gray" Margin="0,0,0,10" FontStyle="Italic"
+                               Visibility="{Binding ShowNoRoomsWarning, Converter={StaticResource BoolToVisibilityConverter}}"/>
+
+                    <StackPanel Visibility="{Binding ShowProperties, Converter={StaticResource BoolToVisibilityConverter}}">
+                        <ItemsControl ItemsSource="{Binding Properties}"/>
+                        <Button Content="Add Property to Vary" Padding="10,2" HorizontalAlignment="Left" Click="BtnAddProperty_Click" Tag="{Binding}" Margin="0,10,0,5"/>
+                    </StackPanel>
+                    
+                    <ItemsControl ItemsSource="{Binding SubElements}" ItemTemplate="{DynamicResource SimulationElementTemplate}" Visibility="{Binding ShowSubElements, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                </StackPanel>
+            </Expander>
+        </DataTemplate>
+    </Window.Resources>
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="0,0,0,10">
+            <TextBlock Text="Weather File (.epw):" FontWeight="Bold" Margin="0,0,0,5"/>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <TextBox x:Name="txtWeatherPath" Width="500" Margin="0,0,10,0" IsReadOnly="True"/>
+                <Button Content="Browse..." Width="80" Click="BtnBrowseWeather_Click" Margin="0,0,5,0"/>
+                <Button Content="Use Bundled Default" Width="130" Click="BtnUseDefaultWeather_Click" Margin="0,0,5,0"
+                        ToolTip="Use the default.epw file bundled with this add-in"/>
+                <Button Content="Download from EnergyPlus.net..." Width="190" Click="BtnDownloadWeather_Click"
+                        ToolTip="Opens the EnergyPlus weather library in your browser to download a location-specific EPW file"/>
+            </StackPanel>
+            
+            <TextBlock Text="Export Path:" FontWeight="Bold" Margin="0,0,0,5"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="txtExportPath" Width="600" Margin="0,0,10,0" IsReadOnly="True"/>
+                <Button Content="Browse..." Width="80" Click="BtnBrowse_Click"/>
+            </StackPanel>
+        </StackPanel>
+
+        <GroupBox Grid.Row="1" Header="Variables Configuration" Margin="0,0,0,10">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" PreviewMouseWheel="ScrollViewer_PreviewMouseWheel">
+                <ItemsControl x:Name="tvVariables" ItemsSource="{Binding}" ItemTemplate="{DynamicResource SimulationElementTemplate}"/>
+            </ScrollViewer>
+        </GroupBox>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="&lt; Back" Width="90" Height="30" Click="BtnBack_Click"/>
+            <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button x:Name="BtnRunSensitivity" Content="Run Sensitivity Test" Width="140" Height="30" Margin="0,0,10,0" Click="BtnRunSensitivity_Click" ToolTip="Test each variable one-by-one against a baseline" Visibility="Collapsed"/>
+                <Button Content="Copy Cipher" Width="100" Height="30" Margin="0,0,10,0" Click="BtnCopyCipher_Click" ToolTip="Copy the simulation configuration to the clipboard before running"/>
+                <Button Content="Run Simulation" Width="120" Height="30" Click="BtnRun_Click"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,24 @@
+{
+  "seed_file": "seed_empty.osm",
+  "weather_file": "custom_weather.epw",
+  "measure_paths": [
+    "C:/Program Files/NREL/OpenStudio CLI For Revit 2027/measures",
+    "E:/Documents/AntigravityIDE/Revit Add-in/Measures"
+  ],
+  "file_paths": [
+    "E:/Documents/AntigravityIDE/Revit Add-in/MATLAB/sensitivity_runs/var_4",
+    "C:/Program Files/NREL/OpenStudio CLI For Revit 2027/seeds"
+  ],
+  "run_directory": "./run",
+  "steps": [
+    { "measure_dir_name": "ChangeBuildingLocation", "name": "Change Building Location", "arguments": { "weather_file_name": "custom_weather.epw", "climate_zone": "ASHRAE 169-2013-4B" } },
+    { "measure_dir_name": "gbxml_import", "name": "ImportGbxml", "arguments": { "gbxml_file_name": "analysis.xml" } },
+    { "measure_dir_name": "gbxml_import_advanced", "name": "Advanced Import Gbxml", "arguments": { "gbxml_file_name": "analysis.xml" } },
+    { "measure_dir_name": "gbxml_import_hvac", "name": "GBXML HVAC Import", "arguments": { "gbxml_file_name": "analysis.xml" } },
+    { "measure_dir_name": "ApplyParametricVariations", "name": "Apply Variations", "arguments": { "json_overrides": "{ \"Entire Building\": { \"HeatingSetpoint\": 70, \"HeatingSetpointUnit\": 70 }, \"Exterior - CMU Insulated\": { \"RValue\": 5 }, \"Generic - 12\": { \"RValue\": 5 }, \"Generic - 9\": { \"RValue\": 5 }, \"sp-100room1\": { \"HeatingSetpoint\": 70, \"HeatingSetpointUnit\": 70, \"Infiltration\": 1 }, \"sp-101room2\": { \"HeatingSetpoint\": 70, \"HeatingSetpointUnit\": 70, \"Infiltration\": 0.5 } }" } },
+        { "measure_dir_name": "set_simulation_control", "name": "Set Simulation Control", "arguments": { "cooling_sizing_factor": 1.0, "do_plant_sizing": true, "do_system_sizing": true, "do_zone_sizing": true, "end_date": "12/31", "heating_sizing_factor": 1.0, "loads_convergence_tolerance": 0.1, "max_warmup_days": 25, "min_warmup_days": 6, "sim_for_run_period": true, "sim_for_sizing": true, "solar_distribution": "FullInteriorAndExterior", "start_date": "01/01", "temp_convergence_tolerance": 0.5, "timesteps_per_hour": 1, "max_hvac_iterations": 8 } },
+    { "measure_dir_name": "gbxml_postprocess", "name": "gbXML Postprocess" },
+    { "measure_dir_name": "openstudio_results", "name": "OpenStudio Results", "arguments": { "annual_overview_section": true, "monthly_overview_section": true, "reg_monthly_details": true } },
+    { "measure_dir_name": "systems_analysis_report_generator", "name": "Systems Analysis Report", "arguments": { "debug": false } }
+  ]
+}

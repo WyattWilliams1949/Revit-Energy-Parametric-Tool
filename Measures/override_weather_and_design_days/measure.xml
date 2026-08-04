@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<measure>
+  <schema_version>3.1</schema_version>
+  <name>override_weather_and_design_days</name>
+  <uid>abcdef12-3456-7890-abcd-ef1234567890</uid>
+  <version_id>d207053f-471e-429a-a106-bc38e627a761</version_id>
+  <version_modified>2026-07-08T02:59:32Z</version_modified>
+  <xml_checksum>2C38F48B</xml_checksum>
+  <class_name>OverrideWeatherAndDesignDays</class_name>
+  <display_name>Override Weather and Design Days</display_name>
+  <description>Overrides EPW data and syncs OS:DesignDay objects programmatically.</description>
+  <modeler_description>Uses EpwFile to overwrite weather variables instead of raw string manipulation.</modeler_description>
+  <arguments>
+    <argument>
+      <name>json_overrides</name>
+      <display_name>Weather JSON Overrides</display_name>
+      <type>String</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>{}</default_value>
+    </argument>
+  </arguments>
+  <outputs />
+  <provenances />
+  <tags>
+    <tag>Whole Building.Space Types</tag>
+  </tags>
+  <attributes>
+    <attribute>
+      <name>Measure Type</name>
+      <value>ModelMeasure</value>
+      <datatype>string</datatype>
+    </attribute>
+  </attributes>
+  <files>
+    <file>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>B45426A3</checksum>
+    </file>
+  </files>
+</measure>

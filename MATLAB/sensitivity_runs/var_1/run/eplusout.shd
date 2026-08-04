@@ -1,0 +1,158 @@
+Shadowing Combinations
+..Solar Distribution=FullInteriorAndExterior
+..In the following, only the first 10 reference surfaces will be shown.
+..But all surfaces are used in the calculations.
+==================================
+Surface=SU-X-S-16 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=SU-T-100-E-R-14
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-SU-X-S-16 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=SU-T-101-E-R-13
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SU-X-S-17 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=SU-T-100-E-R-11
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=Mir-SU-X-S-17 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=SU-T-101-E-R-10
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SU-E-100-E-W-5 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=8
+...Surface=SU-N-100-E-W-6
+...Surface=SU-N-101-100-I-W-15 REVERSED
+...Surface=SU-W-100-E-W-2
+...Surface=SU-B-100-E-F-8
+...Surface=SU-T-100-E-R-11
+...Surface=SU-T-100-E-R-14
+...Surface=SU-T-100-E-R-9
+...Surface=OP-3
+Number of receiving sub surfaces=1
+....Surface=OP-4
+==================================
+Surface=OP-4 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SU-N-100-E-W-6 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SU-N-101-100-I-W-15 REVERSED is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SU-W-100-E-W-2 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=1
+....Surface=OP-3
+==================================
+Surface=OP-3 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SU-B-100-E-F-8 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SU-T-100-E-R-11 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=SU-X-S-17
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SU-T-100-E-R-14 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=SU-X-S-16
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SU-T-100-E-R-9 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SU-E-101-E-W-4 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=8
+...Surface=SU-N-101-100-I-W-15
+...Surface=SU-S-101-E-W-3
+...Surface=SU-W-101-E-W-1
+...Surface=SU-B-101-E-F-7
+...Surface=SU-T-101-E-R-10
+...Surface=SU-T-101-E-R-12
+...Surface=SU-T-101-E-R-13
+...Surface=OP-2
+Number of receiving sub surfaces=2
+....Surface=OP-1
+....Surface=OP-5
+==================================
+Surface=OP-1 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=OP-5 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SU-N-101-100-I-W-15 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SU-S-101-E-W-3 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SU-W-101-E-W-1 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=1
+....Surface=OP-2
+==================================
+Surface=OP-2 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SU-B-101-E-F-7 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SU-T-101-E-R-10 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=Mir-SU-X-S-17
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SU-T-101-E-R-12 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=SU-T-101-E-R-13 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=Mir-SU-X-S-16
+Number of back surfaces=0
+Number of receiving sub surfaces=0
