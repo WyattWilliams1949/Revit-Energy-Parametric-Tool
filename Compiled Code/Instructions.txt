@@ -1,0 +1,6 @@
+Extract the .zip folder to:
+C:\Users\<UserName>\AppData\Roaming\Autodesk\Revit\Addins\<RevitYear>
+
+Open Revit
+Select trust addon
+Go to addons tab and you will be able to run the addon from there. 
