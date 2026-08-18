@@ -23,7 +23,7 @@ namespace RevitAddin
         /// variable, keyed by variable name.  Used by MATLAB to patch the
         /// gbXML construction R-values after Revit exports.
         /// </summary>
-        public Dictionary<string, double> GetWallRValues(
+        public Dictionary<string, double> GetEnvelopeRValues(
             Dictionary<string, TargetProperty> variableProperties,
             Dictionary<string, ElementId> variableElements)
         {
@@ -34,11 +34,11 @@ namespace RevitAddin
                 if (kvp.Value != TargetProperty.RevitType) continue;
 
                 if (!variableElements.TryGetValue(kvp.Key, out var typeId)) continue;
-                var wt = _doc.GetElement(typeId) as WallType;
+                var wt = _doc.GetElement(typeId) as HostObjAttributes;
                 if (wt == null) continue;
 
                 // Compute total R by summing layer-by-layer contributions from ThermalAsset conductivities
-                double computed = ComputeWallRValue_SI(wt);
+                double computed = ComputeRValue_SI(wt);
                 if (computed > 0)
                 {
                     result[kvp.Key] = computed;
@@ -52,14 +52,31 @@ namespace RevitAddin
         /// Returns the effective thermal R-value (SI: m²·K/W) for a wall type
         /// looked up by its display name. Returns 0 if no matching type is found.
         /// </summary>
-        public double GetWallRValueByName(string typeName)
+        public double GetRValueByName(string typeName)
         {
-            var wt = new FilteredElementCollector(_doc)
-                .OfClass(typeof(WallType))
-                .Cast<WallType>()
+            var type = new FilteredElementCollector(_doc)
+                .OfClass(typeof(HostObjAttributes))
+                .Cast<HostObjAttributes>()
                 .FirstOrDefault(t => t.Name == typeName);
-            if (wt == null) return 0.0;
-            return ComputeWallRValue_SI(wt);
+            if (type == null) return 0;
+
+            return ComputeRValue_SI(type);
+        }
+
+        /// <summary>
+        /// Returns the effective thermal R-value (SI: m²·K/W) for an envelope type
+        /// looked up by its display name and category. Returns 0 if no matching type is found.
+        /// </summary>
+        public double GetRValueByNameAndCategory(string typeName, ElementId categoryId)
+        {
+            var type = new FilteredElementCollector(_doc)
+                .OfCategoryId(categoryId)
+                .WhereElementIsElementType()
+                .Cast<HostObjAttributes>()
+                .FirstOrDefault(t => t.Name == typeName);
+            if (type == null) return 0;
+
+            return ComputeRValue_SI(type);
         }
 
         public void ApplyModifications(Dictionary<string, object> scenario, Dictionary<string, TargetProperty> variableProperties, Dictionary<string, ElementId> variableElements)
@@ -252,7 +269,7 @@ namespace RevitAddin
 
                 // Compute effective R (SI: m²·K/W) of the TARGET wall type
                 // by reading its compound structure layers
-                double targetR_SI = ComputeWallRValue_SI(targetWt);
+                double targetR_SI = ComputeRValue_SI(targetWt);
                 double targetR_SI_safe = targetR_SI > 0 ? targetR_SI : 0.18; // fallback ~R1 SI
 
                 // Keep the ORIGINAL wall's thickness to avoid geometry conflicts
@@ -289,7 +306,7 @@ namespace RevitAddin
         /// Computes the total thermal resistance (m²·K/W) of a wall type
         /// by summing each layer's contribution: R_layer = thickness_m / k_SI.
         /// </summary>
-        private double ComputeWallRValue_SI(WallType wt)
+        private double ComputeRValue_SI(HostObjAttributes wt)
         {
             double totalR = 0;
             var cs = wt.GetCompoundStructure();
@@ -704,5 +721,72 @@ namespace RevitAddin
                 return FailureProcessingResult.Continue;
             }
         }
+
+        public List<MaterialReferenceData> GetBuildingMaterials()
+        {
+            var list = new List<MaterialReferenceData>();
+            var allHostTypes = new FilteredElementCollector(_doc)
+                .OfClass(typeof(HostObjAttributes))
+                .Cast<HostObjAttributes>();
+
+            foreach (var ht in allHostTypes)
+            {
+                string catName = ht.Category?.Name ?? "HostObj";
+                double rValue = ComputeRValue_SI(ht);
+                double thickness = 0;
+                var cs = ht.GetCompoundStructure();
+                if (cs != null)
+                {
+                    for (int i = 0; i < cs.LayerCount; i++) thickness += cs.GetLayerWidth(i);
+                }
+                
+                list.Add(new MaterialReferenceData {
+                    Category = catName,
+                    Name = ht.Name,
+                    ThicknessFt = thickness,
+                    RValueSI = rValue,
+                    UValueSI = rValue > 0 ? 1.0 / rValue : 0
+                });
+            }
+
+            var allWindowTypes = new FilteredElementCollector(_doc)
+                .OfCategory(BuiltInCategory.OST_Windows)
+                .WhereElementIsElementType();
+            foreach (var w in allWindowTypes)
+            {
+                list.Add(new MaterialReferenceData {
+                    Category = "Windows",
+                    Name = w.Name,
+                    ThicknessFt = 0,
+                    RValueSI = 0,
+                    UValueSI = 0
+                });
+            }
+
+            var allDoorTypes = new FilteredElementCollector(_doc)
+                .OfCategory(BuiltInCategory.OST_Doors)
+                .WhereElementIsElementType();
+            foreach (var d in allDoorTypes)
+            {
+                list.Add(new MaterialReferenceData {
+                    Category = "Doors",
+                    Name = d.Name,
+                    ThicknessFt = 0,
+                    RValueSI = 0,
+                    UValueSI = 0
+                });
+            }
+
+            return list;
+        }
+    }
+
+    public class MaterialReferenceData
+    {
+        public string Category { get; set; }
+        public string Name { get; set; }
+        public double ThicknessFt { get; set; }
+        public double RValueSI { get; set; }
+        public double UValueSI { get; set; }
     }
 }

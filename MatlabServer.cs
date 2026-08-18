@@ -167,7 +167,7 @@ namespace RevitAddin
 
                     _handler.CurrentAction = (app) =>
                     {
-                        rValues = _mutator.GetWallRValues(_variableProperties, _variableElements);
+                        rValues = _mutator.GetEnvelopeRValues(_variableProperties, _variableElements);
                     };
                     _exEvent.Raise();
                     tcs2.Task.Wait();
@@ -175,7 +175,7 @@ namespace RevitAddin
                     responseString = JsonSerializer.Serialize(rValues ?? new Dictionary<string, double>());
                     response.ContentType = "application/json";
                 }
-                else if (request.HttpMethod == "GET" && request.Url.AbsolutePath == "/wall-rvalue-by-name")
+                else if (request.HttpMethod == "GET" && request.Url.AbsolutePath == "/envelope-rvalue-by-name")
                 {
                     // Returns { "rValueSI": X } for a wall type looked up by display name.
                     // Query param: ?typeName=<url-encoded wall type name>
@@ -193,7 +193,7 @@ namespace RevitAddin
 
                     _handler.CurrentAction = (app) =>
                     {
-                        rValueSI = _mutator.GetWallRValueByName(typeName);
+                        rValueSI = _mutator.GetRValueByName(typeName);
                     };
                     _exEvent.Raise();
                     tcsRvn.Task.Wait();

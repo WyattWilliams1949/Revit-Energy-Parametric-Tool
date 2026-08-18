@@ -218,7 +218,7 @@ function test_variables_sensitivity(baseEpwPath, exportPath, openStudioCliPath)
                 elseif strcmp(pType, 'RevitType')
                     targetTypeName = scenarioDict(fName);
                     if ~strcmp(targetTypeName, 'Original') && ~isempty(targetTypeName)
-                        rSI = getWallRValueByName(revit.BaseUrl, targetTypeName);
+                        rSI = getEnvelopeRValueByName(revit.BaseUrl, targetTypeName);
                         if rSI > 0
                             rIP = rSI / 0.17611;
                             if ~isKey(overridesMap, 'Walls')

@@ -118,44 +118,48 @@ class OverrideWeatherAndDesignDays < OpenStudio::Measure::ModelMeasure
         revit_func = ev["RevitElementFunction"] || ""
         surfaces_to_modify = []
         model.getSurfaces.each do |surf|
-          if revit_func == "ExteriorWall" && surf.surfaceType.downcase == "wall" && surf.outsideBoundaryCondition.downcase == "outdoors"
-            surfaces_to_modify << surf
-          elsif revit_func == "InteriorWall" && surf.surfaceType.downcase == "wall" && surf.outsideBoundaryCondition.downcase != "outdoors"
-            surfaces_to_modify << surf
-          elsif revit_func == "Roof" && surf.surfaceType.downcase == "roofceiling"
-            surfaces_to_modify << surf
-          elsif revit_func == "Floor" && surf.surfaceType.downcase == "floor"
-            surfaces_to_modify << surf
-          else
-            # fallback string match on construction name
-            if surf.construction.is_initialized && surf.construction.get.name.get.to_s.downcase.include?(revit_name.downcase)
-              surfaces_to_modify << surf
-            # fallback CADObjectId match
-            elsif surf.additionalProperties.getFeatureAsString("CADObjectId").is_initialized
-              surf_cad_id = surf.additionalProperties.getFeatureAsString("CADObjectId").get
-              if cad_ids.include?(surf_cad_id) || cad_ids.include?("-1")
-                surfaces_to_modify << surf
-              end
+          is_match = false
+          if surf.additionalProperties.getFeatureAsString("CADObjectId").is_initialized
+            surf_cad_id = surf.additionalProperties.getFeatureAsString("CADObjectId").get
+            runner.registerInfo("measure.rb DEBUG: cad_ids=#{cad_ids.inspect}, surf_cad_id=#{surf_cad_id}")
+            if cad_ids.any? { |id| surf_cad_id == id.to_s || surf_cad_id.include?(id.to_s) }
+              is_match = true
             end
           end
+
+          # Try matching by Name (Physical Name - works if Detailed Elements are exported)
+          if !is_match && surf.construction.is_initialized && surf.construction.get.name.get.to_s.downcase.include?(revit_name.downcase)
+            is_match = true
+          end
+
+          # Smart Fallback: If no ID or Name matched, assume Conceptual Types and match by Function
+          if !is_match
+            if revit_func == "ExteriorWall" && surf.surfaceType.downcase == "wall" && surf.outsideBoundaryCondition.downcase == "outdoors"
+              is_match = true
+            elsif revit_func == "InteriorWall" && surf.surfaceType.downcase == "wall" && surf.outsideBoundaryCondition.downcase != "outdoors"
+              is_match = true
+            elsif revit_func == "Roof" && surf.surfaceType.downcase == "roofceiling" && surf.outsideBoundaryCondition.downcase == "outdoors"
+              is_match = true
+            elsif revit_func == "Floor" && surf.surfaceType.downcase == "floor" && ["outdoors", "ground"].include?(surf.outsideBoundaryCondition.downcase)
+              is_match = true
+            end
+          end
+
+          if is_match
+            surfaces_to_modify << surf
+          end
         end
+
         model.getSubSurfaces.each do |surf|
-          if revit_func == "ExteriorWall" && surf.subSurfaceType.downcase == "window" # fallback
-            # skip windows if we are applying to wall, unless the name matches exactly?
-            # actually if we are overriding a window, revit_func isn't mapped properly in our C# code, but cad_ids might work.
-            if surf.additionalProperties.getFeatureAsString("CADObjectId").is_initialized
-              surf_cad_id = surf.additionalProperties.getFeatureAsString("CADObjectId").get
-              if cad_ids.include?(surf_cad_id) || cad_ids.include?("-1")
-                surfaces_to_modify << surf
-              end
+          is_match = false
+          if surf.additionalProperties.getFeatureAsString("CADObjectId").is_initialized
+            surf_cad_id = surf.additionalProperties.getFeatureAsString("CADObjectId").get
+            if cad_ids.include?("-1") || cad_ids.any? { |id| surf_cad_id == id.to_s || surf_cad_id.include?(id.to_s) }
+              is_match = true
             end
-          else
-            if surf.additionalProperties.getFeatureAsString("CADObjectId").is_initialized
-              surf_cad_id = surf.additionalProperties.getFeatureAsString("CADObjectId").get
-              if cad_ids.include?(surf_cad_id) || cad_ids.include?("-1")
-                surfaces_to_modify << surf
-              end
-            end
+          end
+          if is_match
+            surfaces_to_modify << surf
           end
         end
 
@@ -243,6 +247,9 @@ class OverrideWeatherAndDesignDays < OpenStudio::Measure::ModelMeasure
           
           surfaces.each do |s|
             s.setConstruction(new_const)
+            if s.adjacentSurface.is_initialized
+              s.adjacentSurface.get.setConstruction(new_const)
+            end
           end
         end
       end

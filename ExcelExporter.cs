@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using OfficeOpenXml;
 using OfficeOpenXml.Drawing.Chart;
+using OfficeOpenXml.ConditionalFormatting;
 using RevitAddin;
 
 public static class ExcelExporter
@@ -208,7 +209,9 @@ public static class ExcelExporter
         List<SimulationResult> results,
         Dictionary<string, string> units,
         Dictionary<string, TargetProperty> variableProperties = null,
-        IEnumerable<SimulationVariable> activeVariables = null)
+        IEnumerable<SimulationVariable> activeVariables = null,
+        string weatherFileName = null,
+        List<MaterialReferenceData> materialReferences = null)
     {
         ExcelPackage.License.SetNonCommercialPersonal("Revit User");
 
@@ -350,7 +353,44 @@ public static class ExcelExporter
 
                 // ── Tab 4: Input Variables sheet ─────────────────────────────────────────
                 if (activeVariables != null)
-                    AddInputVariablesSheet(package, docName, dateStr, timeStr, activeVariables);
+                    AddInputVariablesSheet(package, docName, dateStr, timeStr, activeVariables, weatherFileName);
+
+                // ── Tab 5: Building Materials ───────────────────────────────────────────────────
+                if (materialReferences != null && materialReferences.Count > 0)
+                {
+                    var wsMat = package.Workbook.Worksheets.Add("Building Materials");
+                    wsMat.Cells[1, 1].Value = "Category";
+                    wsMat.Cells[1, 2].Value = "Type Name";
+                    wsMat.Cells[1, 3].Value = "Thickness (in)";
+                    wsMat.Cells[1, 4].Value = "R-Value (h·ft²·°F/Btu)";
+                    wsMat.Cells[1, 5].Value = "U-Value (Btu/h·ft²·°F)";
+
+                    var headRange = wsMat.Cells[1, 1, 1, 5];
+                    headRange.Style.Font.Bold = true;
+                    headRange.Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
+                    headRange.Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.FromArgb(43, 87, 154));
+                    headRange.Style.Font.Color.SetColor(System.Drawing.Color.White);
+
+                    int rMat = 2;
+                    foreach (var mat in materialReferences.OrderBy(m => m.Category).ThenBy(m => m.Name))
+                    {
+                        wsMat.Cells[rMat, 1].Value = mat.Category;
+                        wsMat.Cells[rMat, 2].Value = mat.Name;
+                        wsMat.Cells[rMat, 3].Value = mat.ThicknessFt > 0 ? Math.Round(mat.ThicknessFt * 12.0, 2) : 0;
+                        wsMat.Cells[rMat, 4].Value = mat.RValueSI > 0 ? Math.Round(mat.RValueSI * 5.678263337, 2) : 0;
+                        wsMat.Cells[rMat, 5].Value = mat.UValueSI > 0 ? Math.Round(mat.UValueSI / 5.678263337, 3) : 0;
+
+                        if (rMat % 2 == 0)
+                        {
+                            var rowRange = wsMat.Cells[rMat, 1, rMat, 5];
+                            rowRange.Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
+                            rowRange.Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.FromArgb(238, 242, 250));
+                        }
+                        rMat++;
+                    }
+
+                    wsMat.Cells[wsMat.Dimension.Address].AutoFitColumns();
+                }
 
                 // ── Tab 2: Energy loss per simulation (Bar Chart) ───────────────────────────────────────────────────
                 if (scenarios.Count > 0)
@@ -379,13 +419,16 @@ public static class ExcelExporter
                     for(int i = 0; i < scenarios.Count; i++) {
                         wsHeatmap.Cells[1, i + 2].Value = $"Sim {i + 1}";
                     }
+                    
+                    double maxAbs = 0.001; // Avoid 0
                     for(int r = 0; r < roomList.Count; r++) {
                         wsHeatmap.Cells[r + 2, 1].Value = roomList[r];
                         for(int i = 0; i < scenarios.Count; i++) {
                             var roomData = results[i].RoomData;
                             if(roomData != null && roomData.TryGetValue(roomList[r], out var rd)) {
-                                double totalHeat = Math.Abs(rd.PeopleHeat + rd.LightsHeat + rd.SunTransmitted + rd.WindowsConduction + rd.DoorsConduction + rd.WallsConduction + rd.CeilingsConduction + rd.FloorsConduction);
+                                double totalHeat = rd.PeopleHeat + rd.LightsHeat + rd.SunTransmitted + rd.WindowsConduction + rd.DoorsConduction + rd.WallsConduction + rd.CeilingsConduction + rd.FloorsConduction;
                                 wsHeatmap.Cells[r + 2, i + 2].Value = totalHeat;
+                                maxAbs = Math.Max(maxAbs, Math.Abs(totalHeat));
                             } else {
                                 wsHeatmap.Cells[r + 2, i + 2].Value = 0;
                             }
@@ -394,8 +437,17 @@ public static class ExcelExporter
                     
                     var heatmapRange = wsHeatmap.Cells[2, 2, roomList.Count + 1, scenarios.Count + 1];
                     var cf = wsHeatmap.ConditionalFormatting.AddThreeColorScale(heatmapRange);
-                    cf.LowValue.Color = System.Drawing.Color.FromArgb(99, 190, 123); // Green
-                    cf.MiddleValue.Color = System.Drawing.Color.FromArgb(255, 235, 132); // Yellow
+                    
+                    cf.LowValue.Type = eExcelConditionalFormattingValueObjectType.Num;
+                    cf.LowValue.Value = -maxAbs;
+                    cf.LowValue.Color = System.Drawing.Color.FromArgb(248, 105, 107); // Red
+                    
+                    cf.MiddleValue.Type = eExcelConditionalFormattingValueObjectType.Num;
+                    cf.MiddleValue.Value = 0;
+                    cf.MiddleValue.Color = System.Drawing.Color.FromArgb(99, 190, 123); // Green
+                    
+                    cf.HighValue.Type = eExcelConditionalFormattingValueObjectType.Num;
+                    cf.HighValue.Value = maxAbs;
                     cf.HighValue.Color = System.Drawing.Color.FromArgb(248, 105, 107); // Red
                     
                     wsHeatmap.Cells[wsHeatmap.Dimension.Address].AutoFitColumns();
@@ -638,7 +690,8 @@ public static class ExcelExporter
         string docName,
         string dateStr,
         string timeStr,
-        IEnumerable<SimulationVariable> activeVariables)
+        IEnumerable<SimulationVariable> activeVariables,
+        string weatherFileName = null)
     {
         var ws = package.Workbook.Worksheets.Add("Input Variables");
 
@@ -647,6 +700,12 @@ public static class ExcelExporter
         ws.Cells["A1"].Style.Font.Size = 14;
         ws.Cells["A2"].Value = $"Generated: {dateStr}  {timeStr.Replace("-", ":")}";
         ws.Cells["A2"].Style.Font.Italic = true;
+        
+        if (!string.IsNullOrEmpty(weatherFileName))
+        {
+            ws.Cells["A3"].Value = $"Weather File: {weatherFileName}";
+            ws.Cells["A3"].Style.Font.Italic = true;
+        }
 
         int hr = 4;
         string[] headers = { "Variable Name", "Property", "State", "Method", "Unit", "Min", "Max", "Step / Count", "Array Values / Types", "Equation" };

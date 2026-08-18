@@ -3,4 +3,9 @@ C:\Users\<UserName>\AppData\Roaming\Autodesk\Revit\Addins\<RevitYear>
 
 Open Revit
 Select trust addon
-Go to addons tab and you will be able to run the addon from there. 
+
+In an open document go to Analyze -> Energy Optimization -> Energy Model Settings
+Under "Mode" change the dropdown to "Rooms"
+and under "Advanced Setting" -> "Export Complexity" change the dropdown to "Complex With Mullions And Shading Surfaces".
+Finally go to addons tab and you will be able to run the addon from there. 
+

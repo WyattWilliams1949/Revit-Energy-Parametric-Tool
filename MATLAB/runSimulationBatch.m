@@ -254,7 +254,7 @@ function resultsTable = runSimulationBatch(variables, baseEpwPath, exportPath, o
                 elseif strcmp(pType, 'RevitType')
                     targetTypeName = scenario.(fName);
                     if ~strcmp(targetTypeName, 'Original') && ~isempty(targetTypeName)
-                        rSI = getWallRValueByName(revit.BaseUrl, targetTypeName);
+                        rSI = getEnvelopeRValueByName(revit.BaseUrl, targetTypeName);
                         if rSI > 0
                             rIP = rSI / 0.17611;
                             if ~isKey(overridesMap, 'Walls')

@@ -49,7 +49,8 @@ public partial class ProgressWindow : Window
     private List<Dictionary<string, object>> _explicitScenarios;
     private bool _isSensitivityMode;
 
-    private Dictionary<string, double> _cachedWallRValues = new Dictionary<string, double>();
+    private Dictionary<string, double> _cachedRValues = new Dictionary<string, double>();
+    private List<MaterialReferenceData> _materialReferences;
 
     private JobObject _jobObject = new JobObject();
 
@@ -94,14 +95,40 @@ public partial class ProgressWindow : Window
         }
         
         var mutator = new MatlabRevitMutator(_doc);
-        var allWallTypes = new FilteredElementCollector(_doc).OfClass(typeof(WallType)).Cast<WallType>();
-        foreach (var wt in allWallTypes)
+        var allHostTypes = new FilteredElementCollector(_doc).OfClass(typeof(HostObjAttributes)).Cast<HostObjAttributes>();
+        foreach (var ht in allHostTypes)
         {
-            if (!_cachedWallRValues.ContainsKey(wt.Name))
+            if (!_cachedRValues.ContainsKey(ht.Name))
             {
-                _cachedWallRValues[wt.Name] = mutator.GetWallRValueByName(wt.Name);
+                _cachedRValues[ht.Name] = mutator.GetRValueByName(ht.Name);
             }
         }
+        
+        var rawMaterials = mutator.GetBuildingMaterials();
+        var allowedMaterialNames = new HashSet<string>();
+        foreach (var id in new FilteredElementCollector(_doc).WhereElementIsNotElementType().Select(e => e.GetTypeId()).Distinct())
+        {
+            var elem = _doc.GetElement(id) as ElementType;
+            if (elem != null) allowedMaterialNames.Add(elem.Name);
+        }
+
+        foreach (var scenario in GetScenarios())
+        {
+            foreach (var val in scenario.Values)
+            {
+                if (val is string s)
+                {
+                    allowedMaterialNames.Add(s);
+                }
+                else if (val is WallModConfig wmc)
+                {
+                    if (!string.IsNullOrEmpty(wmc.StudType)) allowedMaterialNames.Add(wmc.StudType);
+                    if (!string.IsNullOrEmpty(wmc.InsulationType)) allowedMaterialNames.Add(wmc.InsulationType);
+                }
+            }
+        }
+        
+        _materialReferences = rawMaterials.Where(m => allowedMaterialNames.Contains(m.Name)).ToList();
         
         EnsureSqliteNativeLoaded();
         
@@ -499,7 +526,7 @@ public partial class ProgressWindow : Window
                 try { docTitle = _doc.Title; } catch { docTitle = "Simulation"; }
                 string excelPath = null;
                 try {
-                    excelPath = ExcelExporter.ExportData(docTitle, _exportPath, _warnings, validScenarios, validResults, _units, _variableProperties, _activeVariables);
+                    excelPath = ExcelExporter.ExportData(docTitle, _exportPath, _warnings, validScenarios, validResults, _units, _variableProperties, _activeVariables, System.IO.Path.GetFileName(_weatherPath), _materialReferences);
                 } catch (Exception ex) {
                     try { System.IO.File.WriteAllText(System.IO.Path.Combine(_exportPath, "excel_fatal_error.txt"), ex.ToString()); } catch { }
                 }
@@ -791,10 +818,14 @@ public partial class ProgressWindow : Window
     {
         if (string.IsNullOrEmpty(input)) return 0;
         
-        if (_cachedWallRValues != null && _cachedWallRValues.TryGetValue(input, out double cachedR))
+        if (_cachedRValues != null && _cachedRValues.TryGetValue(input, out double cachedR))
         {
             return cachedR;
         }
+
+        var mutator = new MatlabRevitMutator(_doc);
+        double rFromMutator = mutator.GetRValueByName(input);
+        if (rFromMutator > 0) return rFromMutator;
 
         var match = System.Text.RegularExpressions.Regex.Match(input, @"[Rr]-?(\d+(\.\d+)?)");
         if (match.Success && double.TryParse(match.Groups[1].Value, out double r))
@@ -916,11 +947,25 @@ public partial class ProgressWindow : Window
                 }
                 else if (prop == TargetProperty.RevitType && kvp.Value is string sValTypeSelection && sValTypeSelection != "Original" && !sValTypeSelection.StartsWith("TempDependent:"))
                 {
-                    if (_cachedWallRValues.TryGetValue(sValTypeSelection, out double targetR_SI))
+                    double targetR_SI = 0;
+                    if (_variableElements.TryGetValue(kvp.Key, out var elementId) && _variableElementNames.TryGetValue(kvp.Key, out var elementName))
                     {
+                        var originalElem = _doc.GetElement(elementId);
+                        var originalType = originalElem as ElementType ?? _doc.GetElement(originalElem.GetTypeId()) as ElementType;
+                        if (originalType != null)
+                        {
+                            var mutatorForTarget = new MatlabRevitMutator(_doc);
+                            targetR_SI = mutatorForTarget.GetRValueByNameAndCategory(sValTypeSelection, originalType.Category.Id);
+                        }
+
+                        if (targetR_SI <= 0 && _cachedRValues.TryGetValue(sValTypeSelection, out double cachedR))
+                        {
+                            targetR_SI = cachedR;
+                        }
+
                         double targetR = targetR_SI * 5.678263337; // Convert m²·K/W to h·ft²·°F/Btu
 
-                        if (targetR > 0 && _variableElements.TryGetValue(kvp.Key, out var elementId) && _variableElementNames.TryGetValue(kvp.Key, out var elementName))
+                        if (targetR > 0)
                         {
                             string osName = _currentConstructionRefs.ContainsKey(kvp.Key) ? _currentConstructionRefs[kvp.Key] : elementName;
                             osName = osName.Replace("\"", "");
@@ -1204,7 +1249,8 @@ public partial class ProgressWindow : Window
                 {
                     conn.Open();
                     using (var cmd = conn.CreateCommand())
-                    {                        cmd.CommandText = @"
+                    {
+                        cmd.CommandText = @"
                             SELECT d.Name, d.KeyValue, 
                                    COALESCE(z_from_surf.ZoneName, d.KeyValue) AS ResolvedZoneName,
                                    SUM(r.Value),

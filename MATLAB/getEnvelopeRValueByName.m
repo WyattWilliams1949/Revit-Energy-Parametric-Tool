@@ -1,11 +1,11 @@
-function rSI = getWallRValueByName(baseUrl, typeName)
-% GETWALLRVALUEBYNAME  Fetches the SI thermal R-value of a Revit wall type by name.
+function rSI = getEnvelopeRValueByName(baseUrl, typeName)
+% GETENVELOPERVALUEBYNAME  Fetches the SI thermal R-value of a Revit envelope type by name.
 %
-%   rSI = getWallRValueByName(baseUrl, typeName)
+%   rSI = getEnvelopeRValueByName(baseUrl, typeName)
 %
 %   Inputs:
 %     baseUrl   - Base URL of the Revit HTTP server (e.g. 'http://localhost:8080')
-%     typeName  - Display name of the wall type (e.g. 'Wall Insulation (2)')
+%     typeName  - Display name of the envelope type (e.g. 'Wall Insulation (2)')
 %
 %   Output:
 %     rSI - R-value in SI units (m²·K/W). Returns 0 if the type is not found
@@ -16,13 +16,13 @@ function rSI = getWallRValueByName(baseUrl, typeName)
     rSI = 0;
     try
         encodedName = urlencode(typeName);
-        url = [baseUrl '/wall-rvalue-by-name?typeName=' encodedName];
+        url = [baseUrl '/envelope-rvalue-by-name?typeName=' encodedName];
         opts = weboptions('Timeout', 10, 'ContentType', 'json');
         result = webread(url, opts);
         if isstruct(result) && isfield(result, 'rValueSI')
             rSI = result.rValueSI;
         end
     catch ex
-        warning('getWallRValueByName: Could not fetch R-value for "%s": %s', typeName, ex.message);
+        warning('getEnvelopeRValueByName: Could not fetch R-value for "%s": %s', typeName, ex.message);
     end
 end
